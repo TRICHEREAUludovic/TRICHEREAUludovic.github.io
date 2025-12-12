@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Ludovic - Développeur Web Full Stack">
+    
+    <!-- liens CSS -->
+    <link rel="stylesheet" href="./Public/css/reset.css" /> 
+    <link rel="stylesheet" href="./Public/css/styles.css" />
+    <script src="./Public/js/script.js" defer></script>
+    
+    <title>Ludovic - Développeur Full Stack</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <!-- <div class="logo">
+            <h2>Ludovic.dev</h2> 
+        </div> -->
+        
+        <button id="toggle-button" aria-label="Menu de navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="dark-mode-toggle" aria-label="Activer/Désactiver le mode sombre">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section Hero -->
+        <section class="home" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-greeting">Bonjour, je suis</span>
+                    <h1 class="hero-name">Ludovic</h1>
+                    <h2 class="hero-title">Développeur Web Full Stack</h2>
+                    <p class="hero-description">
+                        Je crée des applications web modernes et performantes avec pour stack principale
+                        <strong>JavaScript</strong>, <strong>Node.js</strong> et <strong>PostgreSQL</strong>.
+                    </p>
+                    <p class="hero-status">
+                        🎯 Actuellement sur le developpement d'un site <strong>e-commerce</strong> <br>
+                        page en cours de construction
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Public/img/profile2.png" alt="Portrait de Ludovic" />
+                    <div class="hero-shape"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À propos -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="Public/img/profile2.png" alt="Photo de profil Ludovic" />
+                    </div>
+                    <div class="about-text">
+                        <h3>Passionné par le développement web</h3>
+                        <p>
+                            Développeur web full stack en formation, je suis spécialisé dans la création 
+                            d'applications web modernes et responsives. Mon approche combine créativité, 
+                            rigueur technique et attention aux détails.
+                        </p>
+                        <p>
+                            Avec une base solide du front-end et du back-end, je transforme des idées 
+                            en solutions digitales performantes et intuitives.
+                        </p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">2+</span>
+                                <span class="stat-label">Projets réalisés</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Technologies</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Mes Compétences</h2>
+                <p class="section-subtitle">Technologies et outils</p>
+                
+                <div class="skills-grid">
+                    <!-- Front-end -->
+                    <div class="skill-category">
+                        <h3>Front-end</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="Public/img/img/html-5-svgrepo-com.svg" alt="HTML5" />
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="Public/img/img/css-svgrepo-com.svg" alt="CSS3" />
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="Public/img/img/js-svgrepo-com.svg" alt="JavaScript" />
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="Public/img/img/svelte-icon-svgrepo-com.svg" alt="Svelte" />
+                                <span>Svelte</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Back-end -->
+                    <div class="skill-category">
+                        <h3>Back-end</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="Public/img/img/nodejs-svgrepo-com.svg" alt="Node.js" />
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="Public/img/img/postgresql-logo-svgrepo-com.svg" alt="PostgreSQL" />
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outils -->
+                    <div class="skill-category">
+                        <h3>Outils & Autres</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="Public/img/img/markdown-svgrepo-com.svg" alt="Markdown" />
+                                <span>Markdown</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="Public/img/img/github.svg" alt="GitHub" />
+                                <span>Git & GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets -->
+        <section id="projets" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Mes Projets</h2>
+                <p class="section-subtitle">Découvrez mes réalisations récentes</p>
+                
+                <div class="projects-grid">
+                    <!-- Projet 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="Public/img/back2.png" alt="Projet en cours" />
+                            <div class="project-overlay">
+                                <a href="#" class="btn-project">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Projet en cours</h3>
+                            <p>creation site e-commerce.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="Public/img/back.png" alt="Porte folio" />
+                            <div class="project-overlay">
+                                <a href="#" class="btn-project">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Portfolio Moderne</h3>
+                            <p>Site portfolio responsive avec animations fluides et design moderne.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="Public/img/back.png" alt="Projet fin de formation" />
+                            <div class="project-overlay">
+                                <a href="#" class="btn-project">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Cinedelices</h3>
+                            <p>Structure monolithique en node.js avec authentification JWT et documentations.</p>
+                            <div class="project-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">Sequelize</span>
+                                <span class="tag">PostgresQl</span>
+                                <span class="tag">JWT</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projects-cta">
+                    <a href="#contact" class="btn btn-primary">Discutons de votre projet</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contactez-moi</h2>
+                <p class="section-subtitle">Je suis actuellemnt en stage pour la création d'un site e-commerce professionnel.</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Restons en contact</h3>
+                        <p>
+                            N'hésitez pas à me contacter pour discuter de vos projets, 
+                            d'opportunités de stage ou simplement pour échanger.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Yvelines, Île-de-France</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                <span>contact@mail.dev</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn">
+                                <img src="Public/img/img/linkedin-1-svgrepo-com.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <img src="Public/img/img/facebook-3-logo-svgrepo-com.svg" alt="Facebook" />
+                            </a>
+                            <a href="#" aria-label="Discord">
+                                <img src="Public/img/img/discord-v2-svgrepo-com.svg" alt="Discord" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required placeholder="Votre nom">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ludovic. Tous droits réservés.</p>
+                <a href="#mentions-legales">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="scroll-to-top" aria-label="Retour en haut">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+</body>
+</html>
+

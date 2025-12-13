@@ -5,27 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Ludovic - Développeur Web Full Stack">
     
+    <!-- Précharger l'image LCP exacte (améliore LCP) -->
+    <link rel="preload" as="image" href="Public/img/profile2-900.webp">
     <!-- liens CSS -->
-    <link rel="stylesheet" href="./Public/css/reset.css" /> 
-    <link rel="stylesheet" href="./Public/css/styles.css" />
+        <!-- Preload CSS then apply onload to avoid double-download and reduce render-blocking -->
+        <link rel="preload" href="./Public/css/reset.css" as="style" onload="this.rel='stylesheet'">
+        <link rel="preload" href="./Public/css/styles.css" as="style" onload="this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="./Public/css/reset.css" />
+            <link rel="stylesheet" href="./Public/css/styles.css" />
+        </noscript>
     <script src="./Public/js/script.js" defer></script>
     
     <title>Ludovic - Développeur Full Stack</title>
 </head>
 <body>
+    <!-- Skip link pour l'accessibilité clavier -->
+    <a class="skip-link" href="#main">Aller au contenu</a>
     <!-- Navigation -->
     <header>
         <!-- <div class="logo">
             <h2>Ludovic.dev</h2> 
         </div> -->
         
-        <button id="toggle-button" aria-label="Menu de navigation">
+        <button id="toggle-button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="primary-nav">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <nav>
+        <nav id="primary-nav" role="navigation" aria-label="Navigation principale">
             <ul>
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#about">À propos</a></li>
@@ -33,7 +42,7 @@
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <button id="dark-mode-toggle" aria-label="Activer/Désactiver le mode sombre">
+                    <button id="dark-mode-toggle" aria-label="Activer le mode sombre" aria-pressed="false">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="5"/>
                             <line x1="12" y1="1" x2="12" y2="3"/>
@@ -54,7 +63,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <!-- Section Hero -->
         <section class="home" id="home">
             <div class="hero-content">
@@ -76,7 +85,14 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="Public/img/profile2.png" alt="Portrait de Ludovic" />
+                    <picture>
+                        <!-- responsive srcset: browser picks optimal variant (DPR-aware) -->
+                        <source type="image/webp"
+                                srcset="Public/img/profile2-480.webp 480w, Public/img/profile2-900.webp 900w, Public/img/profile2-1600.webp 1600w"
+                                sizes="(max-width:600px) 80vw, (max-width:1200px) 40vw, 350px">
+                        <!-- fallback img points to medium as a sensible default -->
+                        <img src="Public/img/profile2-900.webp" alt="Portrait de Ludovic" fetchpriority="high" decoding="async" width="350" height="350" />
+                    </picture>
                     <div class="hero-shape"></div>
                 </div>
             </div>
@@ -88,7 +104,10 @@
                 <h2 class="section-title">À propos de moi</h2>
                 <div class="about-content">
                     <div class="about-image">
-                        <img src="Public/img/profile2.png" alt="Photo de profil Ludovic" />
+                        <picture>
+                            <source type="image/webp" srcset="Public/img/profile2.webp" />
+                            <img src="Public/img/profile2.webp" alt="Photo de profil Ludovic" loading="lazy" decoding="async" width="350" height="350" />
+                        </picture>
                     </div>
                     <div class="about-text">
                         <h3>Passionné par le développement web</h3>
@@ -133,20 +152,20 @@
                         <h3>Front-end</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <img src="Public/img/img/html-5-svgrepo-com.svg" alt="HTML5" />
-                                <span>HTML5</span>
+                                <img src="Public/img/img/html-5-svgrepo-com.svg" alt="HTML5" title="HTML5" loading="lazy" width="48" height="48" />
+                                
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/css-svgrepo-com.svg" alt="CSS3" />
-                                <span>CSS3</span>
+                                <img src="Public/img/img/css-svgrepo-com.svg" alt="CSS3" title="CSS3" loading="lazy" width="48" height="48" />
+                                
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/js-svgrepo-com.svg" alt="JavaScript" />
-                                <span>JavaScript</span>
+                                <img src="Public/img/img/js-svgrepo-com.svg" alt="JavaScript" title="JavaScript" loading="lazy" width="48" height="48" />
+                                
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/svelte-icon-svgrepo-com.svg" alt="Svelte" />
-                                <span>Svelte</span>
+                                <img src="Public/img/img/svelte-icon-svgrepo-com.svg" alt="Svelte" title="Svelte" loading="lazy" width="48" height="48" />
+                                
                             </div>
                         </div>
                     </div>
@@ -156,12 +175,12 @@
                         <h3>Back-end</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <img src="Public/img/img/nodejs-svgrepo-com.svg" alt="Node.js" />
-                                <span>Node.js</span>
+                                <img src="Public/img/img/nodejs-svgrepo-com.svg" alt="Node.js" title="Node.js" loading="lazy" width="48" height="48" />
+                                
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/postgresql-logo-svgrepo-com.svg" alt="PostgreSQL" />
-                                <span>PostgreSQL</span>
+                                <img src="Public/img/img/postgresql-logo-svgrepo-com.svg" alt="PostgreSQL" title="PostgreSQL" loading="lazy" width="48" height="48" />
+                                
                             </div>
                         </div>
                     </div>
@@ -171,12 +190,11 @@
                         <h3>Outils & Autres</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <img src="Public/img/img/markdown-svgrepo-com.svg" alt="Markdown" />
-                                <span>Markdown</span>
-                            </div>
+                                <img src="Public/img/img/markdown-svgrepo-com.svg" alt="Markdown" title="Markdown" loading="lazy" width="48" height="48" />
+                            </div>    
                             <div class="skill-item">
-                                <img src="Public/img/img/github.svg" alt="GitHub" />
-                                <span>Git & GitHub</span>
+                                <img src="Public/img/img/github.svg" alt="GitHub" title="GitHub" loading="lazy" width="48" height="48" />
+                                
                             </div>
                         </div>
                     </div>
@@ -194,7 +212,10 @@
                     <!-- Projet 1 -->
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="Public/img/back2.png" alt="Projet en cours" />
+                            <picture>
+                                <source type="image/webp" srcset="Public/img/back2.webp" />
+                                <img src="Public/img/back2.webp" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
+                            </picture>
                             <div class="project-overlay">
                                 <a href="#" class="btn-project">Voir le projet</a>
                             </div>
@@ -213,7 +234,10 @@
                     <!-- Projet 2 -->
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="Public/img/back.png" alt="Porte folio" />
+                            <picture>
+                                <source type="image/webp" srcset="Public/img/landing-page.webp" />
+                                <img src="Public/img/landing-page.webp" alt="Porte folio" loading="lazy" decoding="async" width="400" height="250" />
+                            </picture>
                             <div class="project-overlay">
                                 <a href="#" class="btn-project">Voir le projet</a>
                             </div>
@@ -232,7 +256,10 @@
                     <!-- Projet 3 -->
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="Public/img/back.png" alt="Projet fin de formation" />
+                            <picture>
+                                <source type="image/webp" srcset="Public/img/cinedelice.webp" />
+                                <img src="Public/img/cinedelice.webp" alt="Projet fin de formation" loading="lazy" decoding="async" width="400" height="250" />
+                            </picture>
                             <div class="project-overlay">
                                 <a href="#" class="btn-project">Voir le projet</a>
                             </div>
@@ -290,18 +317,18 @@
 
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn">
-                                <img src="Public/img/img/linkedin-1-svgrepo-com.svg" alt="LinkedIn" />
+                                <img src="Public/img/img/linkedin-1-svgrepo-com.svg" alt="LinkedIn" loading="lazy" width="24" height="24" />
                             </a>
                             <a href="#" aria-label="Facebook">
-                                <img src="Public/img/img/facebook-3-logo-svgrepo-com.svg" alt="Facebook" />
+                                <img src="Public/img/img/facebook-3-logo-svgrepo-com.svg" alt="Facebook" loading="lazy" width="24" height="24" />
                             </a>
                             <a href="#" aria-label="Discord">
-                                <img src="Public/img/img/discord-v2-svgrepo-com.svg" alt="Discord" />
+                                <img src="Public/img/img/discord-v2-svgrepo-com.svg" alt="Discord" loading="lazy" width="24" height="24" />
                             </a>
                         </div>
                     </div>
 
-                    <form class="contact-form">
+                    <form class="contact-form" novalidate>
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -323,6 +350,7 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                        <div id="form-status" class="visually-hidden" role="status" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
@@ -345,6 +373,24 @@
             <polyline points="18 15 12 9 6 15"/>
         </svg>
     </button>
+        <script>
+            // Enable animations when the browser is idle or after load to avoid layout jank
+            (function(){
+                function enableAnimations(){ document.documentElement.classList.add('anim-ready'); }
+                if ('requestIdleCallback' in window) requestIdleCallback(enableAnimations, {timeout:200});
+                else window.addEventListener('load', function(){ setTimeout(enableAnimations, 120); });
+            })();
+        </script>
+        <script>
+            // debug: log the current src of the hero image after load
+            document.addEventListener('DOMContentLoaded', function(){
+                const heroImg = document.querySelector('.hero-image img');
+                if(heroImg){
+                    heroImg.addEventListener('load', ()=> console.log('Hero image loaded:', heroImg.currentSrc || heroImg.src));
+                    // also log immediately
+                    console.log('Hero currentSrc initially:', heroImg.currentSrc || heroImg.src);
+                }
+            });
+        </script>
 </body>
 </html>
-

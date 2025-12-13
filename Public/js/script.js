@@ -83,6 +83,14 @@ if (darkModeToggle) {
       body.classList.add("dark-mode");
       darkModeToggle.setAttribute("aria-pressed", "true");
       localStorage.setItem("theme", "dark");
+      // preload dark background when dark mode is enabled
+      try {
+        var l = document.createElement("link");
+        l.rel = "preload";
+        l.as = "image";
+        l.href = "Public/img/back2.webp";
+        document.head.appendChild(l);
+      } catch (e) {}
     } else {
       body.classList.remove("dark-mode");
       darkModeToggle.setAttribute("aria-pressed", "false");

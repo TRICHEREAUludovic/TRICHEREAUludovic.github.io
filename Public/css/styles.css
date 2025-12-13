@@ -196,6 +196,24 @@ body.dark-mode .btn-primary:hover {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Improve contrast for primary buttons in dark mode */
+body.dark-mode .btn-primary,
+body.dark-mode a.btn.btn-primary,
+body.dark-mode button.btn.btn-primary {
+  /* use a bright gradient background for good contrast */
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .btn-primary:hover,
+body.dark-mode a.btn.btn-primary:hover,
+body.dark-mode button.btn.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
 /* Hero text in dark mode */
 body.dark-mode .hero-greeting,
 body.dark-mode .hero-name,

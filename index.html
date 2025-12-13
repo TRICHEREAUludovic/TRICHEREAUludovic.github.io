@@ -7,14 +7,46 @@
     
     <!-- Précharger l'image LCP exacte (améliore LCP) -->
     <link rel="preload" as="image" href="Public/img/profile2-900.webp">
-    <!-- liens CSS -->
-        <!-- Preload CSS then apply onload to avoid double-download and reduce render-blocking -->
-        <link rel="preload" href="./Public/css/reset.css" as="style" onload="this.rel='stylesheet'">
-        <link rel="preload" href="./Public/css/styles.css" as="style" onload="this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet" href="./Public/css/reset.css" />
-            <link rel="stylesheet" href="./Public/css/styles.css" />
-        </noscript>
+    <!-- Précharger aussi le background principal utilisé par .home (réduit LCP) -->
+    <link rel="preload" as="image" href="Public/img/back.webp">
+        <!-- Précharger back2.webp uniquement si le mode sombre est attendu (évite téléchargement inutile) -->
+        <script>
+            (function(){
+                try{
+                    var saved = localStorage.getItem('theme');
+                    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    var shouldPreloadDark = (saved === 'dark') || (!saved && prefersDark);
+                    if(shouldPreloadDark){
+                        var l = document.createElement('link');
+                        l.rel = 'preload'; l.as = 'image'; l.href = 'Public/img/back2.webp';
+                        document.head.appendChild(l);
+                        // also create a hidden image on DOMContentLoaded to increase likelihood the browser treats it as LCP
+                        document.addEventListener('DOMContentLoaded', function(){
+                            try{
+                                var img = new Image();
+                                img.src = 'Public/img/back2.webp';
+                                img.decoding = 'async';
+                                img.fetchPriority = 'high';
+                                img.style.display = 'none';
+                                document.body.appendChild(img);
+                            }catch(e){}
+                        });
+                    }
+                }catch(e){}
+            })();
+        </script>
+    <!-- Stylesheets: load normally so styles are applied immediately (prevents FOUC) -->
+    <link rel="stylesheet" href="./Public/css/reset.css">
+    <link rel="stylesheet" href="./Public/css/styles.css">
+        <!-- Critical CSS: minimal rules to avoid FOUC while main CSS loads -->
+        <style>
+            /* keep header visible and basic layout stable */
+            html,body{height:100%;}
+            body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0;}
+            header{position:fixed;top:0;width:100%;background:#fff;padding:1rem;z-index:1000}
+            .skip-link{position:absolute;left:-9999px}
+            main{padding-top:80px}
+        </style>
     <script src="./Public/js/script.js" defer></script>
     
     <title>Ludovic - Développeur Full Stack</title>
@@ -361,8 +393,8 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 Ludovic. Tous droits réservés.</p>
-                <a href="#mentions-legales">Mentions légales</a>
+                <p>&copy; 2025 Ludovic Trichereau. Tous droits réservés.</p>
+                
             </div>
         </div>
     </footer>

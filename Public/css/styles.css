@@ -1108,6 +1108,13 @@ body.dark-mode .social-links a {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+body.dark-mode .skill-category .Markdown,
+body.dark-mode .skill-category .github,
+body.dark-mode .social-links .github {
+  filter: invert(100%);
+
+}
+
 body.dark-mode .social-links a:hover {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -1125,6 +1132,7 @@ body.dark-mode footer .footer-bottom a {
 body.dark-mode footer .footer-bottom a:hover {
   color: #f9fafb;
 }
+
 
 /* Smooth transition for theme change */
 body,

@@ -9,32 +9,8 @@
     <link rel="preload" as="image" href="Public/img/profile2-900.webp">
     <!-- Précharger aussi le background principal utilisé par .home (réduit LCP) -->
     <link rel="preload" as="image" href="Public/img/back.webp">
-        <!-- Précharger back2.webp uniquement si le mode sombre est attendu (évite téléchargement inutile) -->
-        <script>
-            (function(){
-                try{
-                    var saved = localStorage.getItem('theme');
-                    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    var shouldPreloadDark = (saved === 'dark') || (!saved && prefersDark);
-                    if(shouldPreloadDark){
-                        var l = document.createElement('link');
-                        l.rel = 'preload'; l.as = 'image'; l.href = 'Public/img/back2.webp';
-                        document.head.appendChild(l);
-                        // also create a hidden image on DOMContentLoaded to increase likelihood the browser treats it as LCP
-                        document.addEventListener('DOMContentLoaded', function(){
-                            try{
-                                var img = new Image();
-                                img.src = 'Public/img/back2.webp';
-                                img.decoding = 'async';
-                                img.fetchPriority = 'high';
-                                img.style.display = 'none';
-                                document.body.appendChild(img);
-                            }catch(e){}
-                        });
-                    }
-                }catch(e){}
-            })();
-        </script>
+        <!-- Précharger back2.webp uniquement pour les navigateurs en mode sombre via media query (non programmatique) -->
+        <link rel="preload" as="image" href="Public/img/back2.webp" media="(prefers-color-scheme: dark)">
     <!-- Stylesheets: load normally so styles are applied immediately (prevents FOUC) -->
     <link rel="stylesheet" href="./Public/css/reset.css">
     <link rel="stylesheet" href="./Public/css/styles.css">
@@ -135,10 +111,10 @@
             <div class="container">
                 <h2 class="section-title">À propos de moi</h2>
                 <div class="about-content">
-                    <div class="about-image">
+                    <div class="about-image" tabindex="0" aria-label="Photo de profil - apercu">
                         <picture>
-                            <source type="image/webp" srcset="Public/img/profile2.webp" />
-                            <img src="Public/img/profile2.webp" alt="Photo de profil Ludovic" loading="lazy" decoding="async" width="350" height="350" />
+                            <source type="image/webp" srcset="Public/img/profile2-480.webp 480w, Public/img/profile2-900.webp 900w, Public/img/profile2-1600.webp 1600w" sizes="(max-width:600px) 80vw, (max-width:1200px) 40vw, 350px" />
+                            <img src="Public/img/profile2-900.webp" alt="Photo de profil Ludovic" loading="lazy" decoding="async" width="350" height="350" />
                         </picture>
                     </div>
                     <div class="about-text">

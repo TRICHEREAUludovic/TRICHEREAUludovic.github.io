@@ -490,6 +490,16 @@ section {
   cursor: pointer;
 }
 
+/* Make the container size match the contained image so the ::before overlay exactly covers it */
+.about-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.about-image { max-width: 350px; }
+
 .about-image::before {
   content: '';
   position: absolute;
@@ -497,15 +507,47 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../img/profile.webp') center/cover;
+  /* default: high-res background for large displays */
+  background: url('../img/profile-1600.webp') center/cover;
+  background-size: cover;
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: 1;
 }
 
+/* Responsive background variants for hover overlay to reduce bandwidth on small screens */
+@media (max-width: 600px) {
+  .about-image::before {
+    background-image: url('../img/profile-480.webp');
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .about-image::before {
+    background-image: url('../img/profile-900.webp');
+  }
+}
+
 .about-image:hover::before {
   opacity: 1;
+}
+
+/* When hovering, fade out the base img so the overlay (profile-*.webp) appears in its place */
+.about-image:hover img {
+  opacity: 0;
+}
+
+/* Show overlay on keyboard focus as well */
+.about-image:focus::before,
+.about-image:focus img {
+  outline: none;
+}
+.about-image:focus::before {
+  opacity: 1;
+}
+.about-image:focus img {
+  opacity: 0;
 }
 
 .about-image img {
@@ -1027,15 +1069,7 @@ footer {
   }
 }
 
-@media (max-width: 420px) {
-  .about-image img {
-    margin: 0 auto;
-    width: 85%;
-  }
-  .about-image::before {
-    display: none;
-  }
-}
+
 
 /* ==== Additional Dark Mode Styles ==== */
 body.dark-mode .skill-category,

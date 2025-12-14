@@ -83,14 +83,7 @@ if (darkModeToggle) {
       body.classList.add("dark-mode");
       darkModeToggle.setAttribute("aria-pressed", "true");
       localStorage.setItem("theme", "dark");
-      // preload dark background when dark mode is enabled
-      try {
-        var l = document.createElement("link");
-        l.rel = "preload";
-        l.as = "image";
-        l.href = "Public/img/back2.webp";
-        document.head.appendChild(l);
-      } catch (e) {}
+      // Dark mode enabled: background image referenced by CSS (no programmatic preload)
     } else {
       body.classList.remove("dark-mode");
       darkModeToggle.setAttribute("aria-pressed", "false");
@@ -101,6 +94,14 @@ if (darkModeToggle) {
 
   darkModeToggle.addEventListener("click", () => {
     setDarkMode(!body.classList.contains("dark-mode"));
+
+    // Si le menu mobile est ouvert, le fermer lorsque l'utilisateur active/désactive le mode sombre
+    if (nav && nav.classList.contains("active")) {
+      nav.classList.remove("active");
+      if (toggleButton) toggleButton.setAttribute("aria-expanded", "false");
+      // Remettre le focus sur le bouton burger pour l'accessibilité
+      if (toggleButton) toggleButton.focus();
+    }
   });
 
   // Initial state attribute

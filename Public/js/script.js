@@ -171,28 +171,167 @@ if (skillsSection) {
 const contactForm = document.querySelector(".contact-form");
 if (contactForm) {
   const statusEl = document.getElementById("form-status");
-  contactForm.addEventListener("submit", (e) => {
+  // Honeypot
+  const honeypot = contactForm.querySelector('input[name="website"]');
+
+  // Délai anti-bot : stocke le timestamp d'affichage du formulaire
+  let formDisplayTime = Date.now();
+  // Réinitialise le timer à chaque affichage (ex: navigation SPA)
+  contactForm.addEventListener("focusin", function once() {
+    formDisplayTime = Date.now();
+    contactForm.removeEventListener("focusin", once);
+  });
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const formData = {
-      name: contactForm.querySelector("#name").value,
-      email: contactForm.querySelector("#email").value,
-      subject: contactForm.querySelector("#subject").value,
-      message: contactForm.querySelector("#message").value,
-    };
-
-    // Ici on simule un envoi asynchrone (à remplacer par un appel réel si nécessaire)
-    if (statusEl) {
-      statusEl.textContent = "Envoi en cours...";
+    // Vérification honeypot
+    if (honeypot && honeypot.value) {
+      if (statusEl) {
+        statusEl.textContent = "Erreur de validation.";
+        statusEl.classList.remove("visually-hidden");
+        statusEl.style.opacity = "1";
+        statusEl.style.transition = "opacity 0.7s";
+        setTimeout(() => {
+          statusEl.style.opacity = "0";
+          setTimeout(() => {
+            statusEl.textContent = "";
+            statusEl.classList.add("visually-hidden");
+            statusEl.style.opacity = "";
+            statusEl.style.transition = "";
+          }, 700);
+        }, 1800);
+      }
+      return;
     }
 
-    setTimeout(() => {
+    // Délai anti-bot : empêche la soumission avant 2 secondes
+    const now = Date.now();
+    if (now - formDisplayTime < 2000) {
       if (statusEl) {
-        statusEl.textContent = "Message envoyé. Merci !";
+        statusEl.textContent = "Merci d'attendre 2 secondes avant d'envoyer.";
+        statusEl.classList.remove("visually-hidden");
+        statusEl.style.opacity = "1";
+        statusEl.style.transition = "opacity 0.7s";
+        setTimeout(() => {
+          statusEl.style.opacity = "0";
+          setTimeout(() => {
+            statusEl.textContent = "";
+            statusEl.classList.add("visually-hidden");
+            statusEl.style.opacity = "";
+            statusEl.style.transition = "";
+          }, 700);
+        }, 1800);
       }
-      // Remise à zéro du formulaire
+      return;
+    }
+
+    // Validation des données (sécurité côté client)
+    const name = contactForm.querySelector('input[name="name"]');
+    const email = contactForm.querySelector('input[name="email"]');
+    const subject = contactForm.querySelector('input[name="subject"]');
+    const message = contactForm.querySelector('textarea[name="message"]');
+
+    // Regex email simple
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name.value.trim() || name.value.length < 2) {
+      showStatus("Nom invalide.");
+      return;
+    }
+    if (!email.value.trim() || !emailRegex.test(email.value)) {
+      showStatus("Email invalide.");
+      return;
+    }
+    if (!subject.value.trim() || subject.value.length < 2) {
+      showStatus("Sujet invalide.");
+      return;
+    }
+    if (!message.value.trim() || message.value.length < 5) {
+      showStatus("Message trop court.");
+      return;
+    }
+
+    // Fonction utilitaire pour afficher les erreurs
+    function showStatus(msg) {
+      if (statusEl) {
+        statusEl.textContent = msg;
+        statusEl.classList.remove("visually-hidden");
+        statusEl.style.opacity = "1";
+        statusEl.style.transition = "opacity 0.7s";
+        setTimeout(() => {
+          statusEl.style.opacity = "0";
+          setTimeout(() => {
+            statusEl.textContent = "";
+            statusEl.classList.add("visually-hidden");
+            statusEl.style.opacity = "";
+            statusEl.style.transition = "";
+          }, 700);
+        }, 1800);
+      }
+    }
+    // Ici on fait un envoi asynchrone classique (sans reCAPTCHA)
+    if (statusEl) {
+      statusEl.textContent = "Envoi en cours...";
+      statusEl.classList.remove("visually-hidden");
+    }
+
+    const formData = new FormData(contactForm);
+    try {
+      const response = await fetch("https://formspree.io/f/mkonbwlv", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        if (statusEl) {
+          statusEl.textContent = "Message envoyé. Merci !";
+          statusEl.style.opacity = "1";
+          statusEl.style.transition = "opacity 0.7s";
+          setTimeout(() => {
+            statusEl.style.opacity = "0";
+            setTimeout(() => {
+              statusEl.textContent = "";
+              statusEl.classList.add("visually-hidden");
+              statusEl.style.opacity = "";
+              statusEl.style.transition = "";
+            }, 700);
+          }, 1800);
+        }
+        contactForm.reset();
+      } else {
+        if (statusEl) {
+          statusEl.textContent = "Une erreur est survenue. Veuillez réessayer.";
+          statusEl.style.opacity = "1";
+          statusEl.style.transition = "opacity 0.7s";
+          setTimeout(() => {
+            statusEl.style.opacity = "0";
+            setTimeout(() => {
+              statusEl.textContent = "";
+              statusEl.classList.add("visually-hidden");
+              statusEl.style.opacity = "";
+              statusEl.style.transition = "";
+            }, 700);
+          }, 1800);
+        }
+        contactForm.reset();
+      }
+    } catch (error) {
+      if (statusEl) {
+        statusEl.textContent = "Erreur reseau. Veuillez réessayer.";
+        statusEl.style.opacity = "1";
+        statusEl.style.transition = "opacity 0.7s";
+        setTimeout(() => {
+          statusEl.style.opacity = "0";
+          setTimeout(() => {
+            statusEl.textContent = "";
+            statusEl.classList.add("visually-hidden");
+            statusEl.style.opacity = "";
+            statusEl.style.transition = "";
+          }, 700);
+        }, 1800);
+      }
       contactForm.reset();
-    }, 500);
+    }
   });
 }
 

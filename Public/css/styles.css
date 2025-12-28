@@ -396,8 +396,9 @@ body.dark-mode .hero-status {
 /* ==== Bouton Retour en Haut ==== */
 #scroll-to-top {
   position: fixed;
+  left: 50%;
   bottom: 2rem;
-  right: 2rem;
+  transform: translateX(-50%);
   width: 50px;
   height: 50px;
   background: var(--gradient);
@@ -421,7 +422,7 @@ body.dark-mode .hero-status {
 }
 
 #scroll-to-top:hover {
-  transform: translateY(-5px);
+  transform: translate(-50%, -5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 

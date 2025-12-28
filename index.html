@@ -14,6 +14,7 @@
     <!-- Stylesheets: load normally so styles are applied immediately (prevents FOUC) -->
     <link rel="stylesheet" href="./Public/css/reset.css">
     <link rel="stylesheet" href="./Public/css/styles.css">
+
         <!-- Critical CSS: minimal rules to avoid FOUC while main CSS loads -->
         <style>
             /* keep header visible and basic layout stable */
@@ -26,6 +27,7 @@
     <script src="./Public/js/script.js" defer></script>
     <script src="./Public/js/page-behavior.js" defer></script>
     <title>Ludovic.T - Développeur Full Stack</title>
+</head>
 </head>
 <body>
     <!-- Skip link pour l'accessibilité clavier -->
@@ -84,8 +86,7 @@
                         <strong>JavaScript</strong>, <strong>Node.js</strong> et <strong>PostgreSQL</strong>.
                     </p>
                     <p class="hero-status">
-                        🎯 Actuellement sur le developpement d'un site <strong>e-commerce</strong> <br>
-                        page en cours de construction
+                        🎯 Actuellement sur le developpement d'un site <strong>e-commerce</strong> 
                     </p>
                     <div class="hero-buttons">
                         <a href="#projets" class="btn btn-primary">Voir mes projets</a>
@@ -230,11 +231,19 @@
                         </div>
                         <div class="project-content">
                             <h3>Projet en cours</h3>
-                            <p>creation site e-commerce.</p>
+                            <p>creation site e-commerce avec un dashboard complet pour la gestion du site.</p>
                             <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">Sequelize</span>
                                 <span class="tag">PostgreSQL</span>
+                                <span class="tag">JWT</span>
+                                <span class="tag">Sharp</span>
+                                <span class="tag">Multer</span>
+                                <span class="tag">API Mondial Relay</span>
                             </div>
                         </div>
                     </article>
@@ -276,11 +285,16 @@
                             <h3>Cinedelices</h3>
                             <p>Structure monolithique en node.js avec authentification JWT et documentations.</p>
                             <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
                                 <span class="tag">Node.js</span>
                                 <span class="tag">Express</span>
                                 <span class="tag">Sequelize</span>
-                                <span class="tag">PostgresQl</span>
+                                <span class="tag">PostgreSQL</span>
                                 <span class="tag">JWT</span>
+                                <span class="tag">Sharp</span>
+                                <span class="tag">Multer</span>
                             </div>
                         </div>
                     </article>
@@ -319,7 +333,7 @@
                                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                                 </svg>
-                                <span>contact@mail.dev</span>
+                                <span>ludot84.dev@gmail.com</span>
                             </div>
                         </div>
 
@@ -340,24 +354,29 @@
                     </div>
 
                     <form class="contact-form" novalidate>
+                        <!-- Champ honeypot anti-bot (ne pas remplir) -->
+                        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                            <label for="website">Ne pas remplir ce champ</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form-group">
                             <label for="name">Nom complet</label>
-                            <input type="text" id="name" name="name" required placeholder="Votre nom">
+                            <input type="text" id="name" name="name" title="votre nom" required placeholder="Votre nom">
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                            <input type="email" id="email" name="email" title="Email" required placeholder="votre@email.com">
                         </div>
                         
                         <div class="form-group">
                             <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message">
+                            <input type="text" id="subject" name="subject" title="Sujet" required placeholder="Sujet de votre message">
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                            <textarea id="message" name="message" title="Votre message" rows="5" required placeholder="Votre message..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Envoyer le message</button>
@@ -372,8 +391,8 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 Ludovic Trichereau. Tous droits réservés.</p>
-                
+                                <p>&copy; 2025 Ludovic Trichereau. Tous droits réservés.</p>
+                                
             </div>
         </div>
     </footer>

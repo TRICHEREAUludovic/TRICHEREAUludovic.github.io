@@ -278,7 +278,7 @@ body.dark-mode .lang-btn:hover {
   align-items: center;
   justify-content: center;
   line-height: 1;
-  color: var(--primary-color);
+  color: var(--dark-color);
   letter-spacing: 0.5px;
 }
 
@@ -2124,5 +2124,23 @@ footer,
 .form-group textarea,
 .social-links a {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Animation des ellipsis pour "Projet en cours..." */
+@keyframes ellipsis-animation {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
+
+.project-content h3[data-i18n="project3.title"]::after,
+.project-content h3[data-i18n="project4.title"]::after {
+  content: '...';
+  display: inline-block;
+  animation: ellipsis-animation 2s infinite;
+  width: 1.5em;
+  text-align: left;
 }
 

@@ -52,6 +52,30 @@ const translations = {
     "projects.subtitle": "Découvrez mes réalisations récentes",
     "projects.btn.demo": "Voir démo",
     "projects.btn.code": "Code source",
+    "projects.btn.view": "Voir le projet",
+
+    // Project 1 - Cinedelices
+    "project1.title": "Cinedelices",
+    "project1.description":
+      "Structure monolithique en node.js avec authentification JWT et documentations.",
+    "project1.alt": "Projet fin de formation",
+
+    // Project 2 - Portfolio
+    "project2.title": "Portfolio Moderne",
+    "project2.description":
+      "Site portfolio responsive avec animations fluides et design moderne.",
+    "project2.alt": "Portfolio",
+
+    // Project 3 - E-commerce
+    "project3.title": "Projet en cours",
+    "project3.description":
+      "Création d'un site e-commerce avec un dashboard complet pour la gestion du site.",
+    "project3.alt": "Projet en cours",
+
+    // Project 4 - DevNDumber
+    "project4.title": "Projet en cours",
+    "project4.description": "Création du site DevNDumber.",
+    "project4.alt": "Projet en cours",
 
     // Startup Section
     "startup.title": "Startup",
@@ -74,6 +98,8 @@ const translations = {
       "Une question ? Un projet en tête ? N'hésitez pas à me contacter !",
     "contact.btn.open": "Ouvrir le formulaire",
     "contact.form.title": "Envoyez-moi un message",
+    "contact.form.subtitle":
+      "Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.",
     "contact.form.name": "Nom",
     "contact.form.name.placeholder": "Votre nom",
     "contact.form.email": "Email",
@@ -248,6 +274,30 @@ const translations = {
     "projects.subtitle": "Discover my recent work",
     "projects.btn.demo": "View demo",
     "projects.btn.code": "Source code",
+    "projects.btn.view": "View project",
+
+    // Project 1 - Cinedelices
+    "project1.title": "Cinedelices",
+    "project1.description":
+      "Monolithic structure in node.js with JWT authentication and documentation.",
+    "project1.alt": "Training final project",
+
+    // Project 2 - Portfolio
+    "project2.title": "Modern Portfolio",
+    "project2.description":
+      "Responsive portfolio website with smooth animations and modern design.",
+    "project2.alt": "Portfolio",
+
+    // Project 3 - E-commerce
+    "project3.title": "Work in Progress",
+    "project3.description":
+      "Creating an e-commerce website with a complete dashboard for site management.",
+    "project3.alt": "Work in Progress",
+
+    // Project 4 - DevNDumber
+    "project4.title": "Work in Progress",
+    "project4.description": "Creating the DevNDumber website.",
+    "project4.alt": "Work in Progress",
 
     // Startup Section
     "startup.title": "Startup",
@@ -270,6 +320,8 @@ const translations = {
       "Have a question? A project in mind? Feel free to contact me!",
     "contact.btn.open": "Open form",
     "contact.form.title": "Send me a message",
+    "contact.form.subtitle":
+      "Fill out the form below and I will get back to you as soon as possible.",
     "contact.form.name": "Name",
     "contact.form.name.placeholder": "Your name",
     "contact.form.email": "Email",
@@ -426,6 +478,12 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
     const key = element.getAttribute("data-i18n-aria");
     element.setAttribute("aria-label", t(key));
+  });
+
+  // Mettre à jour les attributs alt des images
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    const key = element.getAttribute("data-i18n-alt");
+    element.setAttribute("alt", t(key));
   });
 
   // Mettre à jour le bouton de langue actif

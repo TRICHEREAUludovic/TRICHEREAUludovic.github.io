@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Politique de confidentialité du portfolio de Ludovic Trichereau - Protection des données personnelles">
+    <link rel="stylesheet" href="./Public/css/reset.css">
+    <link rel="stylesheet" href="./Public/css/styles.css">
+    <style>
+        html,body{height:100%;}
+        body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0;}
+        header{position:fixed;top:0;width:100%;background:#fff;padding:1rem;z-index:1000}
+        .skip-link{position:absolute;left:-9999px}
+        main{padding-top:80px}
+    </style>
+    <script src="./Public/js/i18n.js" defer></script>
+    <script src="./Public/js/script.js" defer></script>
+    <title>Politique de Confidentialité - Ludovic.T</title>
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="skip.link">Aller au contenu</a>
+    
+    <header>
+        <button id="toggle-button" data-i18n-aria="nav.menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="primary-nav" role="navigation" aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html#home" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="index.html#about" data-i18n="nav.about">À propos</a></li>
+                <li><a href="index.html#skills" data-i18n="nav.skills">Compétences</a></li>
+                <li><a href="index.html#projets" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="index.html#startup" data-i18n="nav.startup">Startup</a></li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                <li class="language-toggle">
+                    <button id="language-toggle" aria-label="Changer de langue" aria-pressed="false">
+                        <span class="lang-icon fr-icon">🇫🇷</span>
+                        <span class="lang-icon en-icon">🇬🇧</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="dark-mode-toggle" data-i18n-aria="nav.darkmode" aria-label="Activer le mode sombre" aria-pressed="false">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <section class="legal-section">
+            <div class="container">
+                <h1 class="section-title" data-i18n="privacy.title">Politique de Confidentialité</h1>
+                <p class="legal-update"><em><span data-i18n="legal.update">Dernière mise à jour</span> : 12 février 2026</em></p>
+                
+                <p class="legal-intro" data-i18n="privacy.intro">Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données personnelles.</p>
+                
+                <div class="legal-content">
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span data-i18n="privacy.controller.title">Responsable du traitement</span>
+                        </h2>
+                        <p data-i18n="privacy.controller.text">
+                            Ludovic Trichereau<br>Email: ludot84.dev@gmail.com
+                        </p>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="8.5" cy="7" r="4"/>
+                                <polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                            <span data-i18n="privacy.collected.title">Données collectées</span>
+                        </h2>
+                        <h3 data-i18n="privacy.collected.subtitle1">Via le formulaire de contact :</h3>
+                        <ul data-i18n="privacy.collected.list">
+                            <li><strong>Nom complet</strong> : pour vous identifier</li>
+                            <li><strong>Adresse email</strong> : pour vous répondre</li>
+                            <li><strong>Sujet</strong> : pour comprendre votre demande</li>
+                            <li><strong>Message</strong> : contenu de votre demande</li>
+                        </ul>
+                        <h3 data-i18n="privacy.collected.subtitle2">Données techniques :</h3>
+                        <ul data-i18n="privacy.collected.technical">
+                            <li><strong>Préférence de thème</strong> (clair/sombre) : stockée localement dans votre navigateur (localStorage)</li>
+                        </ul>
+                        <p data-i18n="privacy.collected.note">
+                            <strong>Aucune donnée de navigation n'est collectée.</strong> Ce site n'utilise pas de cookies 
+                            de tracking, d'analytics ou de publicité.
+                        </p>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span data-i18n="privacy.purpose.title">Finalité du traitement</span>
+                        </h2>
+                        <p data-i18n="privacy.purpose.text">Les données collectées via le formulaire de contact sont utilisées uniquement pour :</p>
+                        <ul data-i18n="privacy.purpose.list">
+                            <li>Répondre à vos demandes de contact</li>
+                            <li>Échanger sur d'éventuelles opportunités professionnelles</li>
+                            <li>Communiquer sur des projets</li>
+                        </ul>
+                        <p data-i18n="privacy.purpose.note">
+                            <strong>Vos données ne seront jamais vendues, louées ou partagées avec des tiers</strong> 
+                            à des fins commerciales.
+                        </p>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span data-i18n="privacy.legal.title">Base légale du traitement</span>
+                        </h2>
+                        <p data-i18n="privacy.legal.text">Le traitement de vos données personnelles repose sur :</p>
+                        <ul data-i18n="privacy.legal.list">
+                            <li><strong>Votre consentement</strong> : en remplissant et soumettant le formulaire de contact</li>
+                            <li><strong>L'intérêt légitime</strong> : pour répondre à vos demandes de contact professionnel</li>
+                        </ul>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span data-i18n="privacy.retention.title">Durée de conservation</span>
+                        </h2>
+                        <p data-i18n="privacy.retention.text">
+                            Les données collectées via le formulaire de contact sont conservées pendant 
+                            <strong>3 ans maximum</strong> à compter de notre dernier échange.
+                        </p>
+                        <p data-i18n="privacy.retention.note">
+                            Passé ce délai, vos données sont supprimées définitivement, sauf obligation légale contraire.
+                        </p>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <span data-i18n="privacy.security.title">Sécurité des données</span>
+                        </h2>
+                        <p data-i18n="privacy.security.text">
+                            Des mesures techniques et organisationnelles appropriées sont mises en place pour protéger 
+                            vos données personnelles contre tout accès non autorisé, perte, destruction ou divulgation.
+                        </p>
+                        <ul data-i18n="privacy.security.list">
+                            <li>Site hébergé sur GitHub Pages avec protocole HTTPS</li>
+                            <li>Pas de stockage de données sensibles (mots de passe, cartes bancaires, etc.)</li>
+                            <li>Accès aux données strictement limité</li>
+                        </ul>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <path d="M9 11l3 3L22 4"/>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                            <span data-i18n="privacy.rights.title">Vos droits (RGPD)</span>
+                        </h2>
+                        <p data-i18n="privacy.rights.text">Conformément au RGPD, vous disposez des droits suivants :</p>
+                        <ul data-i18n="privacy.rights.list">
+                            <li><strong>Droit d'accès</strong> : obtenir une copie de vos données personnelles</li>
+                            <li><strong>Droit de rectification</strong> : corriger des données inexactes ou incomplètes</li>
+                            <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+                            <li><strong>Droit à la limitation</strong> : limiter le traitement de vos données</li>
+                            <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
+                            <li><strong>Droit à la portabilité</strong> : récupérer vos données dans un format structuré</li>
+                        </ul>
+                        <p data-i18n="privacy.rights.exercise">
+                            Pour exercer ces droits, contactez-moi à : 
+                            <a href="mailto:ludot84.dev@gmail.com">ludot84.dev@gmail.com</a>
+                        </p>
+                        <p data-i18n="privacy.rights.cnil">
+                            Vous disposez également du droit d'introduire une réclamation auprès de la 
+                            <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : 
+                            <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>
+                        </p>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6"/>
+                                <circle cx="12" cy="12" r="10"/>
+                            </svg>
+                            <span data-i18n="privacy.cookies.title">Cookies et technologies similaires</span>
+                        </h2>
+                        <p data-i18n="privacy.cookies.text">
+                            Ce site utilise uniquement le <strong>localStorage</strong> de votre navigateur pour 
+                            enregistrer votre préférence de thème (clair/sombre). Cette donnée reste stockée 
+                            localement sur votre appareil et n'est jamais transmise à un serveur.
+                        </p>
+                        <p data-i18n="privacy.cookies.note">
+                            <strong>Aucun cookie de tracking, d'analyse ou de publicité n'est utilisé.</strong>
+                        </p>
+                    </article>
+
+                    <article class="legal-card">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                            <span data-i18n="privacy.changes.title">Modifications de la politique</span>
+                        </h2>
+                        <p data-i18n="privacy.changes.text">
+                            Cette politique de confidentialité peut être mise à jour occasionnellement pour 
+                            refléter les changements dans nos pratiques de traitement des données. 
+                            La date de dernière mise à jour est indiquée ci-dessous.
+                        </p>
+                        <p data-i18n="privacy.changes.note">
+                            Il vous est conseillé de consulter régulièrement cette page pour prendre 
+                            connaissance des éventuelles modifications.
+                        </p>
+                    </article>
+
+                    <div class="legal-update">
+                        <p><strong>Dernière mise à jour :</strong> Février 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">&copy; 2025 Ludovic Trichereau. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+                    <span>•</span>
+                    <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" data-i18n-aria="scroll.top" aria-label="Retour en haut">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script>
+        (function(){
+            function enableAnimations(){ document.documentElement.classList.add('anim-ready'); }
+            if ('requestIdleCallback' in window) requestIdleCallback(enableAnimations, {timeout:200});
+            else window.addEventListener('load', function(){ setTimeout(enableAnimations, 120); });
+        })();
+    </script>
+</body>
+</html>

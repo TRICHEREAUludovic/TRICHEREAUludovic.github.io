@@ -24,21 +24,23 @@
             .skip-link{position:absolute;left:-9999px}
             main{padding-top:80px}
         </style>
+    <script src="./Public/js/i18n.js" defer></script>
     <script src="./Public/js/script.js" defer></script>
-    <script src="./Public/js/page-behavior.js" defer></script>
+    <script src="./Public/js/visitor-counter.js" defer></script>
+    <!-- <script src="./Public/js/page-behavior.js" defer></script> -->
     <title>Ludovic.T - Développeur Full Stack</title>
 </head>
 </head>
 <body>
     <!-- Skip link pour l'accessibilité clavier -->
-    <a class="skip-link" href="#main">Aller au contenu</a>
+    <a class="skip-link" href="#main" data-i18n="skip.link">Aller au contenu</a>
     <!-- Navigation -->
     <header>
         <!-- <div class="logo">
             <h2>Ludovic.dev</h2> 
         </div> -->
         
-        <button id="toggle-button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="primary-nav">
+        <button id="toggle-button" data-i18n-aria="nav.menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="primary-nav">
             <span></span>
             <span></span>
             <span></span>
@@ -46,13 +48,20 @@
 
         <nav id="primary-nav" role="navigation" aria-label="Navigation principale">
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+                <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="#startup" data-i18n="nav.startup">Startup</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li class="language-toggle">
+                    <button id="language-toggle" aria-label="Changer de langue" aria-pressed="false">
+                        <span class="lang-icon fr-icon">🇫🇷</span>
+                        <span class="lang-icon en-icon">🇬🇧</span>
+                    </button>
+                </li>
                 <li>
-                    <button id="dark-mode-toggle" aria-label="Activer le mode sombre" aria-pressed="false">
+                    <button id="dark-mode-toggle" data-i18n-aria="nav.darkmode" aria-label="Activer le mode sombre" aria-pressed="false">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="5"/>
                             <line x1="12" y1="1" x2="12" y2="3"/>
@@ -78,19 +87,19 @@
         <section class="home" id="home">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="hero-greeting">Bonjour, je suis</span>
-                    <h1 class="hero-name">Ludovic</h1>
-                    <h2 class="hero-title">Développeur Web Full Stack</h2>
-                    <p class="hero-description">
+                    <span class="hero-greeting" data-i18n="hero.greeting">Bonjour, je suis</span>
+                    <h1 class="hero-name" data-i18n="hero.name">Ludovic</h1>
+                    <h2 class="hero-title" data-i18n="hero.title">Développeur Web Full Stack</h2>
+                    <p class="hero-description" data-i18n="hero.description">
                         Je crée des applications web modernes et performantes avec pour stack principale
                         <strong>JavaScript</strong>, <strong>Node.js</strong> et <strong>PostgreSQL</strong>.
                     </p>
-                    <p class="hero-status">
+                    <p class="hero-status" data-i18n="hero.status">
                         🎯 Actuellement sur le developpement d'un site <strong>e-commerce</strong> 
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
-                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                        <a href="#projets" class="btn btn-primary" data-i18n="hero.btn.projects">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.btn.contact">Me contacter</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -110,7 +119,7 @@
         <!-- Section À propos -->
         <section id="about" class="about-section">
             <div class="container">
-                <h2 class="section-title">À propos de moi</h2>
+                <h2 class="section-title" data-i18n="about.title">À propos de moi</h2>
                 <div class="about-content">
                     <div class="about-image" tabindex="0" aria-label="Photo de profil - apercu">
                         <picture>
@@ -119,25 +128,25 @@
                         </picture>
                     </div>
                     <div class="about-text">
-                        <h3>Passionné par le développement web</h3>
-                        <p>
+                        <h3 data-i18n="about.subtitle">Passionné par le développement web</h3>
+                        <p data-i18n="about.intro">
                             Développeur web full stack en formation, je suis spécialisé dans la création 
                             d'applications web modernes et responsives. Mon approche combine créativité, 
                             rigueur technique et attention aux détails.
                         </p>
-                        <p>
+                        <p data-i18n="about.text2">
                             Avec une base solide du front-end et du back-end, je transforme des idées 
                             en solutions digitales performantes et intuitives.
                         </p>
                         
                         <div class="about-stats">
                             <div class="stat-item">
-                                <span class="stat-number">2+</span>
-                                <span class="stat-label">Projets réalisés</span>
+                                <span class="stat-number" data-i18n="about.detail1.value">3+</span>
+                                <span class="stat-label" data-i18n="about.detail1.title">Projets réalisés</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">8</span>
-                                <span class="stat-label">Technologies</span>
+                                <span class="stat-number" data-i18n="about.detail3.value">8</span>
+                                <span class="stat-label" data-i18n="about.detail3.title">Technologies</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number">100%</span>
@@ -152,8 +161,8 @@
         <!-- Section Compétences -->
         <section id="skills" class="skills-section">
             <div class="container">
-                <h2 class="section-title">Mes Compétences</h2>
-                <p class="section-subtitle">Technologies et outils</p>
+                <h2 class="section-title" data-i18n="skills.title">Mes Compétences</h2>
+                <p class="section-subtitle" data-i18n="skills.subtitle">Technologies et outils</p>
                 
                 <div class="skills-grid">
                     <!-- Front-end -->
@@ -214,11 +223,44 @@
         <!-- Section Projets -->
         <section id="projets" class="projects-section">
             <div class="container">
-                <h2 class="section-title">Mes Projets</h2>
-                <p class="section-subtitle">Découvrez mes réalisations récentes</p>
+                <h2 class="section-title" data-i18n="projects.title">Mes Projets</h2>
+                <p class="section-subtitle" data-i18n="projects.subtitle">Découvrez mes réalisations récentes</p>
                 
-                <div class="projects-grid">
+                <div class="projects-slider-wrapper">
+                    <button class="slider-btn slider-btn-prev" aria-label="Projet précédent">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="projects-slider">
+                        <div class="projects-grid">
                     <!-- Projet 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <picture>
+                                <source type="image/webp" srcset="Public/img/back2.webp" />
+                                <img src="Public/img/back2.webp" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
+                            </picture>
+                            <div class="project-overlay">
+                                <a href="#" class="btn-project">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Projet en cours</h3>
+                            <p>creation devNdumber.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 -->
                     <article class="project-card">
                         <div class="project-image">
                             <picture>
@@ -248,7 +290,7 @@
                         </div>
                     </article>
 
-                    <!-- Projet 2 -->
+                    <!-- Projet 3 -->
                     <article class="project-card">
                         <div class="project-image">
                             <picture>
@@ -269,8 +311,7 @@
                             </div>
                         </div>
                     </article>
-
-                    <!-- Projet 3 -->
+                    <!-- Projet 4 test -->
                     <article class="project-card">
                         <div class="project-image">
                             <picture>
@@ -298,10 +339,106 @@
                             </div>
                         </div>
                     </article>
+                        </div>
+                    </div>
+                    
+                    <button class="slider-btn slider-btn-next" aria-label="Projet suivant">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </button>
                 </div>
+                
+                <div class="slider-dots"></div>
 
-                <div class="projects-cta">
-                    <a href="#contact" class="btn btn-primary">Discutons de votre projet</a>
+            </div>
+        </section>
+
+        <!-- Section Startup -->
+        <section id="startup" class="startup-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="startup.title">Ma Startup</h2>
+                <p class="section-subtitle" data-i18n="startup.subtitle">Membre de l'équipe DevNDumber</p>
+                
+                <div class="startup-content">
+                    <div class="startup-card">
+                        <div class="startup-badge">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="startup-name" data-i18n="startup.name">DevNDumber</h3>
+                        
+                        <div class="startup-info">
+                            <div class="startup-info-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                <span data-i18n="startup.since">Depuis janvier 2026</span>
+                            </div>
+                            
+                            <div class="startup-info-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <span data-i18n="startup.role">Développeur Full Stack</span>
+                            </div>
+                            
+                            <div class="startup-info-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <span>Développement web & mobile</span>
+                            </div>
+                        </div>
+                        
+                        <p class="startup-description" data-i18n="startup.description">
+                            Je fais partie de l'équipe DevNDumber, une startup spécialisée dans le développement 
+                            de solutions web et web mobile. Notre mission est de développer des solutions 
+                            <strong>robustes et fiables</strong> pour nos clients, en alliant innovation 
+                            et expertise technique.
+                        </p>
+                        
+                        <div class="startup-values">
+                            <div class="value-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span data-i18n="startup.value1">Solutions robustes</span>
+                            </div>
+                            <div class="value-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                <span data-i18n="startup.value2">Fiabilité garantie</span>
+                            </div>
+                            <div class="value-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span data-i18n="startup.value3">Orienté client</span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://www.devndumber.fr" target="_blank" rel="noopener noreferrer" class="btn btn-primary startup-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            Visiter DevNDumber
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -309,13 +446,13 @@
         <!-- Section Contact -->
         <section id="contact" class="contact-section">
             <div class="container">
-                <h2 class="section-title">Contactez-moi</h2>
-                <p class="section-subtitle">Je suis actuellemnt en stage pour la création d'un site e-commerce professionnel.</p>
+                <h2 class="section-title" data-i18n="contact.title">Contactez-moi</h2>
+                <!-- <p class="section-subtitle">Je suis actuellemnt en stage pour la création d'un site e-commerce professionnel.</p> -->
                 
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Restons en contact</h3>
-                        <p>
+                    <div class="contact-info-full">
+                        <!-- <h3>Restons en contact</h3> -->
+                        <p data-i18n="contact.intro">
                             N'hésitez pas à me contacter pour discuter de vos projets, 
                             d'opportunités de stage ou simplement pour échanger.
                         </p>
@@ -351,22 +488,47 @@
                                 <img class="github" src="Public/img/img/github.svg" alt="github" loading="lazy" width="24" height="24" />
                             </a>
                         </div>
+                        
+                        <button id="open-contact-form" class="btn btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                            <span data-i18n="contact.btn.open">M'envoyer un message</span>
+                        </button>
                     </div>
-
-                    <form class="contact-form" novalidate>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popup formulaire de contact -->
+        <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
+            <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="close-contact-form" data-i18n-aria="contact.form.close" aria-label="Fermer le formulaire">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+                
+                <h3 id="modal-title" data-i18n="contact.form.title">Envoyez-moi un message</h3>
+                <p class="modal-subtitle">Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.</p>
+                
+                <form class="contact-form" novalidate>
                         <!-- Champ honeypot anti-bot (ne pas remplir) -->
                         <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
                             <label for="website">Ne pas remplir ce champ</label>
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" name="name" title="votre nom" required placeholder="Votre nom">
+                            <label for="name" data-i18n="contact.form.name">Nom complet</label>
+                            <input type="text" id="name" name="name" title="votre nom" required data-i18n="contact.form.name.placeholder" placeholder="Votre nom">
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" title="Email" required placeholder="votre@email.com">
+                            <label for="email" data-i18n="contact.form.email">Email</label>
+                            <input type="email" id="email" name="email" title="Email" required data-i18n="contact.form.email.placeholder" placeholder="votre@email.com">
                         </div>
                         
                         <div class="form-group">
@@ -375,30 +537,38 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" title="Votre message" rows="5" required placeholder="Votre message..."></textarea>
+                            <label for="message" data-i18n="contact.form.message">Message</label>
+                            <textarea id="message" name="message" title="Votre message" rows="5" required data-i18n="contact.form.message.placeholder" placeholder="Votre message..."></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Envoyer le message</button>
                         <div id="form-status" class="visually-hidden" role="status" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                                <p>&copy; 2025 Ludovic Trichereau. Tous droits réservés.</p>
-                                
+                <p>&copy; 2025 Ludovic Trichereau. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+                    <span>•</span>
+                    <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+                </div>
+                <!-- Compteur de visites -->
+                <div class="visitor-counter">
+                    <p><span data-i18n="footer.visitors">Visiteurs uniques</span> : <span id="visitor-count">...</span></p>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Bouton retour en haut -->
-    <button id="scroll-to-top" aria-label="Retour en haut">
+    <button id="scroll-to-top" data-i18n-aria="scroll.top" aria-label="Retour en haut">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="18 15 12 9 6 15"/>
         </svg>

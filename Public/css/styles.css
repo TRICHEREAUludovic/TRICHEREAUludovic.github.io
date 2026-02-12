@@ -253,16 +253,18 @@ body.dark-mode .lang-btn:hover {
 }
 
 .lang-icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   position: absolute;
   transition: var(--transition);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
   color: var(--primary-color);
+  letter-spacing: 0.5px;
 }
 
 .fr-icon {
@@ -1808,7 +1810,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   header nav {
     position: fixed;
     top: 70px;

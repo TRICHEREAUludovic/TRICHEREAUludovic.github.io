@@ -34,12 +34,11 @@ const translations = {
       "Avec une solide expérience en <strong>JavaScript</strong> et <strong>Node.js</strong>, je développe des solutions complètes, du front-end au back-end. Mon approche se concentre sur la création d'interfaces utilisateur intuitives et d'architectures back-end robustes.",
     "about.text2":
       "Je suis constamment à la recherche de nouveaux défis et j'aime apprendre de nouvelles technologies pour améliorer mes compétences et créer des solutions innovantes.",
-    "about.detail1.title": "Expérience",
-    "about.detail1.value": "2+ ans",
-    "about.detail2.title": "Projets complétés",
-    "about.detail2.value": "10+",
+    "about.detail1.title": "Projets réalisés",
+    "about.detail1.value": "3+",
+    "about.detail2.title": "Engagement",
     "about.detail3.title": "Technologies",
-    "about.detail3.value": "15+",
+    "about.detail3.value": "8",
 
     // Skills Section
     "skills.title": "Compétences",
@@ -55,7 +54,7 @@ const translations = {
     "projects.btn.code": "Code source",
 
     // Startup Section
-    "startup.title": "Ma Startup",
+    "startup.title": "Startup",
     "startup.subtitle": "Innovation et développement",
     "startup.name": "DevNDumber",
     "startup.since": "Depuis janvier 2026",
@@ -88,7 +87,6 @@ const translations = {
     "footer.rights": "Tous droits réservés.",
     "footer.legal": "Mentions Légales",
     "footer.privacy": "Politique de Confidentialité",
-    "footer.visitors": "Visiteurs uniques",
 
     // Other
     "scroll.top": "Retour en haut",
@@ -232,12 +230,11 @@ const translations = {
       "With solid experience in <strong>JavaScript</strong> and <strong>Node.js</strong>, I develop complete solutions, from front-end to back-end. My approach focuses on creating intuitive user interfaces and robust back-end architectures.",
     "about.text2":
       "I'm constantly looking for new challenges and I love learning new technologies to improve my skills and create innovative solutions.",
-    "about.detail1.title": "Experience",
-    "about.detail1.value": "2+ years",
-    "about.detail2.title": "Completed Projects",
-    "about.detail2.value": "10+",
+    "about.detail1.title": "Completed Projects",
+    "about.detail1.value": "3+",
+    "about.detail2.title": "Commitment",
     "about.detail3.title": "Technologies",
-    "about.detail3.value": "15+",
+    "about.detail3.value": "8",
 
     // Skills Section
     "skills.title": "Skills",
@@ -253,7 +250,7 @@ const translations = {
     "projects.btn.code": "Source code",
 
     // Startup Section
-    "startup.title": "My Startup",
+    "startup.title": "Startup",
     "startup.subtitle": "Innovation and development",
     "startup.name": "DevNDumber",
     "startup.since": "Since January 2026",
@@ -286,7 +283,6 @@ const translations = {
     "footer.rights": "All rights reserved.",
     "footer.legal": "Legal Notice",
     "footer.privacy": "Privacy Policy",
-    "footer.visitors": "Unique visitors",
 
     // Other
     "scroll.top": "Back to top",

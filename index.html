@@ -26,7 +26,6 @@
         </style>
     <script src="./Public/js/i18n.js" defer></script>
     <script src="./Public/js/script.js" defer></script>
-    <script src="./Public/js/visitor-counter.js" defer></script>
     <!-- <script src="./Public/js/page-behavior.js" defer></script> -->
     <title>Ludovic.T - Développeur Full Stack</title>
 </head>
@@ -150,7 +149,7 @@
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number">100%</span>
-                                <span class="stat-label">Engagement</span>
+                                <span class="stat-label" data-i18n="about.detail2.title">Engagement</span>
                             </div>
                         </div>
                     </div>
@@ -362,15 +361,12 @@
                 
                 <div class="startup-content">
                     <div class="startup-card">
-                        <div class="startup-badge">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
+                        <div class="startup-logo">
+                            <picture>
+                                <source srcset="Public/img/devndumber.webp" type="image/webp" />
+                                <img src="Public/img/devndumber.webp" alt="Logo DevNDumber" class="startup-logo" width="200" height="200" loading="lazy" />
+                            </picture>
                         </div>
-                        
-                        <h3 class="startup-name" data-i18n="startup.name">DevNDumber</h3>
-                        
                         <div class="startup-info">
                             <div class="startup-info-item">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -558,10 +554,6 @@
                     <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
                     <span>•</span>
                     <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
-                </div>
-                <!-- Compteur de visites -->
-                <div class="visitor-counter">
-                    <p><span data-i18n="footer.visitors">Visiteurs uniques</span> : <span id="visitor-count">...</span></p>
                 </div>
             </div>
         </div>

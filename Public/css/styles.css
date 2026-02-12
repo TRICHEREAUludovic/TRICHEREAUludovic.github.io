@@ -1,3 +1,17 @@
+/* Bordure néon verte pour la carte startup */
+.startup-card {
+  border: 3px solid #bfff00;
+  box-shadow: 0 0 24px 4px #bfff00, 0 0 4px 1px #a2cf52;
+  border-radius: 1.5rem;
+  /* Optionnel : effet de glow plus doux */
+}
+.startup-logo {
+  filter:
+    drop-shadow(0 0 3px #bfff00)
+    drop-shadow(0 0 2px #fff);
+}
+
+
 /* ==== Variables CSS ==== */
 :root {
   --primary-color: #667eea;
@@ -7,6 +21,7 @@
   --white-color: #ffffff;
   --gray-color: #6b7280;
   --accent-color: #f59e0b;
+  --green-color:#A2CF52;
   
   --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -1177,23 +1192,29 @@ body.dark-mode .tag {
   box-shadow: 0 20px 60px rgba(102, 126, 234, 0.25), 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.startup-badge {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  border-radius: 50%;
+.startup-logo {
+  width: 200px;
+  margin: 0 auto 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 2rem;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-  animation: float 3s ease-in-out infinite;
   position: relative;
   z-index: 2;
 }
 
-.startup-badge svg {
-  stroke: white;
+.startup-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.startup-logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 20px rgba(102, 126, 234, 0.5));
 }
 
 @keyframes float {
@@ -1677,86 +1698,6 @@ footer {
 
 .footer-bottom a:hover {
   color: #1f2937;
-}
-
-/* ==== Compteur de visiteurs avec œil animé ==== */
-.visitor-counter {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.visitor-counter:hover {
-  opacity: 1;
-}
-
-.visitor-counter p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-/* Création de l'œil animé avec couleurs réalistes */
-.visitor-counter p::before {
-  content: '';
-  display: inline-block;
-  width: 32px;
-  height: 20px;
-  background: 
-    /* Pupille noire */
-    radial-gradient(circle at 50% 50%, #000 25%, transparent 25%),
-    /* Iris bleu/vert avec détails */
-    radial-gradient(circle at 50% 50%, #4a90e2 25%, #2e5c8a 45%, transparent 45%),
-    /* Blanc de l'œil */
-    radial-gradient(ellipse 16px 10px at 50% 50%, #ffffff 65%, rgba(200, 200, 200, 0.3) 65%);
-  border-radius: 50%;
-  position: relative;
-  animation: blink 4s infinite ease-in-out;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* Animation de clignement */
-@keyframes blink {
-  0%, 90%, 100% {
-    transform: scaleY(1);
-  }
-  95% {
-    transform: scaleY(0.1);
-  }
-}
-
-/* Animation de regard qui bouge */
-.visitor-counter:hover p::before {
-  animation: blink 4s infinite ease-in-out, lookAround 3s infinite ease-in-out;
-}
-
-@keyframes lookAround {
-  0%, 100% {
-    background-position: center, center;
-  }
-  25% {
-    background-position: 40% center, 40% center;
-  }
-  50% {
-    background-position: center, center;
-  }
-  75% {
-    background-position: 60% center, 60% center;
-  }
-}
-
-/* Style pour le compteur de chiffres */
-.visitor-counter #visitor-count {
-  font-weight: bold;
-  color: var(--primary-color);
-  font-size: 1.1em;
-  transition: all 0.3s ease;
-}
-
-.visitor-counter:hover #visitor-count {
-  transform: scale(1.1);
 }
 
 /* ==== Responsive ==== */

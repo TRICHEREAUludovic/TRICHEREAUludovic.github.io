@@ -4,6 +4,7 @@ const nav = document.querySelector("header nav");
 
 if (toggleButton && nav) {
   const navLinks = document.querySelectorAll("header nav a");
+  const navButtons = document.querySelectorAll("header nav button");
 
   function openNav() {
     nav.classList.add("active");
@@ -27,6 +28,13 @@ if (toggleButton && nav) {
   // Fermer le menu au clic sur un lien
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
+      closeNav();
+    });
+  });
+
+  // Fermer le menu au clic sur les boutons du menu (language-toggle, dark-mode-toggle)
+  navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
       closeNav();
     });
   });

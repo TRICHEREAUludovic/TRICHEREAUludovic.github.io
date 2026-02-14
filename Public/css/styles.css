@@ -1348,6 +1348,11 @@ body.dark-mode .value-item:hover {
 }
 
 /* Responsive startup section */
+@media (max-width: 950px) {
+  .startup-section {
+    padding: 0 2rem;
+  }
+}
 @media (max-width: 768px) {
   .startup-card {
     padding: 2rem 1.5rem;
@@ -1748,6 +1753,13 @@ footer {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+
+/* hide des tags de projets */
+@media (max-width: 950px) {
+  .project-tags {
+    display: none;
   }
 }
 

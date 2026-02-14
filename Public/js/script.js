@@ -690,7 +690,7 @@ if (startupCard) {
   });
 }
 
-// === Easter Egg Matrix sur la hero-image (effet terminal avant Matrix, sans DevN'Dumber dans la pluie) ===
+// === Easter Egg Matrix sur la hero-image (effet terminal avant Matrix, pluie 2x plus lente) ===
 (function () {
   const heroImageDiv = document.querySelector(".hero-image");
   const heroPicture = heroImageDiv
@@ -775,7 +775,8 @@ if (startupCard) {
         ) {
           drops[i] = 0;
         }
-        if (matrixFrame % 2 === 0) {
+        // Incrément 2x plus lent : une ligne toutes les 4 frames
+        if (matrixFrame % 4 === 0) {
           drops[i]++;
         }
       }

@@ -689,3 +689,127 @@ if (startupCard) {
     startupCard.style.setProperty("--mouse-y", `${rect.height / 2}px`);
   });
 }
+
+// === Easter Egg Matrix sur la hero-image (effet terminal avant Matrix, sans DevN'Dumber dans la pluie) ===
+(function () {
+  const heroImageDiv = document.querySelector(".hero-image");
+  const heroPicture = heroImageDiv
+    ? heroImageDiv.querySelector("picture")
+    : null;
+  const heroImg = heroPicture ? heroPicture.querySelector("img") : null;
+  let clickCount = 0;
+  let matrixActive = false;
+  let matrixCanvas, matrixCtx, animationId;
+  let matrixFrame = 0;
+  let terminalDiv, typingInterval;
+
+  function showTerminalAndStartMatrix() {
+    // Créer le terminal
+    terminalDiv = document.createElement("div");
+    terminalDiv.id = "matrix-terminal-easter-egg";
+    terminalDiv.style.position = "fixed";
+    terminalDiv.style.top = "50%";
+    terminalDiv.style.left = "50%";
+    terminalDiv.style.transform = "translate(-50%, -50%)";
+    terminalDiv.style.background = "rgba(0,0,0,0.95)";
+    terminalDiv.style.color = "#00FF41";
+    terminalDiv.style.font = "bold 1.3rem monospace";
+    terminalDiv.style.padding = "2rem 2.5rem";
+    terminalDiv.style.borderRadius = "10px";
+    terminalDiv.style.zIndex = 10000;
+    terminalDiv.style.boxShadow = "0 0 30px #00FF41AA";
+    terminalDiv.style.letterSpacing = "1px";
+    terminalDiv.style.textShadow = "0 0 8px #00FF41";
+    terminalDiv.style.pointerEvents = "none";
+    document.body.appendChild(terminalDiv);
+    // Effet machine à écrire
+    const text = "loading function (DevN'Dumber)";
+    let i = 0;
+    terminalDiv.textContent = "";
+    typingInterval = setInterval(() => {
+      terminalDiv.textContent = text.slice(0, i + 1);
+      i++;
+      if (i === text.length) {
+        clearInterval(typingInterval);
+        setTimeout(() => {
+          terminalDiv.remove();
+          startMatrix();
+        }, 700);
+      }
+    }, 55);
+  }
+
+  function startMatrix() {
+    if (matrixActive) return;
+    matrixActive = true;
+    matrixCanvas = document.createElement("canvas");
+    matrixCanvas.id = "matrix-canvas-easter-egg";
+    matrixCanvas.style.position = "fixed";
+    matrixCanvas.style.top = 0;
+    matrixCanvas.style.left = 0;
+    matrixCanvas.style.width = "100vw";
+    matrixCanvas.style.height = "100vh";
+    matrixCanvas.style.zIndex = 9999;
+    matrixCanvas.style.pointerEvents = "auto";
+    matrixCanvas.style.background = "rgba(0,0,0,0.97)";
+    document.body.appendChild(matrixCanvas);
+    matrixCanvas.width = window.innerWidth;
+    matrixCanvas.height = window.innerHeight;
+    matrixCtx = matrixCanvas.getContext("2d");
+    const letters =
+      "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const fontSize = 18;
+    const columns = Math.floor(matrixCanvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+    function drawMatrix() {
+      matrixCtx.fillStyle = "rgba(0,0,0,0.15)";
+      matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+      matrixCtx.font = fontSize + "px monospace";
+      matrixCtx.fillStyle = "#00FF41";
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        matrixCtx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (
+          drops[i] * fontSize > matrixCanvas.height &&
+          Math.random() > 0.985
+        ) {
+          drops[i] = 0;
+        }
+        if (matrixFrame % 2 === 0) {
+          drops[i]++;
+        }
+      }
+      matrixFrame++;
+      animationId = requestAnimationFrame(drawMatrix);
+    }
+    drawMatrix();
+    matrixCanvas.addEventListener("click", stopMatrix);
+    window.addEventListener("resize", resizeMatrix);
+  }
+  function stopMatrix() {
+    if (!matrixActive) return;
+    matrixActive = false;
+    cancelAnimationFrame(animationId);
+    if (matrixCanvas) {
+      matrixCanvas.remove();
+      matrixCanvas = null;
+    }
+    window.removeEventListener("resize", resizeMatrix);
+    matrixFrame = 0;
+  }
+  function resizeMatrix() {
+    if (!matrixCanvas) return;
+    matrixCanvas.width = window.innerWidth;
+    matrixCanvas.height = window.innerHeight;
+  }
+  function handleClick() {
+    clickCount++;
+    if (clickCount >= 3) {
+      showTerminalAndStartMatrix();
+      clickCount = 0;
+    }
+  }
+  if (heroImageDiv) heroImageDiv.addEventListener("click", handleClick);
+  if (heroPicture) heroPicture.addEventListener("click", handleClick);
+  if (heroImg) heroImg.addEventListener("click", handleClick);
+})();

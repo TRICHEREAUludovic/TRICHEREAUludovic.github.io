@@ -26,7 +26,7 @@
         </style>
     <script src="./Public/js/i18n.js" defer></script>
     <script src="./Public/js/script.js" defer></script>
-    <script src="./Public/js/page-behavior.js" defer></script>
+    <!-- <script src="./Public/js/page-behavior.js" defer></script> -->
     <title>Ludovic.T - Développeur Full Stack</title>
 </head>
 </head>
@@ -94,7 +94,7 @@
                         <strong>JavaScript</strong>, <strong>Node.js</strong> et <strong>PostgreSQL</strong>.
                     </p>
                     <p class="hero-status" data-i18n="hero.status">
-                        🎯 Actuellement sur le developpement d'un site <strong>e-commerce</strong> 
+                        🎯 Actuellement sur le developpement du site <strong>devndumber</strong> 
                     </p>
                     <div class="hero-buttons">
                         <a href="#projets" class="btn btn-primary" data-i18n="hero.btn.projects">Voir mes projets</a>
@@ -225,24 +225,28 @@
                 <h2 class="section-title" data-i18n="projects.title">Mes Projets</h2>
                 <p class="section-subtitle" data-i18n="projects.subtitle">Découvrez mes réalisations récentes</p>
                 
-                <div class="projects-slider-wrapper">
-                    <button class="slider-btn slider-btn-prev" aria-label="Projet précédent">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="15 18 9 12 15 6"/>
-                        </svg>
-                    </button>
-                    
-                    <div class="projects-slider">
-                        <div class="projects-grid">
+                <!-- Filtres -->
+                <div class="projects-filters">
+                    <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">Tous</button>
+                    <button class="filter-btn" data-filter="fullstack" data-i18n="projects.filter.fullstack">Full Stack</button>
+                    <!-- <button class="filter-btn" data-filter="frontend" data-i18n="projects.filter.frontend">Front-End</button> -->
+                    <!-- <button class="filter-btn" data-filter="backend" data-i18n="projects.filter.backend">Back-End</button> -->
+                    <button class="filter-btn" data-filter="landing" data-i18n="projects.filter.landing">Landing Page</button>
+                </div>
+                
+                <div class="projects-grid">
                     <!-- Projet 4 -->
-                    <article class="project-card">
+                    <article class="project-card" data-type="fullstack">
                         <div class="project-image">
+                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
+                                <source src="Public/video/devndumber.mp4" type="video/mp4">
+                            </video>
                             <picture>
-                                <source type="image/webp" srcset="Public/img/back2.webp" />
-                                <img src="Public/img/back2.webp" data-i18n-alt="project4.alt" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
+                                <source type="image/webp" srcset="Public/img/devndumber2.webp" />
+                                <img src="Public/img/devndumber2.webp" data-i18n-alt="project4.alt" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
                             </picture>
                             <div class="project-overlay">
-                                <a href="#" class="btn-project" data-i18n="projects.btn.view">Voir le projet</a>
+                                <a href="https://www.devndumber.fr" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -260,18 +264,21 @@
                     </article>
 
                     <!-- Projet 3 -->
-                    <article class="project-card">
+                    <article class="project-card" data-type="fullstack">
                         <div class="project-image">
+                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
+                                <source src="Public/video/lespresentsdangel.mp4" type="video/mp4">
+                            </video>
                             <picture>
-                                <source type="image/webp" srcset="Public/img/back2.webp" />
-                                <img src="Public/img/back2.webp" data-i18n-alt="project3.alt" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
+                                <source type="image/webp" srcset="Public/img/lespresentsdangel.webp" />
+                                <img src="Public/img/lespresentsdangel.webp" data-i18n-alt="project3.alt" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
                             </picture>
                             <div class="project-overlay">
-                                <a href="#" class="btn-project" data-i18n="projects.btn.view">Voir le projet</a>
+                                <a href="https://lespresentsdangel.fr/" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 data-i18n="project3.title">Projet en cours</h3>
+                            <h3 data-i18n="project3.title">Les Présents d'Ange'L</h3>
                             <p data-i18n="project3.description">Création d'un site e-commerce avec un dashboard complet pour la gestion du site.</p>
                             <div class="project-tags">
                                 <span class="tag">HTML5</span>
@@ -290,14 +297,17 @@
                     </article>
 
                     <!-- Projet 2 -->
-                    <article class="project-card">
+                    <article class="project-card" data-type="landing">
                         <div class="project-image">
+                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
+                                <source src="Public/video/landingperso.mp4" type="video/mp4">
+                            </video>
                             <picture>
                                 <source type="image/webp" srcset="Public/img/landing-page.webp" />
                                 <img src="Public/img/landing-page.webp" data-i18n-alt="project2.alt" alt="Portfolio" loading="lazy" decoding="async" width="400" height="250" />
                             </picture>
                             <div class="project-overlay">
-                                <a href="https://github.com/TRICHEREAUludovic/TRICHEREAUludovic.github.io" class="btn-project" data-i18n="projects.btn.view">Voir le projet</a>
+                                <a href="https://trichereauludovic.github.io/" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -311,15 +321,18 @@
                         </div>
                     </article>
                     <!-- Projet 1  -->
-                    <article class="project-card">
+                    <article class="project-card" data-type="fullstack">
                         <div class="project-image">
+                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
+                                <source src="Public/video/cinedelice.mp4" type="video/mp4">
+                            </video>
                             <picture>
                                 <source type="image/webp" srcset="Public/img/cinedelice.webp" />
                                 <img src="Public/img/cinedelice.webp" data-i18n-alt="project1.alt" alt="Projet fin de formation" loading="lazy" decoding="async" width="400" height="250" />
                             </picture>
-                            <div class="project-overlay">
-                                <a href="https://github.com/TRICHEREAUludovic/Cinedelices" class="btn-project" data-i18n="projects.btn.view">Voir le projet</a>
-                            </div>
+                            <!-- <div class="project-overlay">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
+                            </div> -->
                         </div>
                         <div class="project-content">
                             <h3 data-i18n="project1.title">Cinedelices</h3>
@@ -338,14 +351,6 @@
                             </div>
                         </div>
                     </article>
-                        </div>
-                    </div>
-                    
-                    <button class="slider-btn slider-btn-next" aria-label="Projet suivant">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"/>
-                        </svg>
-                    </button>
                 </div>
                 
 

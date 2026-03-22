@@ -414,260 +414,6 @@ if (openContactFormBtn && closeContactFormBtn && contactFormModal) {
   });
 }
 
-// ==== Slider de Projets ====
-const projectsSlider = document.querySelector(".projects-slider");
-const projectsGrid = document.querySelector(".projects-grid");
-const sliderBtnPrev = document.querySelector(".slider-btn-prev");
-const sliderBtnNext = document.querySelector(".slider-btn-next");
-const sliderDotsContainer = document.querySelector(".slider-dots");
-
-if (projectsSlider && projectsGrid && sliderBtnPrev && sliderBtnNext) {
-  const projectCards = document.querySelectorAll(".project-card");
-  let currentIndex = 0;
-  let cardsPerView = 1;
-  let isDragging = false;
-  let startPos = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let animationID = 0;
-
-  // Fonction pour déterminer le nombre de cartes visibles
-  function updateCardsPerView() {
-    const width = window.innerWidth;
-    if (width >= 1200) {
-      cardsPerView = 3;
-    } else if (width >= 768) {
-      cardsPerView = 2;
-    } else {
-      cardsPerView = 1;
-    }
-  }
-
-  // Créer les dots de navigation
-  function createDots() {
-    if (!sliderDotsContainer) return;
-    sliderDotsContainer.innerHTML = "";
-
-    // Nombre de positions possibles = nombre total - nombre visible + 1
-    const totalDots = projectCards.length - cardsPerView + 1;
-
-    // Masquer les dots si tous les projets sont visibles
-    if (projectCards.length <= cardsPerView) {
-      sliderDotsContainer.style.display = "none";
-      return;
-    } else {
-      sliderDotsContainer.style.display = "flex";
-    }
-
-    for (let i = 0; i < totalDots; i++) {
-      const dot = document.createElement("button");
-      dot.classList.add("slider-dot");
-      dot.setAttribute("aria-label", `Aller à la position ${i + 1}`);
-      if (i === 0) dot.classList.add("active");
-      dot.addEventListener("click", () => goToSlide(i));
-      sliderDotsContainer.appendChild(dot);
-    }
-  }
-
-  // Mettre à jour les dots actifs
-  function updateDots() {
-    const dots = document.querySelectorAll(".slider-dot");
-    dots.forEach((dot, index) => {
-      if (index === currentIndex) {
-        dot.classList.add("active");
-      } else {
-        dot.classList.remove("active");
-      }
-    });
-  }
-
-  // Calculer la position du slide
-  function getPositionX() {
-    if (!projectCards || projectCards.length === 0) return 0;
-
-    const cardWidth = projectCards[0].offsetWidth;
-    const gap = 32; // 2rem en pixels
-
-    // Calcul pour déplacer d'UN article à la fois
-    // currentIndex = 0 : affiche cartes 0,1,2
-    // currentIndex = 1 : affiche cartes 1,2,3
-    // currentIndex = 2 : affiche cartes 2,3,4
-    const moveDistance = cardWidth + gap;
-
-    return -(currentIndex * moveDistance);
-  }
-
-  // Aller à un slide spécifique
-  function goToSlide(index) {
-    // Avec défilement d'un article à la fois :
-    // maxIndex = nombre total de cartes - nombre de cartes visibles
-    const maxIndex = projectCards.length - cardsPerView;
-    currentIndex = Math.max(0, Math.min(index, maxIndex));
-    console.log(
-      "goToSlide - Nouvel index:",
-      currentIndex,
-      "Max:",
-      maxIndex,
-      "Total cartes:",
-      projectCards.length,
-      "Cartes visibles:",
-      cardsPerView,
-    );
-    setSliderPosition();
-    updateDots();
-    updateButtons();
-  }
-
-  // Définir la position du slider
-  function setSliderPosition() {
-    projectsGrid.style.transform = `translateX(${getPositionX()}px)`;
-  }
-
-  // Mettre à jour l'état des boutons
-  function updateButtons() {
-    const maxIndex = projectCards.length - cardsPerView;
-    sliderBtnPrev.disabled = currentIndex === 0;
-    sliderBtnNext.disabled = currentIndex >= maxIndex;
-
-    // Masquer les boutons si tous les projets sont visibles
-    if (projectCards.length <= cardsPerView) {
-      sliderBtnPrev.style.display = "none";
-      sliderBtnNext.style.display = "none";
-    } else {
-      sliderBtnPrev.style.display = "flex";
-      sliderBtnNext.style.display = "flex";
-    }
-  }
-
-  // Navigation précédent
-  sliderBtnPrev.addEventListener("click", () => {
-    console.log("Clic précédent - Index actuel:", currentIndex);
-    if (currentIndex > 0) {
-      goToSlide(currentIndex - 1);
-    }
-  });
-
-  // Navigation suivant
-  sliderBtnNext.addEventListener("click", () => {
-    const maxIndex = projectCards.length - cardsPerView;
-    console.log("Clic suivant - Index actuel:", currentIndex, "Max:", maxIndex);
-    if (currentIndex < maxIndex) {
-      goToSlide(currentIndex + 1);
-    }
-  });
-
-  // Support tactile pour mobile
-  projectsSlider.addEventListener("touchstart", touchStart);
-  projectsSlider.addEventListener("touchend", touchEnd);
-  projectsSlider.addEventListener("touchmove", touchMove);
-
-  // Support souris pour desktop
-  projectsSlider.addEventListener("mousedown", touchStart);
-  projectsSlider.addEventListener("mouseup", touchEnd);
-  projectsSlider.addEventListener("mouseleave", touchEnd);
-  projectsSlider.addEventListener("mousemove", touchMove);
-
-  function touchStart(event) {
-    isDragging = true;
-    startPos = getEventPositionX(event);
-    animationID = requestAnimationFrame(animation);
-    projectsSlider.style.cursor = "grabbing";
-  }
-
-  function touchEnd() {
-    isDragging = false;
-    cancelAnimationFrame(animationID);
-
-    const movedBy = currentTranslate - prevTranslate;
-    const maxIndex = projectCards.length - cardsPerView;
-
-    if (movedBy < -100 && currentIndex < maxIndex) {
-      goToSlide(currentIndex + 1);
-    } else if (movedBy > 100 && currentIndex > 0) {
-      goToSlide(currentIndex - 1);
-    } else {
-      goToSlide(currentIndex);
-    }
-
-    projectsSlider.style.cursor = "grab";
-  }
-
-  function touchMove(event) {
-    if (isDragging) {
-      const currentPosition = getEventPositionX(event);
-      currentTranslate = prevTranslate + currentPosition - startPos;
-    }
-  }
-
-  function getEventPositionX(event) {
-    return event.type.includes("mouse")
-      ? event.pageX
-      : event.touches[0].clientX;
-  }
-
-  function animation() {
-    setSliderPosition();
-    if (isDragging) requestAnimationFrame(animation);
-  }
-
-  // Navigation au clavier
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") {
-      sliderBtnPrev.click();
-    } else if (e.key === "ArrowRight") {
-      sliderBtnNext.click();
-    }
-  });
-
-  // Initialisation et gestion du redimensionnement
-  function initSlider() {
-    updateCardsPerView();
-    createDots();
-    currentIndex = 0;
-    setSliderPosition();
-    updateButtons();
-    updateDots();
-  }
-
-  // Auto-play optionnel (commenté par défaut)
-  /*
-  let autoplayInterval;
-  function startAutoplay() {
-    autoplayInterval = setInterval(() => {
-      const maxIndex = Math.ceil(projectCards.length / cardsPerView) - 1;
-      if (currentIndex < maxIndex) {
-        goToSlide(currentIndex + 1);
-      } else {
-        goToSlide(0);
-      }
-    }, 5000); // Change toutes les 5 secondes
-  }
-
-  function stopAutoplay() {
-    clearInterval(autoplayInterval);
-  }
-
-  // Démarrer l'autoplay
-  startAutoplay();
-
-  // Arrêter l'autoplay au survol
-  projectsSlider.addEventListener("mouseenter", stopAutoplay);
-  projectsSlider.addEventListener("mouseleave", startAutoplay);
-  */
-
-  // Initialiser le slider
-  initSlider();
-
-  // Réinitialiser lors du redimensionnement
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      initSlider();
-    }, 250);
-  });
-}
-
 // ==== Effet d'ondulation qui suit la souris sur la carte startup ====
 const startupCard = document.querySelector(".startup-card");
 
@@ -813,4 +559,71 @@ if (startupCard) {
   if (heroImageDiv) heroImageDiv.addEventListener("click", handleClick);
   if (heroPicture) heroPicture.addEventListener("click", handleClick);
   if (heroImg) heroImg.addEventListener("click", handleClick);
+})();
+
+// ==== Filtrage des Projets ====
+(function () {
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filterValue = btn.getAttribute("data-filter");
+
+      // Mettre à jour les boutons actifs
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Filtrer les cartes
+      projectCards.forEach((card) => {
+        const cardType = card.getAttribute("data-type");
+
+        if (filterValue === "all" || cardType === filterValue) {
+          card.classList.remove("hidden");
+          // Redéclencher l'animation
+          card.style.animation = "none";
+          setTimeout(() => {
+            card.style.animation = "";
+          }, 10);
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+})();
+
+// ==== Gestion des vidéos au hover des projets ====
+(function () {
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectCards.forEach((card) => {
+    const video = card.querySelector(".project-video");
+
+    if (video) {
+      card.addEventListener("mouseenter", () => {
+        video.play().catch(() => {
+          // La vidéo n'existe pas ou n'a pas pu être chargée
+          console.log("Vidéo non disponible pour ce projet");
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+
+      // Support touch pour mobile
+      card.addEventListener("touchstart", () => {
+        video.play().catch(() => {
+          console.log("Vidéo non disponible pour ce projet");
+        });
+      });
+
+      card.addEventListener("touchend", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  });
 })();

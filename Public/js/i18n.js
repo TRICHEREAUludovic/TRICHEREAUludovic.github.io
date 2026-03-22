@@ -20,7 +20,7 @@ const translations = {
     "hero.description":
       "Je crée des applications web modernes et performantes avec pour stack principale <strong>JavaScript</strong>, <strong>Node.js</strong> et <strong>PostgreSQL</strong>.",
     "hero.status":
-      "🎯 Actuellement sur le developpement d'un site <strong>e-commerce</strong>",
+      "🎯 Actuellement sur le developpement du site <strong>devndumber</strong> ",
     "hero.btn.projects": "Voir mes projets",
     "hero.btn.contact": "Me contacter",
 
@@ -53,6 +53,14 @@ const translations = {
     "projects.btn.demo": "Voir démo",
     "projects.btn.code": "Code source",
     "projects.btn.view": "Voir le projet",
+    "projects.btn.visit": "Visiter le site",
+
+    // Projects Filters
+    "projects.filter.all": "Tous",
+    "projects.filter.fullstack": "Full Stack",
+    "projects.filter.frontend": "Front-End",
+    "projects.filter.backend": "Back-End",
+    "projects.filter.landing": "Landing Page",
 
     // Project 1 - Cinedelices
     "project1.title": "Cinedelices",
@@ -67,10 +75,10 @@ const translations = {
     "project2.alt": "Portfolio",
 
     // Project 3 - E-commerce
-    "project3.title": "Projet en cours",
+    "project3.title": "Les Présents d'Ange'L",
     "project3.description":
       "Création d'un site e-commerce avec un dashboard complet pour la gestion du site.",
-    "project3.alt": "Projet en cours",
+    "project3.alt": "Les Présents d'Ange'L",
 
     // Project 4 - DevNDumber
     "project4.title": "Projet en cours",
@@ -243,7 +251,7 @@ const translations = {
     "hero.description":
       "I create modern and efficient web applications with my main stack being <strong>JavaScript</strong>, <strong>Node.js</strong> and <strong>PostgreSQL</strong>.",
     "hero.status":
-      "🎯 Currently developing an <strong>e-commerce</strong> website",
+      "🎯 Currently developing the <strong>devndumber</strong> website",
     "hero.btn.projects": "View my projects",
     "hero.btn.contact": "Contact me",
 
@@ -275,6 +283,14 @@ const translations = {
     "projects.btn.demo": "View demo",
     "projects.btn.code": "Source code",
     "projects.btn.view": "View project",
+    "projects.btn.visit": "Visit the site",
+
+    // Projects Filters
+    "projects.filter.all": "All",
+    "projects.filter.fullstack": "Full Stack",
+    "projects.filter.frontend": "Front-End",
+    "projects.filter.backend": "Back-End",
+    "projects.filter.landing": "Landing Page",
 
     // Project 1 - Cinedelices
     "project1.title": "Cinedelices",
@@ -289,10 +305,10 @@ const translations = {
     "project2.alt": "Portfolio",
 
     // Project 3 - E-commerce
-    "project3.title": "Work in Progress",
+    "project3.title": "Les Présents d'Ange'L",
     "project3.description":
       "Creating an e-commerce website with a complete dashboard for site management.",
-    "project3.alt": "Work in Progress",
+    "project3.alt": "Les Présents d'Ange'L",
 
     // Project 4 - DevNDumber
     "project4.title": "Work in Progress",

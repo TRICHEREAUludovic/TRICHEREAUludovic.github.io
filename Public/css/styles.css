@@ -77,10 +77,16 @@ header {
   top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 1rem ;
+}
+
+/* Blur only on desktop for better performance on mobile */
+@media (min-width: 768px) {
+  header {
+    backdrop-filter: blur(10px);
+  }
 }
 
 header .logo h2 {
@@ -331,18 +337,18 @@ body.dark-mode .projects-section {
 body.dark-mode .filter-btn {
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--primary-color);
-  color: var(--white-color);
+  color: #ffffff;
 }
 
 body.dark-mode .filter-btn:hover {
   background: var(--primary-color);
-  color: var(--white-color);
+  color: #ffffff;
 }
 
 body.dark-mode .filter-btn.active {
   background: var(--gradient);
-  border-color: var(--gradient);
-  color: var(--white-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
   box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
 }
 
@@ -393,17 +399,30 @@ body.dark-mode .hero-title,
 body.dark-mode .hero-description,
 body.dark-mode .hero-status {
   color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 body.dark-mode .hero-name {
   color: #ffffff;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 body.dark-mode .hero-status {
   background: rgba(255, 255, 255, 0.15);
   border-left-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Reduce text-shadow on mobile for performance */
+@media (min-width: 768px) {
+  body.dark-mode .hero-greeting,
+  body.dark-mode .hero-name,
+  body.dark-mode .hero-title,
+  body.dark-mode .hero-description,
+  body.dark-mode .hero-status {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  body.dark-mode .hero-name {
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  }
 }
 
 
@@ -429,6 +448,14 @@ body.dark-mode .hero-status {
   bottom: 0;
   background: url('../img/back.webp') center/cover;
   opacity: 0.9;
+  will-change: opacity;
+}
+
+/* Disable opacity on mobile dark mode for better perf */
+@media (max-width: 767px) {
+  body.dark-mode .home::before {
+    opacity: 1;
+  }
 }
 
 .hero-content {
@@ -913,7 +940,7 @@ body.dark-mode .tag {
 
 .filter-btn.active {
   background: var(--gradient);
-  border-color: var(--gradient);
+  border-color: var(--primary-color);
   color: var(--white-color);
   box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
 }

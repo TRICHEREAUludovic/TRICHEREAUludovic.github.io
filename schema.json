@@ -1,0 +1,87 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ludovic Trichereau",
+  "url": "https://trichereauludovic.github.io",
+  "image": "https://trichereauludovic.github.io/Public/img/profile2-900.webp",
+  "description": "Développeur Web Full Stack spécialisé en JavaScript, Node.js et PostgreSQL",
+  "jobTitle": "Développeur Web Full Stack",
+  "email": "ludot84.dev@gmail.com",
+  "location": {
+    "@type": "Place",
+    "name": "Yvelines, Île-de-France, France"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/ludovictrichereaupsp/",
+    "https://github.com/TRICHEREAUludovic"
+  ],
+  "knowsAbout": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Svelte",
+    "JWT",
+    "API REST"
+  ],
+  "skills": [
+    {
+      "@type": "Thing",
+      "name": "Frontend Development",
+      "description": "HTML5, CSS3, JavaScript, Svelte"
+    },
+    {
+      "@type": "Thing",
+      "name": "Backend Development",
+      "description": "Node.js, Express, PostgreSQL, Sequelize"
+    },
+    {
+      "@type": "Thing",
+      "name": "Full Stack Development",
+      "description": "Applications web modernes et responsives"
+    }
+  ],
+  "workExperience": [
+    {
+      "@type": "WorkPosition",
+      "name": "Développeur Full Stack",
+      "company": {
+        "@type": "Organization",
+        "name": "DevNDumber"
+      },
+      "startDate": "2026-01",
+      "description": "Développement de solutions web et web mobile"
+    }
+  ],
+  "projects": [
+    {
+      "@type": "CreativeWork",
+      "name": "Les Présents d'Ange'L",
+      "description": "Site e-commerce avec dashboard complet pour la gestion du site",
+      "url": "https://lespresentsdangel.fr/",
+      "keywords": "e-commerce, Node.js, Express, PostgreSQL"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Portfolio Moderne",
+      "description": "Site portfolio responsive avec animations fluides et design moderne",
+      "url": "https://trichereauludovic.github.io/",
+      "keywords": "portfolio, HTML5, CSS3, JavaScript"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Cinedelices",
+      "description": "Application web avec authentification JWT et documentations",
+      "keywords": "Node.js, Express, PostgreSQL, JWT"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "DevNDumber",
+      "description": "Site vitrine de la startup DevNDumber",
+      "url": "https://www.devndumber.fr",
+      "keywords": "startup, web development"
+    }
+  ]
+}

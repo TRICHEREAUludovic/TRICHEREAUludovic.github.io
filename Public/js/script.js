@@ -2,6 +2,13 @@
 const toggleButton = document.getElementById("toggle-button");
 const nav = document.querySelector("header nav");
 
+// ==== Compter les projets automatiquement ====
+const projectsCountEl = document.getElementById("projects-count");
+if (projectsCountEl) {
+  const projectCards = document.querySelectorAll(".project-card");
+  projectsCountEl.textContent = projectCards.length;
+}
+
 if (toggleButton && nav) {
   const navLinks = document.querySelectorAll("header nav a");
   const navButtons = document.querySelectorAll("header nav button");

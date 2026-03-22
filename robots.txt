@@ -1,0 +1,32 @@
+# Robots.txt pour trichereauludovic.github.io
+# Configuration pour tous les robots
+
+# Autoriser tous les robots
+User-agent: *
+Allow: /
+
+# Interdire les répertoires sensibles (s'il y en a)
+Disallow: /.git/
+Disallow: /rapports lighthouse/
+
+# Sitemap
+Sitemap: https://trichereauludovic.github.io/sitemap.xml
+
+# Règles spécifiques pour les crawlers populaires
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquer les mauvais bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

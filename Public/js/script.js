@@ -309,6 +309,17 @@ if (contactForm) {
               statusEl.classList.add("visually-hidden");
               statusEl.style.opacity = "";
               statusEl.style.transition = "";
+              // Fermer le modal après la disparition du message
+              const contactFormModal =
+                document.getElementById("contact-form-modal");
+              if (contactFormModal) {
+                contactFormModal.classList.remove("active");
+                contactFormModal.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+                const openContactFormBtn =
+                  document.getElementById("open-contact-form");
+                if (openContactFormBtn) openContactFormBtn.focus();
+              }
             }, 700);
           }, 1800);
         }

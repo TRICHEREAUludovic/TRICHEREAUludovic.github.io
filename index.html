@@ -26,12 +26,17 @@
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
     <script type="application/ld+json" src="./schema.json"></script>
     
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Précharger l'image LCP exacte (améliore LCP) -->
     <link rel="preload" as="image" href="Public/img/profile2-900.webp">
     <!-- Précharger aussi le background principal utilisé par .home (réduit LCP) -->
     <link rel="preload" as="image" href="Public/img/back.webp">
         <!-- Précharger back2.webp uniquement pour les navigateurs en mode sombre via media query (non programmatique) -->
         <link rel="preload" as="image" href="Public/img/back2.webp" media="(prefers-color-scheme: dark)">
+        <!-- Précharger back2-mobile.webp pour mobile en mode sombre (optimisé pour LCP mobile) -->
+        <link rel="preload" as="image" href="Public/img/back2-mobile.webp" media="(prefers-color-scheme: dark) and (max-width: 767px)">
     <!-- Stylesheets: load normally so styles are applied immediately (prevents FOUC) -->
     <link rel="stylesheet" href="./Public/css/reset.css">
     <link rel="stylesheet" href="./Public/css/styles.css">
@@ -49,7 +54,6 @@
     <script src="./Public/js/script.js" defer></script>
     <script src="./Public/js/page-behavior.js" defer></script>
     <title>Ludovic.T - Développeur Full Stack</title>
-</head>
 </head>
 <body>
     <!-- Skip link pour l'accessibilité clavier -->
@@ -187,19 +191,19 @@
                         <h3 data-i18n="skills.frontend">Front-end</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <img src="Public/img/img/html-5-svgrepo-com.svg" alt="HTML5" title="HTML5" loading="lazy" width="48" height="48" />
+                                <img src="Public/img/icones/html-5-svgrepo-com.svg" alt="HTML5" title="HTML5" loading="lazy" width="48" height="48" />
                                 
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/css-svgrepo-com.svg" alt="CSS3" title="CSS3" loading="lazy" width="48" height="48" />
+                                <img src="Public/img/icones/css-svgrepo-com.svg" alt="CSS3" title="CSS3" loading="lazy" width="48" height="48" />
                                 
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/js-svgrepo-com.svg" alt="JavaScript" title="JavaScript" loading="lazy" width="48" height="48" />
+                                <img src="Public/img/icones/js-svgrepo-com.svg" alt="JavaScript" title="JavaScript" loading="lazy" width="48" height="48" />
                                 
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/svelte-icon-svgrepo-com.svg" alt="Svelte" title="Svelte" loading="lazy" width="48" height="48" />
+                                <img src="Public/img/icones/svelte-icon-svgrepo-com.svg" alt="Svelte" title="Svelte" loading="lazy" width="48" height="48" />
                                 
                             </div>
                         </div>
@@ -210,11 +214,11 @@
                         <h3 data-i18n="skills.backend">Back-end</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <img src="Public/img/img/nodejs-svgrepo-com.svg" alt="Node.js" title="Node.js" loading="lazy" width="48" height="48" />
+                                <img src="Public/img/icones/nodejs-svgrepo-com.svg" alt="Node.js" title="Node.js" loading="lazy" width="48" height="48" />
                                 
                             </div>
                             <div class="skill-item">
-                                <img src="Public/img/img/postgresql-logo-svgrepo-com.svg" alt="PostgreSQL" title="PostgreSQL" loading="lazy" width="48" height="48" />
+                                <img src="Public/img/icones/postgresql-logo-svgrepo-com.svg" alt="PostgreSQL" title="PostgreSQL" loading="lazy" width="48" height="48" />
                                 
                             </div>
                         </div>
@@ -225,10 +229,10 @@
                         <h3 data-i18n="skills.tools">Outils & Autres</h3>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <img class="Markdown" src="Public/img/img/markdown-svgrepo-com.svg" alt="Markdown" title="Markdown" loading="lazy" width="48" height="48" />
+                                <img class="Markdown" src="Public/img/icones/markdown-svgrepo-com.svg" alt="Markdown" title="Markdown" loading="lazy" width="48" height="48" />
                             </div>    
                             <div class="skill-item">
-                                <img class="github" src="Public/img/img/github.svg" alt="GitHub" title="GitHub" loading="lazy" width="48" height="48" />
+                                <img class="github" src="Public/img/icones/github.svg" alt="GitHub" title="GitHub" loading="lazy" width="48" height="48" />
                                 
                             </div>
                         </div>
@@ -496,13 +500,13 @@
 
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/ludovictrichereaupsp/" aria-label="LinkedIn">
-                                <img src="Public/img/img/linkedin-1-svgrepo-com.svg" alt="LinkedIn" loading="lazy" width="24" height="24" />
+                                <img src="Public/img/icones/linkedin-1-svgrepo-com.svg" alt="LinkedIn" loading="lazy" width="24" height="24" />
                             </a>
                             <a href="#" aria-label="Discord">
-                                <img src="Public/img/img/discord-v2-svgrepo-com.svg" alt="Discord" loading="lazy" width="24" height="24" />
+                                <img src="Public/img/icones/discord-v2-svgrepo-com.svg" alt="Discord" loading="lazy" width="24" height="24" />
                             </a>
                             <a href="https://github.com/TRICHEREAUludovic" aria-label="Github">
-                                <img class="github" src="Public/img/img/github.svg" alt="github" loading="lazy" width="24" height="24" />
+                                <img class="github" src="Public/img/icones/github.svg" alt="github" loading="lazy" width="24" height="24" />
                             </a>
                         </div>
                         
@@ -582,9 +586,7 @@
 
     <!-- Bouton retour en haut -->
     <button id="scroll-to-top" data-i18n-aria="scroll.top" aria-label="Retour en haut">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"/>
-        </svg>
+        <i class="fa fa-arrow-up"></i>
     </button>
         <script>
             // Enable animations when the browser is idle or after load to avoid layout jank

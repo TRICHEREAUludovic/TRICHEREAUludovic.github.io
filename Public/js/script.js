@@ -21,35 +21,29 @@ if (toggleButton && nav) {
     if (firstLink) firstLink.focus();
   }
 
-  function closeNav() {
-    nav.classList.remove("active");
-    toggleButton.setAttribute("aria-expanded", "false");
-    toggleButton.focus();
-  }
-
   toggleButton.addEventListener("click", () => {
-    if (nav.classList.contains("active")) closeNav();
+    if (nav.classList.contains("active")) closeNavigation();
     else openNav();
   });
 
   // Fermer le menu au clic sur un lien
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      closeNav();
+      closeNavigation();
     });
   });
 
   // Fermer le menu au clic sur les boutons du menu (language-toggle, dark-mode-toggle)
   navButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      closeNav();
+      closeNavigation();
     });
   });
 
   // Fermer le menu au press ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && nav.classList.contains("active")) {
-      closeNav();
+      closeNavigation();
     }
   });
 }
@@ -112,10 +106,7 @@ if (darkModeToggle) {
 
     // Si le menu mobile est ouvert, le fermer lorsque l'utilisateur active/désactive le mode sombre
     if (nav && nav.classList.contains("active")) {
-      nav.classList.remove("active");
-      if (toggleButton) toggleButton.setAttribute("aria-expanded", "false");
-      // Remettre le focus sur le bouton burger pour l'accessibilité
-      if (toggleButton) toggleButton.focus();
+      closeNavigation();
     }
   });
 
@@ -124,6 +115,35 @@ if (darkModeToggle) {
     "aria-pressed",
     body.classList.contains("dark-mode") ? "true" : "false",
   );
+}
+
+// ==== Fonction pour afficher les messages du formulaire ====
+function showFormStatus(message, duration = 1800) {
+  const statusEl = document.getElementById("form-status");
+  if (!statusEl) return;
+
+  statusEl.textContent = message;
+  statusEl.classList.remove("visually-hidden");
+  statusEl.style.opacity = "1";
+  statusEl.style.transition = "opacity 0.7s";
+
+  setTimeout(() => {
+    statusEl.style.opacity = "0";
+    setTimeout(() => {
+      statusEl.textContent = "";
+      statusEl.classList.add("visually-hidden");
+      statusEl.style.opacity = "";
+      statusEl.style.transition = "";
+    }, 700);
+  }, duration);
+}
+
+// ==== Fonction pour fermer la navigation ====
+function closeNavigation() {
+  if (!nav) return;
+  nav.classList.remove("active");
+  if (toggleButton) toggleButton.setAttribute("aria-expanded", "false");
+  if (toggleButton) toggleButton.focus();
 }
 
 // ==== Smooth Scroll ====
@@ -146,8 +166,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         });
         // After navigation, close mobile nav if open
         if (nav && nav.classList.contains("active")) {
-          nav.classList.remove("active");
-          if (toggleButton) toggleButton.setAttribute("aria-expanded", "false");
+          closeNavigation();
         }
       }
     }
@@ -201,42 +220,14 @@ if (contactForm) {
 
     // Vérification honeypot
     if (honeypot && honeypot.value) {
-      if (statusEl) {
-        statusEl.textContent = "Erreur de validation.";
-        statusEl.classList.remove("visually-hidden");
-        statusEl.style.opacity = "1";
-        statusEl.style.transition = "opacity 0.7s";
-        setTimeout(() => {
-          statusEl.style.opacity = "0";
-          setTimeout(() => {
-            statusEl.textContent = "";
-            statusEl.classList.add("visually-hidden");
-            statusEl.style.opacity = "";
-            statusEl.style.transition = "";
-          }, 700);
-        }, 1800);
-      }
+      showFormStatus("Erreur de validation.");
       return;
     }
 
     // Délai anti-bot : empêche la soumission avant 2 secondes
     const now = Date.now();
     if (now - formDisplayTime < 2000) {
-      if (statusEl) {
-        statusEl.textContent = "Merci d'attendre 2 secondes avant d'envoyer.";
-        statusEl.classList.remove("visually-hidden");
-        statusEl.style.opacity = "1";
-        statusEl.style.transition = "opacity 0.7s";
-        setTimeout(() => {
-          statusEl.style.opacity = "0";
-          setTimeout(() => {
-            statusEl.textContent = "";
-            statusEl.classList.add("visually-hidden");
-            statusEl.style.opacity = "";
-            statusEl.style.transition = "";
-          }, 700);
-        }, 1800);
-      }
+      showFormStatus("Merci d'attendre 2 secondes avant d'envoyer.");
       return;
     }
 
@@ -250,19 +241,19 @@ if (contactForm) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!name.value.trim() || name.value.length < 2) {
-      showStatus("Nom invalide.");
+      showFormStatus("Nom invalide.");
       return;
     }
     if (!email.value.trim() || !emailRegex.test(email.value)) {
-      showStatus("Email invalide.");
+      showFormStatus("Email invalide.");
       return;
     }
     if (!subject.value.trim() || subject.value.length < 2) {
-      showStatus("Sujet invalide.");
+      showFormStatus("Sujet invalide.");
       return;
     }
     if (!message.value.trim() || message.value.length < 5) {
-      showStatus("Message trop court.");
+      showFormStatus("Message trop court.");
       return;
     }
 
@@ -298,72 +289,41 @@ if (contactForm) {
         headers: { Accept: "application/json" },
       });
       if (response.ok) {
-        if (statusEl) {
-          statusEl.textContent = "Message envoyé. Merci !";
-          statusEl.style.opacity = "1";
-          statusEl.style.transition = "opacity 0.7s";
-          setTimeout(() => {
-            statusEl.style.opacity = "0";
-            setTimeout(() => {
-              statusEl.textContent = "";
-              statusEl.classList.add("visually-hidden");
-              statusEl.style.opacity = "";
-              statusEl.style.transition = "";
-              // Fermer le modal après la disparition du message
-              const contactFormModal =
-                document.getElementById("contact-form-modal");
-              if (contactFormModal) {
-                contactFormModal.classList.remove("active");
-                contactFormModal.setAttribute("aria-hidden", "true");
-                document.body.style.overflow = "";
-                const openContactFormBtn =
-                  document.getElementById("open-contact-form");
-                if (openContactFormBtn) openContactFormBtn.focus();
-              }
-            }, 700);
-          }, 1800);
-        }
+        showFormStatus("Message envoyé. Merci !");
         contactForm.reset();
+        // Fermer le modal après la disparition du message
+        setTimeout(() => {
+          const contactFormModal =
+            document.getElementById("contact-form-modal");
+          if (contactFormModal) {
+            contactFormModal.classList.remove("active");
+            contactFormModal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+            const openContactFormBtn =
+              document.getElementById("open-contact-form");
+            if (openContactFormBtn) openContactFormBtn.focus();
+          }
+        }, 2500);
       } else {
-        if (statusEl) {
-          statusEl.textContent = "Une erreur est survenue. Veuillez réessayer.";
-          statusEl.style.opacity = "1";
-          statusEl.style.transition = "opacity 0.7s";
-          setTimeout(() => {
-            statusEl.style.opacity = "0";
-            setTimeout(() => {
-              statusEl.textContent = "";
-              statusEl.classList.add("visually-hidden");
-              statusEl.style.opacity = "";
-              statusEl.style.transition = "";
-            }, 700);
-          }, 1800);
-        }
+        showFormStatus("Une erreur est survenue. Veuillez réessayer.");
         contactForm.reset();
       }
     } catch (error) {
-      if (statusEl) {
-        statusEl.textContent = "Erreur reseau. Veuillez réessayer.";
-        statusEl.style.opacity = "1";
-        statusEl.style.transition = "opacity 0.7s";
-        setTimeout(() => {
-          statusEl.style.opacity = "0";
-          setTimeout(() => {
-            statusEl.textContent = "";
-            statusEl.classList.add("visually-hidden");
-            statusEl.style.opacity = "";
-            statusEl.style.transition = "";
-          }, 700);
-        }, 1800);
-      }
+      showFormStatus("Erreur reseau. Veuillez réessayer.");
       contactForm.reset();
     }
   });
 }
 
-// ==== Scroll Header Background ====
+// ==== Scroll Header Background avec throttle ====
+let lastScrollUpdate = 0;
 window.addEventListener("scroll", () => {
-  updateHeaderBackground();
+  const now = Date.now();
+  // Throttle à ~10 appels/sec max (au lieu de 60+)
+  if (now - lastScrollUpdate > 100) {
+    updateHeaderBackground();
+    lastScrollUpdate = now;
+  }
 });
 
 // ==== Bouton Retour en Haut ====
@@ -454,13 +414,9 @@ if (startupCard) {
   });
 }
 
-// === Easter Egg Matrix sur la hero-image (effet terminal avant Matrix, pluie 2x plus lente) ===
+// === Easter Egg Matrix sur le logo startup (effet terminal avant Matrix, pluie 2x plus lente) ===
 (function () {
-  const heroImageDiv = document.querySelector(".hero-image");
-  const heroPicture = heroImageDiv
-    ? heroImageDiv.querySelector("picture")
-    : null;
-  const heroImg = heroPicture ? heroPicture.querySelector("img") : null;
+  const startupLogo = document.querySelector(".startup-logo");
   let clickCount = 0;
   let matrixActive = false;
   let matrixCanvas, matrixCtx, animationId;
@@ -574,9 +530,7 @@ if (startupCard) {
       clickCount = 0;
     }
   }
-  if (heroImageDiv) heroImageDiv.addEventListener("click", handleClick);
-  if (heroPicture) heroPicture.addEventListener("click", handleClick);
-  if (heroImg) heroImg.addEventListener("click", handleClick);
+  if (startupLogo) startupLogo.addEventListener("click", handleClick);
 })();
 
 // ==== Filtrage des Projets ====

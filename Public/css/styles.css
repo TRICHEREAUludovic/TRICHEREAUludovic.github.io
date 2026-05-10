@@ -20,8 +20,9 @@
   --light-color: #f9fafb;
   --white-color: #ffffff;
   --gray-color: #6b7280;
-  --accent-color: #f59e0b;
-  --green-color:#A2CF52;
+  --accent-color: #667eea;
+  --green-color:#BFFF00;
+  --text-color: #1f2937;
   
   --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -34,6 +35,7 @@ body.dark-mode {
   --light-color: #1a1a2e;
   --white-color: #16213e;
   --gray-color: #a0a0a0;
+  --text-color: #f9fafb;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -160,8 +162,6 @@ header nav a:hover::after {
   min-width: 48px;
   min-height: 48px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -355,6 +355,13 @@ body.dark-mode .filter-btn.active {
 /* Change background image in dark mode */
 body.dark-mode .home::before {
   background: url('../img/back2.webp') center/cover;
+}
+
+/* Use optimized mobile image for dark mode on small screens */
+@media (max-width: 767px) {
+  body.dark-mode .home::before {
+    background: url('../img/back2-mobile.webp') center/cover;
+  }
 }
 
 /* Buttons in dark mode */
@@ -602,39 +609,65 @@ body.dark-mode .hero-status {
   min-height: 56px;
   width: 56px;
   height: 56px;
-  background: var(--gradient);
-  border: none;
+  background: transparent;
+  border: 3px solid var(--primary-color);
   border-radius: 50%;
-  color: var(--white-color);
+  color: var(--primary-color);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow);
+  box-shadow: none;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
   z-index: 999;
+  font-size: 18px;
 }
 
 #scroll-to-top.visible {
   opacity: 1;
   visibility: visible;
+  animation: circle 1s infinite, pulse-shadow 1.5s infinite;
 }
 
 #scroll-to-top:hover {
-  transform: translate(-50%, -5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, 0) scale(1.1);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
 }
 
-#scroll-to-top svg {
-  width: 24px;
-  height: 24px;
+@keyframes circle {
+  0% {
+    bottom: 2rem;
+  }
+  50% {
+    bottom: 2.3rem;
+  }
+  100% {
+    bottom: 2rem;
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 0 0 var(--primary-color);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+#scroll-to-top.visible {
+  animation: circle 1s infinite, pulse-shadow 1.5s infinite;
 }
 
 body.dark-mode #scroll-to-top {
-  background: var(--gradient);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: transparent;
+  border-color: var(--primary-color);
+  box-shadow: none;
 }
 
 /* ==== Sections Communes ==== */
@@ -880,8 +913,8 @@ section {
   text-align: center;
 }
 
-/* Tags (badges) */
-.tag {
+/* Tags (badges) - Compétences */
+.skill-category .tag {
   display: inline-block;
   background: rgba(255,255,255,0.08);
   color: var(--white-color);
@@ -891,16 +924,15 @@ section {
   font-size: 0.85rem;
 }
 
-/* Light mode: subtle primary tint with dark text for contrast */
-body:not(.dark-mode) .tag {
-  background: rgba(102,126,234,0.12);
-  color: rgba(17,24,39,0.95);
-}
-
-/* Dark mode tags */
-body.dark-mode .tag {
-  background: rgba(102,126,234,0.22);
-  color: rgba(255,255,255,0.95);
+/* Tags (badges) - Projets */
+.project-tags .tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--light-color);
+  color: var(--primary-color);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 /* ==== Section Projets ==== */
 .projects-section {
@@ -977,7 +1009,7 @@ body.dark-mode .tag {
   flex: 0 0 calc(33.333% - 1.5rem);
   min-width: 300px;
   background: var(--white-color);
-  border: solid,1px,rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -1047,14 +1079,6 @@ body.dark-mode .tag {
 .project-card:hover .project-overlay {
   display: flex;
   opacity: 1;
-}
-
-.overlay-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .btn-project {
@@ -1237,18 +1261,6 @@ body.dark-mode .tag {
   50% {
     transform: translateY(-10px);
   }
-}
-
-.startup-name {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
 }
 
 .startup-info {
@@ -1677,14 +1689,6 @@ footer {
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 2rem;
-}
-
-.footer-info h3 {
-  margin-bottom: 0.5rem;
-}
-
-.footer-info p {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-links {
@@ -2124,6 +2128,14 @@ body.dark-mode .btn-code {
   
   .footer-links span {
     margin: 0 0.3rem;
+  }
+
+  #scroll-to-top {
+    width: 48px;
+    height: 48px;
+    border-width: 2px;
+    font-size: 16px;
+    bottom: 1.5rem;
   }
 }
 

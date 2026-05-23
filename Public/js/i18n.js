@@ -116,6 +116,8 @@ const translations = {
     "contact.form.message.placeholder": "Votre message...",
     "contact.form.submit": "Envoyer",
     "contact.form.close": "Fermer",
+    "contact.form.rgpd": "J'accepte la ",
+    "contact.form.rgpd.link": "politique de confidentialité",
 
     // Footer
     "footer.rights": "Tous droits réservés.",
@@ -346,6 +348,8 @@ const translations = {
     "contact.form.message.placeholder": "Your message...",
     "contact.form.submit": "Send",
     "contact.form.close": "Close",
+    "contact.form.rgpd": "I accept the ",
+    "contact.form.rgpd.link": "privacy policy",
 
     // Footer
     "footer.rights": "All rights reserved.",

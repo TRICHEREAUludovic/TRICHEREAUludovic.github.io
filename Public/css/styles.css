@@ -23,7 +23,7 @@
   --accent-color: #667eea;
   --green-color:#BFFF00;
   --text-color: #1f2937;
-  
+  --light-color-alpha: rgba(255, 255, 255, 0.9);
   --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
@@ -33,6 +33,7 @@
 body.dark-mode {
   --dark-color: #f9fafb;
   --light-color: #1a1a2e;
+  --light-color-alpha: rgb(26, 26, 46, 0.9);
   --white-color: #16213e;
   --gray-color: #a0a0a0;
   --text-color: #f9fafb;
@@ -81,7 +82,11 @@ header {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 1rem ;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 /* Blur only on desktop for better performance on mobile */
@@ -104,6 +109,12 @@ header nav ul {
   list-style: none;
   gap: 2rem;
   align-items: center;
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 header nav a {
@@ -143,6 +154,7 @@ header nav a:hover::after {
   min-height: 48px;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 #toggle-button span {
@@ -151,6 +163,29 @@ header nav a:hover::after {
   background: var(--dark-color);
   border-radius: 3px;
   transition: var(--transition);
+}
+
+body.dark-mode #toggle-button span {
+  background: #ffffff;
+}
+
+#toggle-button.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(12px);
+}
+
+#toggle-button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#toggle-button.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-12px);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 /* ==== Dark Mode Toggle ==== */
@@ -1564,6 +1599,44 @@ body.dark-mode .value-item:hover {
   min-height: 120px;
 }
 
+.form-group.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.form-group.form-checkbox input[type="checkbox"] {
+  width: auto;
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+  margin-top: 0rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.checkbox-label a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
 .contact-form button {
   width: 100%;
 }
@@ -1786,28 +1859,68 @@ footer {
 }
 
 @media (max-width: 820px) {
+  header {
+    padding: 1rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  /* Espace vide à gauche pour équilibrer */
+  header::before {
+    content: '';
+    flex: 1;
+  }
+
   header nav {
     position: fixed;
     top: 70px;
-    left: -100%;
+    right: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background: var(--white-color);
+    background: var(--light-color-alpha);
     padding: 2rem;
     transition: var(--transition);
+    flex: unset;
+    z-index: 999;
+  }
+
+  body.dark-mode header nav {
+    background: var(--light-color-alpha);
+    
   }
   
   header nav.active {
-    left: 0;
+    right: 0;
   }
   
   header nav ul {
     flex-direction: column;
     gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  header nav a {
+    text-align: center;
   }
   
   #toggle-button {
     display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  body.dark-mode #toggle-button span {
+    background: #ffffff;
+  }
+
+  .header-actions {
+    gap: 0.25rem;
+    position: relative;
+    z-index: 1000;
   }
   
   .hero-name {

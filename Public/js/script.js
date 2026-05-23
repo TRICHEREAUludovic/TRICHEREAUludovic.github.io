@@ -11,10 +11,13 @@ if (projectsCountEl) {
 
 if (toggleButton && nav) {
   const navLinks = document.querySelectorAll("header nav a");
-  const navButtons = document.querySelectorAll("header nav button");
+  const headerActionButtons = document.querySelectorAll(
+    ".header-actions button",
+  );
 
   function openNav() {
     nav.classList.add("active");
+    toggleButton.classList.add("active");
     toggleButton.setAttribute("aria-expanded", "true");
     // focus first link for keyboard users
     const firstLink = nav.querySelector("a");
@@ -33,8 +36,8 @@ if (toggleButton && nav) {
     });
   });
 
-  // Fermer le menu au clic sur les boutons du menu (language-toggle, dark-mode-toggle)
-  navButtons.forEach((button) => {
+  // Fermer le menu au clic sur les boutons du header (language-toggle, dark-mode-toggle)
+  headerActionButtons.forEach((button) => {
     button.addEventListener("click", () => {
       closeNavigation();
     });
@@ -142,6 +145,7 @@ function showFormStatus(message, duration = 1800) {
 function closeNavigation() {
   if (!nav) return;
   nav.classList.remove("active");
+  if (toggleButton) toggleButton.classList.remove("active");
   if (toggleButton) toggleButton.setAttribute("aria-expanded", "false");
   if (toggleButton) toggleButton.focus();
 }
@@ -236,6 +240,7 @@ if (contactForm) {
     const email = contactForm.querySelector('input[name="email"]');
     const subject = contactForm.querySelector('input[name="subject"]');
     const message = contactForm.querySelector('textarea[name="message"]');
+    const rgpd = contactForm.querySelector('input[name="rgpd"]');
 
     // Regex email simple
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -254,6 +259,10 @@ if (contactForm) {
     }
     if (!message.value.trim() || message.value.length < 5) {
       showFormStatus("Message trop court.");
+      return;
+    }
+    if (!rgpd.checked) {
+      showFormStatus("Veuillez accepter la politique de confidentialité.");
       return;
     }
 

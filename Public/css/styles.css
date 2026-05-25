@@ -770,55 +770,7 @@ section {
 
 .about-image { max-width: 350px; }
 
-.about-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* default: high-res background for large displays */
-  background: url('../img/profile-1600.webp') center/cover;
-  background-size: cover;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1;
-}
 
-/* Responsive background variants for hover overlay to reduce bandwidth on small screens */
-@media (max-width: 600px) {
-  .about-image::before {
-    background-image: url('../img/profile-480.webp');
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1200px) {
-  .about-image::before {
-    background-image: url('../img/profile-900.webp');
-  }
-}
-
-.about-image:hover::before {
-  opacity: 1;
-}
-
-/* When hovering, fade out the base img so the overlay (profile-*.webp) appears in its place */
-.about-image:hover img {
-  opacity: 0;
-}
-
-/* Show overlay on keyboard focus as well */
-.about-image:focus::before,
-.about-image:focus img {
-  outline: none;
-}
-.about-image:focus::before {
-  opacity: 1;
-}
-.about-image:focus img {
-  opacity: 0;
-}
 
 .about-image img {
   border-radius: 20px;
@@ -852,6 +804,8 @@ section {
   padding: 1.5rem;
   background: var(--light-color);
   border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
@@ -890,6 +844,7 @@ section {
   background: var(--white-color);
   padding: 2rem;
   border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: var(--shadow);
   transition: var(--transition);
 
@@ -963,7 +918,6 @@ section {
 .project-tags .tag {
   display: inline-block;
   padding: 0.3rem 0.8rem;
-  background: var(--light-color);
   color: var(--primary-color);
   border-radius: 20px;
   font-size: 0.9rem;
@@ -1044,10 +998,10 @@ section {
   flex: 0 0 calc(33.333% - 1.5rem);
   min-width: 300px;
   background: var(--white-color);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
   position: relative;
   z-index: 1;
@@ -1184,8 +1138,9 @@ section {
 
 .tag {
   padding: 0.3rem 0.8rem;
-  background: var(--light-color);
+  background: rgba(102, 126, 234, 0.2);
   color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;

@@ -2,11 +2,20 @@
 const toggleButton = document.getElementById("toggle-button");
 const nav = document.querySelector("header nav");
 
-// ==== Compter les projets automatiquement ====
+// ==== Compter les projets automatiquement (mise à jour du data-target) ====
 const projectsCountEl = document.getElementById("projects-count");
 if (projectsCountEl) {
   const projectCards = document.querySelectorAll(".project-card");
-  projectsCountEl.textContent = projectCards.length;
+  projectsCountEl.setAttribute("data-target", projectCards.length);
+}
+
+// ==== Compter les technologies automatiquement (nombre de skill-item) ====
+const technologiesStatNumbers = document.querySelectorAll(
+  ".stat-item .stat-number",
+);
+if (technologiesStatNumbers.length > 1) {
+  const skillItems = document.querySelectorAll(".skill-item");
+  technologiesStatNumbers[1].setAttribute("data-target", skillItems.length);
 }
 
 if (toggleButton && nav) {
@@ -607,4 +616,61 @@ if (startupCard) {
       });
     }
   });
+})();
+
+// ==== Animation des Counters sur .stat-item (About section) ====
+(function () {
+  const statNumbers = document.querySelectorAll(".stat-item .stat-number");
+  let hasAnimated = false;
+
+  if (statNumbers.length === 0) return;
+
+  // Intersection Observer pour déclencher l'animation au scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          animateCounters();
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  // Observer le premier stat-item pour déclencher l'animation
+  if (statNumbers.length > 0) {
+    observer.observe(statNumbers[0].closest(".stat-item"));
+  }
+
+  function animateCounters() {
+    statNumbers.forEach((counter) => {
+      const target = parseInt(counter.getAttribute("data-target"), 10);
+      const duration = 2000; // 2 secondes d'animation
+      const startTime = Date.now();
+      const startValue = 0;
+
+      function updateCount() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing function: cubic-out
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(
+          startValue + (target - startValue) * easeProgress,
+        );
+
+        counter.textContent = currentValue;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.textContent = target;
+        }
+      }
+
+      updateCount();
+    });
+  }
 })();

@@ -7,7 +7,6 @@ Allow: /
 
 # Interdire les répertoires sensibles (s'il y en a)
 Disallow: /.git/
-Disallow: /rapports lighthouse/
 
 # Sitemap
 Sitemap: https://trichereauludovic.github.io/sitemap.xml

@@ -3,218 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mentions légales - Portfolio de Ludovic Trichereau. Informations sur le propriétaire du site, l'hébergeur et les conditions d'utilisation.">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/x-icon" href="./Public/img/favicon/favicon.ico">
-    <link rel="apple-touch-icon" href="./Public/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./Public/img/favicon/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="./Public/img/favicon/favicon-512x512.png">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Mentions légales du portfolio de Ludovic Trichereau." data-i18n-content="meta.legal.description">
+    <title data-i18n="meta.legal.title">Mentions légales — Ludovic.T</title>
+    <link rel="icon" type="image/webp" sizes="512x512" href="./Public/img/Logo.webp">
     <link rel="stylesheet" href="./Public/css/reset.css">
-    <link rel="stylesheet" href="./Public/css/styles.css">
-    <style>
-        html,body{height:100%;}
-        body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0;}
-        header{position:fixed;top:0;width:100%;background:#fff;padding:1rem;z-index:1000}
-        .skip-link{position:absolute;left:-9999px}
-        main{padding-top:80px}
-    </style>
+    <link rel="stylesheet" href="./Public/css/common.css">
+    <link rel="stylesheet" href="./Public/css/legal.css">
     <script src="./Public/js/i18n.js" defer></script>
-    <script src="./Public/js/script.js" defer></script>
-    <script src="./Public/js/page-behavior.js" defer></script>
-    <title>Mentions Légales - Ludovic.T</title>
 </head>
 <body>
-    <a class="skip-link" href="#main" data-i18n="skip.link">Aller au contenu</a>
-    
-    <header>
-        <button id="toggle-button" data-i18n-aria="nav.menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="primary-nav">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav id="primary-nav" role="navigation" aria-label="Navigation principale">
+    <header class="legal-site-header scrolled">
+        <a class="legal-brand" href="./index.html" aria-label="Ludovic.T — accueil" data-i18n-aria="legal.brand.aria">
+            <img class="legal-brand-logo" src="./Public/img/Logo.webp" width="40" height="40" alt="">
+        </a>
+        <nav class="legal-nav" aria-label="Navigation principale" data-i18n-aria="legal.navigation.aria">
             <ul>
-                <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
-                <li><a href="index.html#about" data-i18n="nav.about">À propos</a></li>
-                <li><a href="index.html#skills" data-i18n="nav.skills">Compétences</a></li>
-                <li><a href="index.html#projets" data-i18n="nav.projects">Projets</a></li>
-                <li><a href="index.html#startup" data-i18n="nav.startup">Startup</a></li>
-                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="./index.html" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="./mentions-legales.html" aria-current="page" data-i18n="nav.legal">Mentions</a></li>
+                <li><a href="./politique-confidentialite.html" data-i18n="nav.privacy">Confidentialité</a></li>
             </ul>
         </nav>
-
-        <div class="header-actions">
-            <button id="language-toggle" aria-label="Changer de langue" aria-pressed="false">
-                <span class="lang-icon fr-icon">FR</span>
-                <span class="lang-icon en-icon">EN</span>
-            </button>
-            <button id="dark-mode-toggle" data-i18n-aria="nav.darkmode" aria-label="Activer le mode sombre" aria-pressed="false">
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"/>
-                    <line x1="12" y1="1" x2="12" y2="3"/>
-                    <line x1="12" y1="21" x2="12" y2="23"/>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                    <line x1="1" y1="12" x2="3" y2="12"/>
-                    <line x1="21" y1="12" x2="23" y2="12"/>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                </svg>
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
+        <div class="language-switcher" role="group" aria-label="Choisir la langue" data-i18n-aria="language.group">
+            <button class="language-option" type="button" data-language="fr" aria-label="Français" aria-pressed="true" data-i18n-aria="language.french">FR</button>
+            <button class="language-option" type="button" data-language="en" aria-label="Anglais" aria-pressed="false" data-i18n-aria="language.english">EN</button>
+            <span class="language-status" role="status" aria-live="polite"></span>
         </div>
     </header>
 
-    <main id="main" tabindex="-1">
-        <section class="legal-section">
-            <div class="container">
-                <h1 class="section-title" data-i18n="legal.title">Mentions Légales</h1>
-                <p class="legal-update"><em><span data-i18n="legal.update">Dernière mise à jour</span> : 12 février 2026</em></p>
-                
-                <p class="legal-intro" data-i18n="legal.intro">Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
-                
-                <div class="legal-content">
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
-                            <span data-i18n="legal.editor.title">Éditeur du site</span>
-                        </h2>
-                        <p><strong><span data-i18n="legal.editor.name">Nom</span> :</strong> Ludovic Trichereau</p>
-                        <p><strong>Statut :</strong> Particulier - Portfolio personnel</p>
-                        <p><strong><span data-i18n="legal.editor.email">Email</span> :</strong> <a href="mailto:ludot84.dev@gmail.com">ludot84.dev@gmail.com</a></p>
-                        <p><strong>Localisation :</strong> Yvelines, Île-de-France, France</p>
-                    </article>
-
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                            <span data-i18n="legal.hosting.title">Hébergement</span>
-                        </h2>
-                        <p><strong><span data-i18n="legal.hosting.name">Hébergeur</span> :</strong> GitHub Pages</p>
-                        <p><strong>Société :</strong> GitHub, Inc.</p>
-                        <p><strong><span data-i18n="legal.hosting.address">Adresse</span> :</strong> 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis</p>
-                        <p><strong><span data-i18n="legal.hosting.site">Site web</span> :</strong> <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">https://pages.github.com</a></p>
-                    </article>
-
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 16v-4"/>
-                                <path d="M12 8h.01"/>
-                            </svg>
-                            <span data-i18n="legal.property.title">Propriété intellectuelle</span>
-                        </h2>
-                        <p data-i18n="legal.property.text">
-                            L'ensemble du contenu de ce site (textes, images, vidéos, logos, mise en page, etc.) 
-                            est la propriété exclusive de Ludovic Trichereau, sauf mention contraire.
-                        </p>
-                    </article>
-
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                            </svg>
-                            <span data-i18n="legal.data.title">Données personnelles</span>
-                        </h2>
-                        <p data-i18n="legal.data.text">
-                            Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, veuillez consulter notre Politique de Confidentialité.
-                        </p>
-                    </article>
-
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-                            </svg>
-                            <span data-i18n="legal.links.title">Liens externes</span>
-                        </h2>
-                        <p>
-                            Ce site peut contenir des liens vers des sites externes (GitHub, LinkedIn, etc.). 
-                            Ludovic Trichereau n'exerce aucun contrôle sur ces sites et décline toute 
-                            responsabilité quant à leur contenu.
-                        </p>
-                    </article>
-
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                        </h2>
-                        <p data-i18n="legal.links.text">
-                            Ce site peut contenir des liens vers d'autres sites. Nous ne sommes pas responsables du contenu de ces sites externes ni des pratiques de confidentialité qu'ils appliquent.
-                        </p>
-                    </article>
-
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <circle cx="12" cy="12" r="3"/>
-                                <path d="M12 1v6m0 6v6M5.6 5.6l4.2 4.2m4.8 4.8l4.2 4.2M1 12h6m6 0h6M5.6 18.4l4.2-4.2m4.8-4.8l4.2-4.2"/>
-                            </svg>
-                            <span data-i18n="legal.cookies.title">Cookies</span>
-                        </h2>
-                        <p data-i18n="legal.cookies.text">
-                            Ce site utilise des cookies pour améliorer l'expérience utilisateur. En continuant votre navigation, vous acceptez l'utilisation de cookies.
-                        </p>
-                    </article>
-
-                    <article class="legal-card">
-                        <h2>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9 22 9 12 15 12 15 22"/>
-                            </svg>
-                            <span data-i18n="legal.law.title">Loi applicable</span>
-                        </h2>
-                        <p data-i18n="legal.law.text">
-                            Le présent site et les présentes conditions d'utilisation sont régis par le droit français. En cas de litige et à défaut d'accord amiable, le litige sera porté devant les tribunaux français conformément aux règles de compétence en vigueur.
-                        </p>
-                    </article>
-                </div>
-            </div>
+    <main class="legal-main">
+        <section class="legal-heading" aria-labelledby="page-title">
+            <p class="legal-eyebrow" data-i18n="legal.mentions.eyebrow">Informations du site</p>
+            <h1 id="page-title" data-i18n="legal.mentions.title">Mentions légales</h1>
+            <p data-i18n="legal.mentions.intro">Les informations utiles sur l’éditeur, l’hébergement et les contenus de ce portfolio.</p>
+            <p class="legal-updated"><span data-i18n="legal.updated.label">Dernière mise à jour :</span> <time datetime="2026-11-13" data-i18n="legal.updated.date">13 novembre 2026</time></p>
         </section>
+
+        <div class="legal-layout">
+            <nav class="legal-toc" aria-label="Sommaire des mentions légales" data-i18n-aria="legal.toc.mentions.aria">
+                <h2 data-i18n="legal.toc.title">Sur cette page</h2>
+                <ol>
+                    <li><a href="#editeur" data-i18n="legal.toc.editor">Éditeur</a></li>
+                    <li><a href="#publication" data-i18n="legal.toc.publication">Publication</a></li>
+                    <li><a href="#hebergement" data-i18n="legal.toc.hosting">Hébergement</a></li>
+                    <li><a href="#propriete" data-i18n="legal.toc.property">Propriété intellectuelle</a></li>
+                    <li><a href="#liens" data-i18n="legal.toc.links">Liens externes</a></li>
+                    <li><a href="#responsabilite" data-i18n="legal.toc.responsibility">Responsabilité et droit</a></li>
+                </ol>
+            </nav>
+
+            <div class="legal-sections">
+                <section class="legal-card" id="editeur">
+                    <h2 data-i18n="legal.editor.title">Éditeur du site</h2>
+                    <p data-i18n="legal.editor.body"><strong>Ludovic Trichereau</strong>, particulier, éditeur du portfolio.</p>
+                    <p data-i18n="legal.editor.location">Localisation : Meulan-en-Yvelines, France.</p>
+                    <p data-i18n="legal.editor.contact">Contact : <a href="mailto:ludot84.dev@gmail.com">ludot84.dev@gmail.com</a></p>
+                </section>
+
+                <section class="legal-card" id="publication">
+                    <h2 data-i18n="legal.publication.title">Direction de la publication</h2>
+                    <p data-i18n="legal.publication.body">Le directeur de la publication est Ludovic Trichereau.</p>
+                </section>
+
+                <section class="legal-card" id="hebergement">
+                    <h2 data-i18n="legal.hosting.title">Hébergement</h2>
+                    <p data-i18n="legal.hosting.body">Le site est publié avec GitHub Pages, service fourni par GitHub, Inc.</p>
+                    <p data-i18n="legal.hosting.address">88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis.</p>
+                    <p data-i18n="legal.hosting.contact"><a href="https://support.github.com/contact" target="_blank" rel="noopener noreferrer">Contacter l’assistance GitHub</a></p>
+                </section>
+
+                <section class="legal-card" id="propriete">
+                    <h2 data-i18n="legal.property.title">Propriété intellectuelle</h2>
+                    <p data-i18n="legal.property.body1">Sauf mention contraire, les textes, éléments graphiques et réalisations présentés sur ce site sont la propriété de leur auteur ou utilisés avec autorisation. Toute reproduction ou réutilisation substantielle nécessite l’accord préalable du titulaire des droits concernés.</p>
+                    <p data-i18n="legal.property.body2">Les marques, noms et contenus de tiers restent la propriété de leurs titulaires respectifs.</p>
+                </section>
+
+                <section class="legal-card" id="liens">
+                    <h2 data-i18n="legal.links.title">Liens externes</h2>
+                    <p data-i18n="legal.links.body">Le site contient des liens vers des services et projets tiers. Leur ouverture vous fait quitter ce site ; leurs éditeurs sont responsables de leurs propres contenus et règles de confidentialité.</p>
+                </section>
+
+                <section class="legal-card" id="responsabilite">
+                    <h2 data-i18n="legal.responsibility.title">Responsabilité et droit applicable</h2>
+                    <p data-i18n="legal.responsibility.body1">Les informations sont présentées à titre informatif et peuvent être mises à jour. Malgré le soin apporté à leur publication, l’éditeur ne garantit pas l’absence d’erreurs ou d’interruptions.</p>
+                    <p data-i18n="legal.responsibility.body2">Le site est régi par le droit français, sous réserve des règles impératives applicables.</p>
+                </section>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ludovic Trichereau. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
-                <div class="footer-links">
-                    <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
-                    <span>•</span>
-                    <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+    <footer class="dev-footer legal-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-identity">
+                    <span class="footer-name" data-i18n="footer.name">Ludovic Trichereau</span>
+                    <span class="footer-status"><span class="status-dot"></span> <span data-i18n="legal.footer.personal">Portfolio personnel</span></span>
                 </div>
+                <div class="footer-links">
+                    <a href="./index.html" data-i18n="nav.home">Accueil</a>
+                    <a href="./politique-confidentialite.html" data-i18n="nav.privacy">Confidentialité</a>
+                    <a href="mailto:ludot84.dev@gmail.com" data-i18n="legal.footer.contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Ludovic Trichereau</p>
+                <p><a href="./politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></p>
             </div>
         </div>
     </footer>
-
-    <button id="scroll-to-top" data-i18n-aria="scroll.top" aria-label="Retour en haut">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"/>
-        </svg>
-    </button>
-
-    <script>
-        (function(){
-            function enableAnimations(){ document.documentElement.classList.add('anim-ready'); }
-            if ('requestIdleCallback' in window) requestIdleCallback(enableAnimations, {timeout:200});
-            else window.addEventListener('load', function(){ setTimeout(enableAnimations, 120); });
-        })();
-    </script>
 </body>
 </html>

@@ -4,611 +4,1213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="7HDbnNib8J6FE2v1imIEi3JKPAEJ8qU5yni_LvlMOXw" />
-    <meta name="description" content="Portfolio de Ludovic Trichereau - Développeur Web Full Stack JavaScript, Node.js et PostgreSQL. Découvrez mes projets et compétences en création d'applications web modernes.">
-    <meta name="keywords" content="développeur web, full stack, JavaScript, Node.js, PostgreSQL, HTML5, CSS3, portfolio">
+    <meta name="description" content="Portfolio de Ludovic Trichereau, développeur web Full Stack JavaScript, Node.js et PostgreSQL. Découvrez ses projets et compétences." data-i18n-content="meta.index.description">
+    <meta name="keywords" content="développeur web, full stack, JavaScript, Node.js, PostgreSQL, HTML5, CSS3, portfolio" data-i18n-content="meta.index.keywords">
     <meta name="author" content="Ludovic Trichereau">
-    <meta name="theme-color" content="#667eea">
+    <meta name="color-scheme" content="light dark">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./Public/img/favicon/favicon.ico">
-    <link rel="apple-touch-icon" href="./Public/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./Public/img/favicon/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="./Public/img/favicon/favicon-512x512.png">
+    <link rel="icon" type="image/webp" sizes="512x512" href="./Public/img/Logo.webp">
+    <link rel="apple-touch-icon" href="./Public/img/Logo.webp">
     
     <!-- Open Graph pour LinkedIn -->
-    <meta property="og:title" content="Ludovic Trichereau - Développeur Web Full Stack">
-    <meta property="og:description" content="Portfolio professionnel. Découvrez mes projets en JavaScript, Node.js et PostgreSQL. Full Stack Developer spécialisé dans les applications web modernes.">
-    <meta property="og:image" content="https://trichereauludovic.github.io/Public/img/profile2-900.webp">
+    <meta property="og:title" content="Ludovic Trichereau — Développeur Web Full Stack" data-i18n-content="meta.index.ogTitle">
+    <meta property="og:description" content="Portfolio professionnel. Découvrez mes projets en JavaScript, Node.js et PostgreSQL." data-i18n-content="meta.index.ogDescription">
+    <meta property="og:image" content="https://trichereauludovic.github.io/Public/img/profile-900.webp">
     <meta property="og:url" content="https://trichereauludovic.github.io">
     <meta property="og:type" content="website">
     
-    <!-- SEO: Sitemap, Schema.json et Robots -->
+    <!-- SEO: Sitemap, données structurées et Robots -->
     <link rel="sitemap" type="application/xml" href="./sitemap.xml">
-    <script type="application/ld+json" src="./schema.json"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ludovic Trichereau",
+      "url": "https://trichereauludovic.github.io",
+      "image": "https://trichereauludovic.github.io/Public/img/profile-900.webp",
+      "description": "Développeur Web Full Stack spécialisé en JavaScript, Node.js et PostgreSQL",
+      "jobTitle": "Développeur Web Full Stack",
+      "email": "ludot84.dev@gmail.com",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Yvelines, Île-de-France, France"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/ludovictrichereaupsp/",
+        "https://github.com/TRICHEREAUludovic"
+      ],
+      "knowsAbout": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Svelte",
+        "JWT",
+        "API REST"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "DevNDumber"
+      }
+    }
+    </script>
     
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Précharger l'image LCP exacte (améliore LCP) -->
-    <link rel="preload" as="image" href="Public/img/profile2-900.webp">
-    <!-- Précharger aussi le background principal utilisé par .home (réduit LCP) -->
-    <link rel="preload" as="image" href="Public/img/back.webp">
-        <!-- Précharger back2.webp uniquement pour les navigateurs en mode sombre via media query (non programmatique) -->
-        <link rel="preload" as="image" href="Public/img/back2.webp" media="(prefers-color-scheme: dark)">
-        <!-- Précharger back2-mobile.webp pour mobile en mode sombre (optimisé pour LCP mobile) -->
-        <link rel="preload" as="image" href="Public/img/back2-mobile.webp" media="(prefers-color-scheme: dark) and (max-width: 767px)">
+    <!-- Précharger le logo visible dès l'arrivée sur la page -->
+    <link rel="preload" as="image" href="./Public/img/logo-128.webp">
     <!-- Stylesheets: load normally so styles are applied immediately (prevents FOUC) -->
     <link rel="stylesheet" href="./Public/css/reset.css">
-    <link rel="stylesheet" href="./Public/css/styles.css">
-
-        <!-- Critical CSS: minimal rules to avoid FOUC while main CSS loads -->
-        <style>
-            /* keep header visible and basic layout stable */
-            html,body{height:100%;}
-            body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0;}
-            header{position:fixed;top:0;width:100%;background:#fff;padding:1rem;z-index:1000}
-            .skip-link{position:absolute;left:-9999px}
-            main{padding-top:80px}
-        </style>
+    <link rel="stylesheet" href="./Public/css/common.css">
+    <link rel="stylesheet" href="./Public/css/index.css">
     <script src="./Public/js/i18n.js" defer></script>
-    <script src="./Public/js/script.js" defer></script>
-    <script src="./Public/js/page-behavior.js" defer></script>
-    <title>Ludovic.T - Développeur Full Stack</title>
+    <script src="./Public/js/index.js" defer></script>
+    <title data-i18n="meta.index.title">Ludovic.T — Développeur Full Stack</title>
 </head>
 <body>
-    <!-- Skip link pour l'accessibilité clavier -->
-    <a class="skip-link" href="#main" data-i18n="skip.link">Aller au contenu</a>
-    <!-- Navigation -->
-    <header>
+ 
+    <a id="flying-logo" class="animated-logo-container" href="#hero" data-i18n-aria="nav.home">
+        <img class="logo-image" src="./Public/img/logo-128.webp" width="128" height="127" alt="Logo de Ludovic Trichereau" data-i18n-alt="meta.logo.alt">
+    </a>
 
-        <button id="toggle-button" data-i18n-aria="nav.menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="primary-nav">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav id="primary-nav" role="navigation" aria-label="Navigation principale">
+    <header id="main-header" aria-hidden="true" inert>
+        <div id="nav-logo-zone" class="nav-logo-target"></div>
+        <nav aria-label="Navigation principale" data-i18n-aria="legal.navigation.aria">
             <ul>
-                <li><a href="#home" data-i18n="nav.home">Accueil</a></li>
-                <li><a href="#about" data-i18n="nav.about">À propos</a></li>
-                <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+                <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
                 <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
-                <li><a href="#startup" data-i18n="nav.startup">Startup</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
         </nav>
-
-        <div class="header-actions">
-            <button id="language-toggle" aria-label="Changer de langue" aria-pressed="false">
-                <span class="lang-icon fr-icon">FR</span>
-                <span class="lang-icon en-icon">EN</span>
-            </button>
-            <button id="dark-mode-toggle" data-i18n-aria="nav.darkmode" aria-label="Activer le mode sombre" aria-pressed="false">
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"/>
-                    <line x1="12" y1="1" x2="12" y2="3"/>
-                    <line x1="12" y1="21" x2="12" y2="23"/>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                    <line x1="1" y1="12" x2="3" y2="12"/>
-                    <line x1="21" y1="12" x2="23" y2="12"/>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                </svg>
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
+        <div class="language-switcher" role="group" aria-label="Choisir la langue" data-i18n-aria="language.group">
+            <button class="language-option" type="button" data-language="fr" aria-label="Français" aria-pressed="true" data-i18n-aria="language.french">FR</button>
+            <button class="language-option" type="button" data-language="en" aria-label="Anglais" aria-pressed="false" data-i18n-aria="language.english">EN</button>
+            <span class="language-status" role="status" aria-live="polite"></span>
         </div>
+        <button class="burger-menu" id="burger-btn" aria-label="Ouvrir le menu de navigation" data-i18n-aria="nav.menu" aria-controls="mobile-overlay" aria-expanded="false">
+            <svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <line class="burger-line line-1" x1="1.5" y1="1.5" x2="28.5" y2="1.5" stroke-width="3" stroke-linecap="round"/>
+                <line class="burger-line line-2" x1="1.5" y1="10.5" x2="28.5" y2="10.5" stroke-width="3" stroke-linecap="round"/>
+                <line class="burger-line line-3" x1="1.5" y1="19.5" x2="28.5" y2="19.5" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+
     </header>
 
-    <main id="main" tabindex="-1">
-        <!-- Section Hero -->
-        <section class="home" id="home">
+    <nav class="mobile-nav-overlay" id="mobile-overlay" aria-label="Navigation mobile" data-i18n-aria="nav.mobile" aria-hidden="true" inert>
+        <ul>
+            <li><a href="#competences" onclick="toggleMenu()" data-i18n="nav.skills">Compétences</a></li>
+            <li><a href="#projets" onclick="toggleMenu()" data-i18n="nav.projects">Projets</a></li>
+            <li><a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="language-switcher hero-language-switcher" role="group" aria-label="Choisir la langue" data-i18n-aria="language.group">
+                <button class="language-option" type="button" data-language="fr" aria-label="Français" aria-pressed="true" data-i18n-aria="language.french">FR</button>
+                <button class="language-option" type="button" data-language="en" aria-label="Anglais" aria-pressed="false" data-i18n-aria="language.english">EN</button>
+                <span class="language-status" role="status" aria-live="polite"></span>
+            </div>
             <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-greeting" data-i18n="hero.greeting">Bonjour, je suis</span>
-                    <h1 class="hero-name" data-i18n="hero.name">Ludovic</h1>
-                    <h2 class="hero-title" data-i18n="hero.title">Développeur Web Full Stack</h2>
-                    <p class="hero-description" data-i18n="hero.description">
-                        Je crée des applications web modernes et performantes avec pour stack principale
-                        <strong>JavaScript</strong>, <strong>Node.js</strong> et <strong>PostgreSQL</strong>.
-                    </p>
-                    <p class="hero-status" data-i18n="hero.status">
-                        🎯 Actuellement sur le developpement du site <strong>devndumber</strong> 
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projets" class="btn btn-primary" data-i18n="hero.btn.projects">Voir mes projets</a>
-                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.btn.contact">Me contacter</a>
+                <p class="hero-subtitle" data-i18n="hero.greeting">Bonjour, je suis Ludovic</p>
+                <h1 class="hero-title" data-i18n="hero.title">Développeur Web<br><span>Full Stack</span></h1>
+                
+                <div class="tech-stack-container">
+                    <div class="tech-stack-badges">
+                        <span class="tech-badge-hero">JavaScript</span>
+                        <span class="tech-badge-hero">Node.js</span>
+                        <span class="tech-badge-hero">PostgreSQL</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <picture>
-                        <!-- responsive srcset: browser picks optimal variant (DPR-aware) -->
-                        <source type="image/webp"
-                                srcset="Public/img/profile2-480.webp 480w, Public/img/profile2-900.webp 900w, Public/img/profile2-1600.webp 1600w"
-                                sizes="(max-width:600px) 80vw, (max-width:1200px) 40vw, 350px">
-                        <!-- fallback img points to medium as a sensible default -->
-                        <img src="Public/img/profile2-900.webp" alt="Portrait de Ludovic" fetchpriority="high" decoding="async" width="350" height="350" />
-                    </picture>
-                    <div class="hero-shape"></div>
+
+                <div class="hero-buttons">
+                    <a href="#projets" class="btn btn-primary" data-i18n="hero.projects">Projets</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.contact">Contact</a>
                 </div>
+
+                <div class="code-editor-mock">
+                    <div class="editor-dots">
+                        <span class="dot dot-r"></span>
+                        <span class="dot dot-y"></span>
+                        <span class="dot dot-g"></span>
+                    </div>
+                    <div id="terminal-screen" class="terminal-lines"></div>
+                </div>
+
+                <div class="stats-wireframe">
+                    <div class="stat-box glow">
+                        <span id="experience-counter" class="stat-number" data-start-year="2025">1+</span>
+                        <span class="stat-label" data-i18n="stats.experience">Expérience</span>
+                        <svg class="glow-container" aria-hidden="true" focusable="false">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </div>
+                    <div class="stat-box glow">
+                        <span id="project-counter" class="stat-number" aria-live="polite">4</span>
+                        <span class="stat-label" data-i18n="stats.projects">Projets</span>
+                        <svg class="glow-container" aria-hidden="true" focusable="false">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </div>
+                    <div class="stat-box glow">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label" data-i18n="stats.professional">Engagé</span>
+                        <svg class="glow-container" aria-hidden="true" focusable="false">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                
+       <svg class="hex-grid-svg" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="480 230 680 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+<defs>
+    <radialGradient id="nodeGlowStrong" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" class="grad-glow-0" stop-opacity="0.92"/>
+        <stop offset="28%" class="grad-glow-1" stop-opacity="0.62"/>
+        <stop offset="62%" class="grad-glow-2" stop-opacity="0.24"/>
+        <stop offset="100%" class="grad-glow-3" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="flareH" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop offset="0%" class="grad-glow-2" stop-opacity="0"/>
+        <stop offset="30%" class="grad-glow-1" stop-opacity="0.20"/>
+        <stop offset="50%" class="grad-glow-0" stop-opacity="0.72"/>
+        <stop offset="70%" class="grad-glow-1" stop-opacity="0.20"/>
+        <stop offset="100%" class="grad-glow-2" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="glassPane1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" class="grad-glass-a"/>
+        <stop offset="50%" class="grad-glow-2" stop-opacity="0.04"/>
+        <stop offset="100%" class="grad-glass-b"/>
+    </linearGradient>
+
+    <linearGradient id="glassPane2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" class="grad-glass-b"/>
+        <stop offset="60%" class="grad-glow-2" stop-opacity="0.04"/>
+        <stop offset="100%" class="grad-glass-a"/>
+    </linearGradient>
+
+    <linearGradient id="strutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" class="grad-strut-0" stop-opacity="0.78"/>
+        <stop offset="50%" class="grad-strut-1" stop-opacity="0.55"/>
+        <stop offset="100%" class="grad-strut-2" stop-opacity="0.72"/>
+    </linearGradient>
+</defs>
+
+
+  <g>
+    <g opacity="0.45">
+      <line x1="480.3" y1="622.2" x2="456.7" y2="673.6" class="svg-strut-mid" stroke-width="1.43" stroke-linecap="round"/>
+      <line x1="456.7" y1="673.6" x2="418.5" y2="662.3" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="418.5" y1="662.3" x2="404.0" y2="609.2" class="svg-strut-mid" stroke-width="1.25" stroke-linecap="round"/>
+      <line x1="404.0" y1="609.2" x2="418.5" y2="563.3" class="svg-strut-mid" stroke-width="1.19" stroke-linecap="round"/>
+      <line x1="418.5" y1="563.3" x2="456.7" y2="565.0" class="svg-strut-mid" stroke-width="1.25" stroke-linecap="round"/>
+      <line x1="456.7" y1="565.0" x2="480.3" y2="622.2" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="480.3" y1="735.6" x2="456.7" y2="782.2" class="svg-strut-mid" stroke-width="1.43" stroke-linecap="round"/>
+      <line x1="456.7" y1="782.2" x2="418.5" y2="761.3" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="418.5" y1="761.3" x2="404.0" y2="703.4" class="svg-strut-mid" stroke-width="1.25" stroke-linecap="round"/>
+      <line x1="404.0" y1="703.4" x2="418.5" y2="662.3" class="svg-strut-mid" stroke-width="1.19" stroke-linecap="round"/>
+      <line x1="456.7" y1="673.6" x2="480.3" y2="735.6" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="480.3" y1="849.1" x2="456.7" y2="890.9" class="svg-strut-mid" stroke-width="1.43" stroke-linecap="round"/>
+      <line x1="456.7" y1="890.9" x2="418.5" y2="860.3" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="418.5" y1="860.3" x2="404.0" y2="797.5" class="svg-strut-mid" stroke-width="1.25" stroke-linecap="round"/>
+      <line x1="404.0" y1="797.5" x2="418.5" y2="761.3" class="svg-strut-mid" stroke-width="1.19" stroke-linecap="round"/>
+      <line x1="456.7" y1="782.2" x2="480.3" y2="849.1" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="569.2" y1="437.6" x2="536.6" y2="504.2" class="svg-strut-mid" stroke-width="1.61" stroke-linecap="round"/>
+      <line x1="536.6" y1="504.2" x2="480.3" y2="508.8" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="480.3" y1="508.8" x2="456.7" y2="456.4" class="svg-strut-mid" stroke-width="1.43" stroke-linecap="round"/>
+      <line x1="456.7" y1="456.4" x2="480.3" y2="395.4" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="480.3" y1="395.4" x2="536.6" y2="381.1" class="svg-strut-mid" stroke-width="1.43" stroke-linecap="round"/>
+      <line x1="536.6" y1="381.1" x2="569.2" y2="437.6" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="569.2" y1="565.4" x2="536.6" y2="627.2" class="svg-strut-mid" stroke-width="1.61" stroke-linecap="round"/>
+      <line x1="536.6" y1="627.2" x2="480.3" y2="622.2" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="456.7" y1="565.0" x2="480.3" y2="508.8" class="svg-strut-mid" stroke-width="1.37" stroke-linecap="round"/>
+      <line x1="536.6" y1="504.2" x2="569.2" y2="565.4" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="569.2" y1="693.3" x2="536.6" y2="750.3" class="svg-strut-mid" stroke-width="1.61" stroke-linecap="round"/>
+      <line x1="536.6" y1="750.3" x2="480.3" y2="735.6" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="536.6" y1="627.2" x2="569.2" y2="693.3" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="569.2" y1="821.2" x2="536.6" y2="873.3" class="svg-strut-mid" stroke-width="1.61" stroke-linecap="round"/>
+      <line x1="536.6" y1="873.3" x2="480.3" y2="849.1" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="536.6" y1="750.3" x2="569.2" y2="821.2" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="685.2" y1="349.7" x2="643.5" y2="426.7" class="svg-strut-mid" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="643.5" y1="426.7" x2="569.2" y2="437.6" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="536.6" y1="381.1" x2="569.2" y2="309.7" class="svg-strut-mid" stroke-width="1.55" stroke-linecap="round"/>
+      <line x1="569.2" y1="309.7" x2="643.5" y2="289.2" class="svg-strut-mid" stroke-width="1.61" stroke-linecap="round"/>
+      <line x1="643.5" y1="289.2" x2="685.2" y2="349.7" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="685.2" y1="492.0" x2="643.5" y2="564.2" class="svg-strut-mid" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="643.5" y1="564.2" x2="569.2" y2="565.4" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="643.5" y1="426.7" x2="685.2" y2="492.0" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="685.2" y1="634.3" x2="643.5" y2="701.6" class="svg-strut-mid" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="643.5" y1="701.6" x2="569.2" y2="693.3" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="643.5" y1="564.2" x2="685.2" y2="634.3" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="685.2" y1="776.6" x2="643.5" y2="839.1" class="svg-strut-mid" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="643.5" y1="839.1" x2="569.2" y2="821.2" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="643.5" y1="701.6" x2="685.2" y2="776.6" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="685.2" y1="918.9" x2="643.5" y2="976.6" class="svg-strut-mid" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="643.5" y1="976.6" x2="569.2" y2="949.0" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="569.2" y1="949.0" x2="536.6" y2="873.3" class="svg-strut-mid" stroke-width="1.61" stroke-linecap="round"/>
+      <line x1="643.5" y1="839.1" x2="685.2" y2="918.9" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="828.2" y1="88.5" x2="777.5" y2="180.6" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="777.5" y1="180.6" x2="685.2" y2="207.4" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="685.2" y1="207.4" x2="643.5" y2="151.7" class="svg-strut-mid" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="643.5" y1="151.7" x2="685.2" y2="65.2" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="685.2" y1="65.2" x2="777.5" y2="28.7" class="svg-strut-mid" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="777.5" y1="28.7" x2="828.2" y2="88.5" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="828.2" y1="245.2" x2="777.5" y2="332.5" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="777.5" y1="332.5" x2="685.2" y2="349.7" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="643.5" y1="289.2" x2="685.2" y2="207.4" class="svg-strut-mid" stroke-width="1.73" stroke-linecap="round"/>
+      <line x1="777.5" y1="180.6" x2="828.2" y2="245.2" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="828.2" y1="401.9" x2="777.5" y2="484.4" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="777.5" y1="484.4" x2="685.2" y2="492.0" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="777.5" y1="332.5" x2="828.2" y2="401.9" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="828.2" y1="558.6" x2="777.5" y2="636.3" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="777.5" y1="636.3" x2="685.2" y2="634.3" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="777.5" y1="484.4" x2="828.2" y2="558.6" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="828.2" y1="715.3" x2="777.5" y2="788.2" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="777.5" y1="788.2" x2="685.2" y2="776.6" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="777.5" y1="636.3" x2="828.2" y2="715.3" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="828.2" y1="872.0" x2="777.5" y2="940.1" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="777.5" y1="940.1" x2="685.2" y2="918.9" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="777.5" y1="788.2" x2="828.2" y2="872.0" class="svg-strut-mid" stroke-width="1.91" stroke-linecap="round"/>
+      <line x1="998.4" y1="124.0" x2="938.6" y2="221.7" class="svg-strut-mid" stroke-width="2.16" stroke-linecap="round"/>
+      <line x1="938.6" y1="221.7" x2="828.2" y2="245.2" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="828.2" y1="88.5" x2="938.6" y2="55.4" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="938.6" y1="55.4" x2="998.4" y2="124.0" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="998.4" y1="295.1" x2="938.6" y2="388.0" class="svg-strut-mid" stroke-width="2.16" stroke-linecap="round"/>
+      <line x1="938.6" y1="388.0" x2="828.2" y2="401.9" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="938.6" y1="221.7" x2="998.4" y2="295.1" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="998.4" y1="466.3" x2="938.6" y2="554.4" class="svg-strut-mid" stroke-width="2.16" stroke-linecap="round"/>
+      <line x1="938.6" y1="554.4" x2="828.2" y2="558.6" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="938.6" y1="388.0" x2="998.4" y2="466.3" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="998.4" y1="637.4" x2="938.6" y2="720.7" class="svg-strut-mid" stroke-width="2.16" stroke-linecap="round"/>
+      <line x1="938.6" y1="720.7" x2="828.2" y2="715.3" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="938.6" y1="554.4" x2="998.4" y2="637.4" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="998.4" y1="808.6" x2="938.6" y2="887.0" class="svg-strut-mid" stroke-width="2.16" stroke-linecap="round"/>
+      <line x1="938.6" y1="887.0" x2="828.2" y2="872.0" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="938.6" y1="720.7" x2="998.4" y2="808.6" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="998.4" y1="979.7" x2="938.6" y2="1053.4" class="svg-strut-mid" stroke-width="2.16" stroke-linecap="round"/>
+      <line x1="938.6" y1="1053.4" x2="828.2" y2="1028.8" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="828.2" y1="1028.8" x2="777.5" y2="940.1" class="svg-strut-mid" stroke-width="1.97" stroke-linecap="round"/>
+      <line x1="938.6" y1="887.0" x2="998.4" y2="979.7" class="svg-strut-mid" stroke-width="2.10" stroke-linecap="round"/>
+      <line x1="1195.6" y1="171.7" x2="1126.8" y2="275.0" class="svg-strut-mid" stroke-width="2.34" stroke-linecap="round"/>
+      <line x1="1126.8" y1="275.0" x2="998.4" y2="295.1" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="998.4" y1="124.0" x2="1126.8" y2="94.2" class="svg-strut-mid" stroke-width="2.16" stroke-linecap="round"/>
+      <line x1="1126.8" y1="94.2" x2="1195.6" y2="171.7" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="1195.6" y1="357.3" x2="1126.8" y2="455.7" class="svg-strut-mid" stroke-width="2.34" stroke-linecap="round"/>
+      <line x1="1126.8" y1="455.7" x2="998.4" y2="466.3" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="1126.8" y1="275.0" x2="1195.6" y2="357.3" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="1195.6" y1="542.9" x2="1126.8" y2="636.5" class="svg-strut-mid" stroke-width="2.34" stroke-linecap="round"/>
+      <line x1="1126.8" y1="636.5" x2="998.4" y2="637.4" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="1126.8" y1="455.7" x2="1195.6" y2="542.9" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="1195.6" y1="728.4" x2="1126.8" y2="817.2" class="svg-strut-mid" stroke-width="2.34" stroke-linecap="round"/>
+      <line x1="1126.8" y1="817.2" x2="998.4" y2="808.6" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="1126.8" y1="636.5" x2="1195.6" y2="728.4" class="svg-strut-mid" stroke-width="2.28" stroke-linecap="round"/>
+    </g>
+    <g>
+      <polygon points="727.3,631.3 681.2,706.6 596.9,700.2 558.8,627.1 596.9,556.8 681.2,554.6" fill="url(#glassPane1)" class="svg-glass" stroke-opacity="0.32" stroke-width="1.15"/>
+      <polygon points="727.3,797.5 681.2,868.2 596.9,852.8 558.8,775.1 596.9,709.4 681.2,716.3" fill="url(#glassPane2)" class="svg-glass" stroke-opacity="0.32" stroke-width="1.15"/>
+      <polygon points="892.2,180.8 837.6,274.8 736.4,292.4 689.8,224.5 736.4,135.4 837.6,109.3" fill="url(#glassPane1)" class="svg-glass" stroke-opacity="0.32" stroke-width="1.15"/>
+      <polygon points="892.2,361.4 837.6,450.9 736.4,459.4 689.8,387.0 736.4,302.4 837.6,285.4" fill="url(#glassPane2)" class="svg-glass" stroke-opacity="0.32" stroke-width="1.15"/>
+      <polygon points="892.2,541.9 837.6,626.9 736.4,626.5 689.8,549.5 736.4,469.5 837.6,461.4" fill="url(#glassPane1)" class="svg-glass" stroke-opacity="0.32" stroke-width="1.15"/>
+      <polygon points="1084.2,435.9 1021.1,530.6 902.9,536.0 847.8,455.3 902.9,365.5 1021.1,351.5" fill="url(#glassPane2)" class="svg-glass" stroke-opacity="0.32" stroke-width="1.15"/>
+    </g>
+    <g opacity="0.52">
+      <line x1="733.3" y1="298.0" x2="685.2" y2="349.7" class="svg-strut-mid" stroke-width="1.91"/>
+      <circle cx="685.2" cy="349.7" r="3.10" class="svg-node-mid"/>
+      <line x1="684.0" y1="387.8" x2="643.5" y2="426.7" class="svg-strut-mid" stroke-width="1.85"/>
+      <circle cx="643.5" cy="426.7" r="2.99" class="svg-node-mid"/>
+      <line x1="594.4" y1="400.0" x2="569.2" y2="437.6" class="svg-strut-mid" stroke-width="1.74"/>
+      <circle cx="569.2" cy="437.6" r="2.78" class="svg-node-mid"/>
+      <line x1="554.1" y1="331.9" x2="536.6" y2="381.1" class="svg-strut-mid" stroke-width="1.69"/>
+      <circle cx="536.6" cy="381.1" r="2.68" class="svg-node-mid"/>
+      <line x1="594.4" y1="247.7" x2="569.2" y2="309.7" class="svg-strut-mid" stroke-width="1.74"/>
+      <circle cx="569.2" cy="309.7" r="2.78" class="svg-node-mid"/>
+      <line x1="684.0" y1="225.9" x2="643.5" y2="289.2" class="svg-strut-mid" stroke-width="1.85"/>
+      <circle cx="643.5" cy="289.2" r="2.99" class="svg-node-mid"/>
+      <line x1="733.3" y1="464.7" x2="685.2" y2="492.0" class="svg-strut-mid" stroke-width="1.91"/>
+      <circle cx="685.2" cy="492.0" r="3.10" class="svg-node-mid"/>
+      <line x1="684.0" y1="549.7" x2="643.5" y2="564.2" class="svg-strut-mid" stroke-width="1.85"/>
+      <circle cx="643.5" cy="564.2" r="2.99" class="svg-node-mid"/>
+      <line x1="594.4" y1="552.3" x2="569.2" y2="565.4" class="svg-strut-mid" stroke-width="1.74"/>
+      <circle cx="569.2" cy="565.4" r="2.78" class="svg-node-mid"/>
+      <line x1="554.1" y1="479.4" x2="536.6" y2="504.2" class="svg-strut-mid" stroke-width="1.69"/>
+      <circle cx="536.6" cy="504.2" r="2.68" class="svg-node-mid"/>
+      <line x1="733.3" y1="631.4" x2="685.2" y2="634.3" class="svg-strut-mid" stroke-width="1.91"/>
+      <circle cx="685.2" cy="634.3" r="3.10" class="svg-node-mid"/>
+      <line x1="684.0" y1="711.6" x2="643.5" y2="701.6" class="svg-strut-mid" stroke-width="1.85"/>
+      <circle cx="643.5" cy="701.6" r="2.99" class="svg-node-mid"/>
+      <line x1="594.4" y1="704.5" x2="569.2" y2="693.3" class="svg-strut-mid" stroke-width="1.74"/>
+      <circle cx="569.2" cy="693.3" r="2.78" class="svg-node-mid"/>
+      <line x1="554.1" y1="626.9" x2="536.6" y2="627.2" class="svg-strut-mid" stroke-width="1.69"/>
+      <circle cx="536.6" cy="627.2" r="2.68" class="svg-node-mid"/>
+      <line x1="733.3" y1="798.2" x2="685.2" y2="776.6" class="svg-strut-mid" stroke-width="1.91"/>
+      <circle cx="685.2" cy="776.6" r="3.10" class="svg-node-mid"/>
+      <line x1="684.0" y1="873.5" x2="643.5" y2="839.1" class="svg-strut-mid" stroke-width="1.85"/>
+      <circle cx="643.5" cy="839.1" r="2.99" class="svg-node-mid"/>
+      <line x1="594.4" y1="856.8" x2="569.2" y2="821.2" class="svg-strut-mid" stroke-width="1.74"/>
+      <circle cx="569.2" cy="821.2" r="2.78" class="svg-node-mid"/>
+      <line x1="554.1" y1="774.4" x2="536.6" y2="750.3" class="svg-strut-mid" stroke-width="1.69"/>
+      <circle cx="536.6" cy="750.3" r="2.68" class="svg-node-mid"/>
+      <line x1="733.3" y1="964.9" x2="685.2" y2="918.9" class="svg-strut-mid" stroke-width="1.91"/>
+      <circle cx="685.2" cy="918.9" r="3.10" class="svg-node-mid"/>
+      <line x1="684.0" y1="1035.5" x2="643.5" y2="976.6" class="svg-strut-mid" stroke-width="1.85"/>
+      <circle cx="643.5" cy="976.6" r="2.99" class="svg-node-mid"/>
+      <line x1="594.4" y1="1009.1" x2="569.2" y2="949.0" class="svg-strut-mid" stroke-width="1.74"/>
+      <circle cx="569.2" cy="949.0" r="2.78" class="svg-node-mid"/>
+      <line x1="554.1" y1="921.9" x2="536.6" y2="873.3" class="svg-strut-mid" stroke-width="1.69"/>
+      <circle cx="536.6" cy="873.3" r="2.68" class="svg-node-mid"/>
+      <line x1="899.3" y1="-1.8" x2="828.2" y2="88.5" class="svg-strut-mid" stroke-width="2.08"/>
+      <circle cx="828.2" cy="88.5" r="3.41" class="svg-node-mid"/>
+      <line x1="841.0" y1="103.2" x2="777.5" y2="180.6" class="svg-strut-mid" stroke-width="2.02"/>
+      <circle cx="777.5" cy="180.6" r="3.31" class="svg-node-mid"/>
+      <line x1="733.3" y1="131.3" x2="685.2" y2="207.4" class="svg-strut-mid" stroke-width="1.91"/>
+      <circle cx="685.2" cy="207.4" r="3.10" class="svg-node-mid"/>
+      <line x1="684.0" y1="64.0" x2="643.5" y2="151.7" class="svg-strut-mid" stroke-width="1.85"/>
+      <circle cx="643.5" cy="151.7" r="2.99" class="svg-node-mid"/>
+      <line x1="733.3" y1="-35.5" x2="685.2" y2="65.2" class="svg-strut-mid" stroke-width="1.91"/>
+      <circle cx="685.2" cy="65.2" r="3.10" class="svg-node-mid"/>
+      <line x1="841.0" y1="-73.2" x2="777.5" y2="28.7" class="svg-strut-mid" stroke-width="2.02"/>
+      <circle cx="777.5" cy="28.7" r="3.31" class="svg-node-mid"/>
+      <line x1="899.3" y1="179.3" x2="828.2" y2="245.2" class="svg-strut-mid" stroke-width="2.08"/>
+      <circle cx="828.2" cy="245.2" r="3.41" class="svg-node-mid"/>
+      <line x1="841.0" y1="279.5" x2="777.5" y2="332.5" class="svg-strut-mid" stroke-width="2.02"/>
+      <circle cx="777.5" cy="332.5" r="3.31" class="svg-node-mid"/>
+      <line x1="899.3" y1="360.5" x2="828.2" y2="401.9" class="svg-strut-mid" stroke-width="2.08"/>
+      <circle cx="828.2" cy="401.9" r="3.41" class="svg-node-mid"/>
+      <line x1="841.0" y1="455.9" x2="777.5" y2="484.4" class="svg-strut-mid" stroke-width="2.02"/>
+      <circle cx="777.5" cy="484.4" r="3.31" class="svg-node-mid"/>
+      <line x1="899.3" y1="541.6" x2="828.2" y2="558.6" class="svg-strut-mid" stroke-width="2.08"/>
+      <circle cx="828.2" cy="558.6" r="3.41" class="svg-node-mid"/>
+      <line x1="841.0" y1="632.2" x2="777.5" y2="636.3" class="svg-strut-mid" stroke-width="2.02"/>
+      <circle cx="777.5" cy="636.3" r="3.31" class="svg-node-mid"/>
+      <line x1="899.3" y1="722.8" x2="828.2" y2="715.3" class="svg-strut-mid" stroke-width="2.08"/>
+      <circle cx="828.2" cy="715.3" r="3.41" class="svg-node-mid"/>
+      <line x1="841.0" y1="808.5" x2="777.5" y2="788.2" class="svg-strut-mid" stroke-width="2.02"/>
+      <circle cx="777.5" cy="788.2" r="3.31" class="svg-node-mid"/>
+      <line x1="899.3" y1="904.0" x2="828.2" y2="872.0" class="svg-strut-mid" stroke-width="2.08"/>
+      <circle cx="828.2" cy="872.0" r="3.41" class="svg-node-mid"/>
+      <line x1="841.0" y1="984.9" x2="777.5" y2="940.1" class="svg-strut-mid" stroke-width="2.02"/>
+      <circle cx="777.5" cy="940.1" r="3.31" class="svg-node-mid"/>
+      <line x1="1092.4" y1="44.0" x2="998.4" y2="124.0" class="svg-strut-mid" stroke-width="2.24"/>
+      <circle cx="998.4" cy="124.0" r="3.72" class="svg-node-mid"/>
+      <line x1="1025.0" y1="154.6" x2="938.6" y2="221.7" class="svg-strut-mid" stroke-width="2.19"/>
+      <circle cx="938.6" cy="221.7" r="3.62" class="svg-node-mid"/>
+      <line x1="1025.0" y1="-36.2" x2="938.6" y2="55.4" class="svg-strut-mid" stroke-width="2.19"/>
+      <circle cx="938.6" cy="55.4" r="3.62" class="svg-node-mid"/>
+      <line x1="1092.4" y1="239.6" x2="998.4" y2="295.1" class="svg-strut-mid" stroke-width="2.24"/>
+      <circle cx="998.4" cy="295.1" r="3.72" class="svg-node-mid"/>
+      <line x1="1025.0" y1="345.3" x2="938.6" y2="388.0" class="svg-strut-mid" stroke-width="2.19"/>
+      <circle cx="938.6" cy="388.0" r="3.62" class="svg-node-mid"/>
+      <line x1="1092.4" y1="435.2" x2="998.4" y2="466.3" class="svg-strut-mid" stroke-width="2.24"/>
+      <circle cx="998.4" cy="466.3" r="3.72" class="svg-node-mid"/>
+      <line x1="1025.0" y1="536.1" x2="938.6" y2="554.4" class="svg-strut-mid" stroke-width="2.19"/>
+      <circle cx="938.6" cy="554.4" r="3.62" class="svg-node-mid"/>
+      <line x1="1092.4" y1="630.8" x2="998.4" y2="637.4" class="svg-strut-mid" stroke-width="2.24"/>
+      <circle cx="998.4" cy="637.4" r="3.72" class="svg-node-mid"/>
+      <line x1="1025.0" y1="726.9" x2="938.6" y2="720.7" class="svg-strut-mid" stroke-width="2.19"/>
+      <circle cx="938.6" cy="720.7" r="3.62" class="svg-node-mid"/>
+      <line x1="1092.4" y1="826.4" x2="998.4" y2="808.6" class="svg-strut-mid" stroke-width="2.24"/>
+      <circle cx="998.4" cy="808.6" r="3.72" class="svg-node-mid"/>
+      <line x1="1025.0" y1="917.7" x2="938.6" y2="887.0" class="svg-strut-mid" stroke-width="2.19"/>
+      <circle cx="938.6" cy="887.0" r="3.62" class="svg-node-mid"/>
+      <line x1="1092.4" y1="1021.9" x2="998.4" y2="979.7" class="svg-strut-mid" stroke-width="2.24"/>
+      <circle cx="998.4" cy="979.7" r="3.72" class="svg-node-mid"/>
+      <line x1="1025.0" y1="1108.4" x2="938.6" y2="1053.4" class="svg-strut-mid" stroke-width="2.19"/>
+      <circle cx="938.6" cy="1053.4" r="3.62" class="svg-node-mid"/>
+      <line x1="899.3" y1="1085.1" x2="828.2" y2="1028.8" class="svg-strut-mid" stroke-width="2.08"/>
+      <circle cx="828.2" cy="1028.8" r="3.41" class="svg-node-mid"/>
+      <line x1="1312.6" y1="102.0" x2="1195.6" y2="171.7" class="svg-strut-mid" stroke-width="2.41"/>
+      <circle cx="1195.6" cy="171.7" r="4.04" class="svg-node-mid"/>
+      <line x1="1236.2" y1="218.2" x2="1126.8" y2="275.0" class="svg-strut-mid" stroke-width="2.35"/>
+      <circle cx="1126.8" cy="275.0" r="3.93" class="svg-node-mid"/>
+      <line x1="1236.2" y1="12.9" x2="1126.8" y2="94.2" class="svg-strut-mid" stroke-width="2.35"/>
+      <circle cx="1126.8" cy="94.2" r="3.93" class="svg-node-mid"/>
+      <line x1="1312.6" y1="312.1" x2="1195.6" y2="357.3" class="svg-strut-mid" stroke-width="2.41"/>
+      <circle cx="1195.6" cy="357.3" r="4.04" class="svg-node-mid"/>
+      <line x1="1236.2" y1="423.4" x2="1126.8" y2="455.7" class="svg-strut-mid" stroke-width="2.35"/>
+      <circle cx="1126.8" cy="455.7" r="3.93" class="svg-node-mid"/>
+      <line x1="1312.6" y1="522.1" x2="1195.6" y2="542.9" class="svg-strut-mid" stroke-width="2.41"/>
+      <circle cx="1195.6" cy="542.9" r="4.04" class="svg-node-mid"/>
+      <line x1="1236.2" y1="628.6" x2="1126.8" y2="636.5" class="svg-strut-mid" stroke-width="2.35"/>
+      <circle cx="1126.8" cy="636.5" r="3.93" class="svg-node-mid"/>
+      <line x1="1312.6" y1="732.1" x2="1195.6" y2="728.4" class="svg-strut-mid" stroke-width="2.41"/>
+      <circle cx="1195.6" cy="728.4" r="4.04" class="svg-node-mid"/>
+      <line x1="1236.2" y1="833.8" x2="1126.8" y2="817.2" class="svg-strut-mid" stroke-width="2.35"/>
+      <circle cx="1126.8" cy="817.2" r="3.93" class="svg-node-mid"/>
+    </g>
+    <g>
+      <line x1="482.6" y1="623.1" x2="451.3" y2="687.4" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="482.6" y1="622.3" x2="451.3" y2="686.6" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="451.3" y1="687.4" x2="397.9" y2="677.3" stroke="url(#strutGrad)" stroke-opacity="0.38" stroke-width="3.09" stroke-linecap="round"/>
+      <line x1="451.3" y1="686.6" x2="397.9" y2="676.5" class="svg-highlight" stroke-opacity="0.16" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="397.9" y1="677.3" x2="375.6" y2="612.6" stroke="url(#strutGrad)" stroke-opacity="0.32" stroke-width="2.91" stroke-linecap="round"/>
+      <line x1="397.9" y1="676.5" x2="375.6" y2="611.8" class="svg-highlight" stroke-opacity="0.13" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="375.6" y1="612.6" x2="397.9" y2="553.9" stroke="url(#strutGrad)" stroke-opacity="0.32" stroke-width="2.91" stroke-linecap="round"/>
+      <line x1="375.6" y1="611.8" x2="397.9" y2="553.1" class="svg-highlight" stroke-opacity="0.13" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="397.9" y1="553.9" x2="451.3" y2="554.4" stroke="url(#strutGrad)" stroke-opacity="0.38" stroke-width="3.09" stroke-linecap="round"/>
+      <line x1="397.9" y1="553.1" x2="451.3" y2="553.6" class="svg-highlight" stroke-opacity="0.16" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="451.3" y1="554.4" x2="482.6" y2="623.1" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="451.3" y1="553.6" x2="482.6" y2="622.3" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="482.6" y1="761.0" x2="451.3" y2="820.5" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="482.6" y1="760.2" x2="451.3" y2="819.7" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="451.3" y1="820.5" x2="397.9" y2="800.8" stroke="url(#strutGrad)" stroke-opacity="0.38" stroke-width="3.09" stroke-linecap="round"/>
+      <line x1="451.3" y1="819.7" x2="397.9" y2="800.0" class="svg-highlight" stroke-opacity="0.16" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="397.9" y1="800.8" x2="375.6" y2="731.3" stroke="url(#strutGrad)" stroke-opacity="0.32" stroke-width="2.91" stroke-linecap="round"/>
+      <line x1="397.9" y1="800.0" x2="375.6" y2="730.5" class="svg-highlight" stroke-opacity="0.13" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="375.6" y1="731.3" x2="397.9" y2="677.3" stroke="url(#strutGrad)" stroke-opacity="0.32" stroke-width="2.91" stroke-linecap="round"/>
+      <line x1="375.6" y1="730.5" x2="397.9" y2="676.5" class="svg-highlight" stroke-opacity="0.13" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="451.3" y1="687.4" x2="482.6" y2="761.0" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="451.3" y1="686.6" x2="482.6" y2="760.2" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="482.6" y1="898.9" x2="451.3" y2="953.5" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="482.6" y1="898.1" x2="451.3" y2="952.7" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="451.3" y1="953.5" x2="397.9" y2="924.2" stroke="url(#strutGrad)" stroke-opacity="0.38" stroke-width="3.09" stroke-linecap="round"/>
+      <line x1="451.3" y1="952.7" x2="397.9" y2="923.4" class="svg-highlight" stroke-opacity="0.16" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="397.9" y1="924.2" x2="375.6" y2="849.9" stroke="url(#strutGrad)" stroke-opacity="0.32" stroke-width="2.91" stroke-linecap="round"/>
+      <line x1="397.9" y1="923.4" x2="375.6" y2="849.1" class="svg-highlight" stroke-opacity="0.13" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="375.6" y1="849.9" x2="397.9" y2="800.8" stroke="url(#strutGrad)" stroke-opacity="0.32" stroke-width="2.91" stroke-linecap="round"/>
+      <line x1="375.6" y1="849.1" x2="397.9" y2="800.0" class="svg-highlight" stroke-opacity="0.13" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="451.3" y1="820.5" x2="482.6" y2="898.9" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="451.3" y1="819.7" x2="482.6" y2="898.1" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="594.4" y1="400.0" x2="554.1" y2="479.4" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="594.4" y1="399.2" x2="554.1" y2="478.6" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="554.1" y1="479.4" x2="482.6" y2="485.3" stroke="url(#strutGrad)" stroke-opacity="0.48" stroke-width="3.43" stroke-linecap="round"/>
+      <line x1="554.1" y1="478.6" x2="482.6" y2="484.5" class="svg-highlight" stroke-opacity="0.20" stroke-width="0.76" stroke-linecap="round"/>
+      <line x1="482.6" y1="485.3" x2="451.3" y2="421.3" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="482.6" y1="484.5" x2="451.3" y2="420.5" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="451.3" y1="421.3" x2="482.6" y2="347.4" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="451.3" y1="420.5" x2="482.6" y2="346.6" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="482.6" y1="347.4" x2="554.1" y2="331.9" stroke="url(#strutGrad)" stroke-opacity="0.48" stroke-width="3.43" stroke-linecap="round"/>
+      <line x1="482.6" y1="346.6" x2="554.1" y2="331.1" class="svg-highlight" stroke-opacity="0.20" stroke-width="0.76" stroke-linecap="round"/>
+      <line x1="554.1" y1="331.9" x2="594.4" y2="400.0" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="554.1" y1="331.1" x2="594.4" y2="399.2" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="594.4" y1="552.3" x2="554.1" y2="626.9" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="594.4" y1="551.5" x2="554.1" y2="626.1" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="554.1" y1="626.9" x2="482.6" y2="623.1" stroke="url(#strutGrad)" stroke-opacity="0.48" stroke-width="3.43" stroke-linecap="round"/>
+      <line x1="554.1" y1="626.1" x2="482.6" y2="622.3" class="svg-highlight" stroke-opacity="0.20" stroke-width="0.76" stroke-linecap="round"/>
+      <line x1="451.3" y1="554.4" x2="482.6" y2="485.3" stroke="url(#strutGrad)" stroke-opacity="0.43" stroke-width="3.26" stroke-linecap="round"/>
+      <line x1="451.3" y1="553.6" x2="482.6" y2="484.5" class="svg-highlight" stroke-opacity="0.18" stroke-width="0.72" stroke-linecap="round"/>
+      <line x1="554.1" y1="479.4" x2="594.4" y2="552.3" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="554.1" y1="478.6" x2="594.4" y2="551.5" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="594.4" y1="704.5" x2="554.1" y2="774.4" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="594.4" y1="703.7" x2="554.1" y2="773.6" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="554.1" y1="774.4" x2="482.6" y2="761.0" stroke="url(#strutGrad)" stroke-opacity="0.48" stroke-width="3.43" stroke-linecap="round"/>
+      <line x1="554.1" y1="773.6" x2="482.6" y2="760.2" class="svg-highlight" stroke-opacity="0.20" stroke-width="0.76" stroke-linecap="round"/>
+      <line x1="554.1" y1="626.9" x2="594.4" y2="704.5" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="554.1" y1="626.1" x2="594.4" y2="703.7" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="594.4" y1="856.8" x2="554.1" y2="921.9" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="594.4" y1="856.0" x2="554.1" y2="921.1" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="554.1" y1="921.9" x2="482.6" y2="898.9" stroke="url(#strutGrad)" stroke-opacity="0.48" stroke-width="3.43" stroke-linecap="round"/>
+      <line x1="554.1" y1="921.1" x2="482.6" y2="898.1" class="svg-highlight" stroke-opacity="0.20" stroke-width="0.76" stroke-linecap="round"/>
+      <line x1="554.1" y1="774.4" x2="594.4" y2="856.8" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="554.1" y1="773.6" x2="594.4" y2="856.0" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="733.3" y1="298.0" x2="684.0" y2="387.8" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="733.3" y1="297.2" x2="684.0" y2="387.0" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="684.0" y1="387.8" x2="594.4" y2="400.0" stroke="url(#strutGrad)" stroke-opacity="0.59" stroke-width="3.78" stroke-linecap="round"/>
+      <line x1="684.0" y1="387.0" x2="594.4" y2="399.2" class="svg-highlight" stroke-opacity="0.25" stroke-width="0.83" stroke-linecap="round"/>
+      <line x1="554.1" y1="331.9" x2="594.4" y2="247.7" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="554.1" y1="331.1" x2="594.4" y2="246.9" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="594.4" y1="247.7" x2="684.0" y2="225.9" stroke="url(#strutGrad)" stroke-opacity="0.59" stroke-width="3.78" stroke-linecap="round"/>
+      <line x1="594.4" y1="246.9" x2="684.0" y2="225.1" class="svg-highlight" stroke-opacity="0.25" stroke-width="0.83" stroke-linecap="round"/>
+      <line x1="684.0" y1="225.9" x2="733.3" y2="298.0" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="684.0" y1="225.1" x2="733.3" y2="297.2" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="733.3" y1="464.7" x2="684.0" y2="549.7" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="733.3" y1="463.9" x2="684.0" y2="548.9" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="684.0" y1="549.7" x2="594.4" y2="552.3" stroke="url(#strutGrad)" stroke-opacity="0.59" stroke-width="3.78" stroke-linecap="round"/>
+      <line x1="684.0" y1="548.9" x2="594.4" y2="551.5" class="svg-highlight" stroke-opacity="0.25" stroke-width="0.83" stroke-linecap="round"/>
+      <line x1="684.0" y1="387.8" x2="733.3" y2="464.7" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="684.0" y1="387.0" x2="733.3" y2="463.9" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="733.3" y1="631.4" x2="684.0" y2="711.6" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="733.3" y1="630.6" x2="684.0" y2="710.8" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="684.0" y1="711.6" x2="594.4" y2="704.5" stroke="url(#strutGrad)" stroke-opacity="0.59" stroke-width="3.78" stroke-linecap="round"/>
+      <line x1="684.0" y1="710.8" x2="594.4" y2="703.7" class="svg-highlight" stroke-opacity="0.25" stroke-width="0.83" stroke-linecap="round"/>
+      <line x1="684.0" y1="549.7" x2="733.3" y2="631.4" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="684.0" y1="548.9" x2="733.3" y2="630.6" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="733.3" y1="798.2" x2="684.0" y2="873.5" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="733.3" y1="797.4" x2="684.0" y2="872.7" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="684.0" y1="873.5" x2="594.4" y2="856.8" stroke="url(#strutGrad)" stroke-opacity="0.59" stroke-width="3.78" stroke-linecap="round"/>
+      <line x1="684.0" y1="872.7" x2="594.4" y2="856.0" class="svg-highlight" stroke-opacity="0.25" stroke-width="0.83" stroke-linecap="round"/>
+      <line x1="684.0" y1="711.6" x2="733.3" y2="798.2" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="684.0" y1="710.8" x2="733.3" y2="797.4" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="733.3" y1="964.9" x2="684.0" y2="1035.5" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="733.3" y1="964.1" x2="684.0" y2="1034.7" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="684.0" y1="1035.5" x2="594.4" y2="1009.1" stroke="url(#strutGrad)" stroke-opacity="0.59" stroke-width="3.78" stroke-linecap="round"/>
+      <line x1="684.0" y1="1034.7" x2="594.4" y2="1008.3" class="svg-highlight" stroke-opacity="0.25" stroke-width="0.83" stroke-linecap="round"/>
+      <line x1="594.4" y1="1009.1" x2="554.1" y2="921.9" stroke="url(#strutGrad)" stroke-opacity="0.54" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="594.4" y1="1008.3" x2="554.1" y2="921.1" class="svg-highlight" stroke-opacity="0.23" stroke-width="0.79" stroke-linecap="round"/>
+      <line x1="684.0" y1="873.5" x2="733.3" y2="964.9" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="684.0" y1="872.7" x2="733.3" y2="964.1" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="899.3" y1="-1.8" x2="841.0" y2="103.2" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="899.3" y1="-2.6" x2="841.0" y2="102.4" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="841.0" y1="103.2" x2="733.3" y2="131.3" stroke="url(#strutGrad)" stroke-opacity="0.70" stroke-width="4.13" stroke-linecap="round"/>
+      <line x1="841.0" y1="102.4" x2="733.3" y2="130.5" class="svg-highlight" stroke-opacity="0.30" stroke-width="0.91" stroke-linecap="round"/>
+      <line x1="733.3" y1="131.3" x2="684.0" y2="64.0" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="733.3" y1="130.5" x2="684.0" y2="63.2" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="684.0" y1="64.0" x2="733.3" y2="-35.5" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="684.0" y1="63.2" x2="733.3" y2="-36.3" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="733.3" y1="-35.5" x2="841.0" y2="-73.2" stroke="url(#strutGrad)" stroke-opacity="0.70" stroke-width="4.13" stroke-linecap="round"/>
+      <line x1="733.3" y1="-36.3" x2="841.0" y2="-74.0" class="svg-highlight" stroke-opacity="0.30" stroke-width="0.91" stroke-linecap="round"/>
+      <line x1="841.0" y1="-73.2" x2="899.3" y2="-1.8" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="841.0" y1="-74.0" x2="899.3" y2="-2.6" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="899.3" y1="179.3" x2="841.0" y2="279.5" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="899.3" y1="178.5" x2="841.0" y2="278.7" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="841.0" y1="279.5" x2="733.3" y2="298.0" stroke="url(#strutGrad)" stroke-opacity="0.70" stroke-width="4.13" stroke-linecap="round"/>
+      <line x1="841.0" y1="278.7" x2="733.3" y2="297.2" class="svg-highlight" stroke-opacity="0.30" stroke-width="0.91" stroke-linecap="round"/>
+      <line x1="684.0" y1="225.9" x2="733.3" y2="131.3" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="684.0" y1="225.1" x2="733.3" y2="130.5" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+      <line x1="841.0" y1="103.2" x2="899.3" y2="179.3" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="841.0" y1="102.4" x2="899.3" y2="178.5" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="899.3" y1="360.5" x2="841.0" y2="455.9" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="899.3" y1="359.7" x2="841.0" y2="455.1" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="841.0" y1="455.9" x2="733.3" y2="464.7" stroke="url(#strutGrad)" stroke-opacity="0.70" stroke-width="4.13" stroke-linecap="round"/>
+      <line x1="841.0" y1="455.1" x2="733.3" y2="463.9" class="svg-highlight" stroke-opacity="0.30" stroke-width="0.91" stroke-linecap="round"/>
+      <line x1="841.0" y1="279.5" x2="899.3" y2="360.5" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="841.0" y1="278.7" x2="899.3" y2="359.7" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="899.3" y1="541.6" x2="841.0" y2="632.2" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="899.3" y1="540.8" x2="841.0" y2="631.4" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="841.0" y1="632.2" x2="733.3" y2="631.4" stroke="url(#strutGrad)" stroke-opacity="0.70" stroke-width="4.13" stroke-linecap="round"/>
+      <line x1="841.0" y1="631.4" x2="733.3" y2="630.6" class="svg-highlight" stroke-opacity="0.30" stroke-width="0.91" stroke-linecap="round"/>
+      <line x1="841.0" y1="455.9" x2="899.3" y2="541.6" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="841.0" y1="455.1" x2="899.3" y2="540.8" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="899.3" y1="722.8" x2="841.0" y2="808.5" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="899.3" y1="722.0" x2="841.0" y2="807.7" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="841.0" y1="808.5" x2="733.3" y2="798.2" stroke="url(#strutGrad)" stroke-opacity="0.70" stroke-width="4.13" stroke-linecap="round"/>
+      <line x1="841.0" y1="807.7" x2="733.3" y2="797.4" class="svg-highlight" stroke-opacity="0.30" stroke-width="0.91" stroke-linecap="round"/>
+      <line x1="841.0" y1="632.2" x2="899.3" y2="722.8" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="841.0" y1="631.4" x2="899.3" y2="722.0" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="899.3" y1="904.0" x2="841.0" y2="984.9" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="899.3" y1="903.2" x2="841.0" y2="984.1" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="841.0" y1="984.9" x2="733.3" y2="964.9" stroke="url(#strutGrad)" stroke-opacity="0.70" stroke-width="4.13" stroke-linecap="round"/>
+      <line x1="841.0" y1="984.1" x2="733.3" y2="964.1" class="svg-highlight" stroke-opacity="0.30" stroke-width="0.91" stroke-linecap="round"/>
+      <line x1="841.0" y1="808.5" x2="899.3" y2="904.0" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="841.0" y1="807.7" x2="899.3" y2="903.2" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="1092.4" y1="44.0" x2="1025.0" y2="154.6" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1092.4" y1="43.2" x2="1025.0" y2="153.8" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1025.0" y1="154.6" x2="899.3" y2="179.3" stroke="url(#strutGrad)" stroke-opacity="0.81" stroke-width="4.47" stroke-linecap="round"/>
+      <line x1="1025.0" y1="153.8" x2="899.3" y2="178.5" class="svg-highlight" stroke-opacity="0.34" stroke-width="0.98" stroke-linecap="round"/>
+      <line x1="899.3" y1="-1.8" x2="1025.0" y2="-36.2" stroke="url(#strutGrad)" stroke-opacity="0.81" stroke-width="4.47" stroke-linecap="round"/>
+      <line x1="899.3" y1="-2.6" x2="1025.0" y2="-37.0" class="svg-highlight" stroke-opacity="0.34" stroke-width="0.98" stroke-linecap="round"/>
+      <line x1="1025.0" y1="-36.2" x2="1092.4" y2="44.0" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1025.0" y1="-37.0" x2="1092.4" y2="43.2" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1092.4" y1="239.6" x2="1025.0" y2="345.3" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1092.4" y1="238.8" x2="1025.0" y2="344.5" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1025.0" y1="345.3" x2="899.3" y2="360.5" stroke="url(#strutGrad)" stroke-opacity="0.81" stroke-width="4.47" stroke-linecap="round"/>
+      <line x1="1025.0" y1="344.5" x2="899.3" y2="359.7" class="svg-highlight" stroke-opacity="0.34" stroke-width="0.98" stroke-linecap="round"/>
+      <line x1="1025.0" y1="154.6" x2="1092.4" y2="239.6" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1025.0" y1="153.8" x2="1092.4" y2="238.8" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1092.4" y1="435.2" x2="1025.0" y2="536.1" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1092.4" y1="434.4" x2="1025.0" y2="535.3" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1025.0" y1="536.1" x2="899.3" y2="541.6" stroke="url(#strutGrad)" stroke-opacity="0.81" stroke-width="4.47" stroke-linecap="round"/>
+      <line x1="1025.0" y1="535.3" x2="899.3" y2="540.8" class="svg-highlight" stroke-opacity="0.34" stroke-width="0.98" stroke-linecap="round"/>
+      <line x1="1025.0" y1="345.3" x2="1092.4" y2="435.2" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1025.0" y1="344.5" x2="1092.4" y2="434.4" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1092.4" y1="630.8" x2="1025.0" y2="726.9" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1092.4" y1="630.0" x2="1025.0" y2="726.1" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1025.0" y1="726.9" x2="899.3" y2="722.8" stroke="url(#strutGrad)" stroke-opacity="0.81" stroke-width="4.47" stroke-linecap="round"/>
+      <line x1="1025.0" y1="726.1" x2="899.3" y2="722.0" class="svg-highlight" stroke-opacity="0.34" stroke-width="0.98" stroke-linecap="round"/>
+      <line x1="1025.0" y1="536.1" x2="1092.4" y2="630.8" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1025.0" y1="535.3" x2="1092.4" y2="630.0" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1092.4" y1="826.4" x2="1025.0" y2="917.7" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1092.4" y1="825.6" x2="1025.0" y2="916.9" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1025.0" y1="917.7" x2="899.3" y2="904.0" stroke="url(#strutGrad)" stroke-opacity="0.81" stroke-width="4.47" stroke-linecap="round"/>
+      <line x1="1025.0" y1="916.9" x2="899.3" y2="903.2" class="svg-highlight" stroke-opacity="0.34" stroke-width="0.98" stroke-linecap="round"/>
+      <line x1="1025.0" y1="726.9" x2="1092.4" y2="826.4" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1025.0" y1="726.1" x2="1092.4" y2="825.6" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1092.4" y1="1021.9" x2="1025.0" y2="1108.4" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1092.4" y1="1021.1" x2="1025.0" y2="1107.6" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1025.0" y1="1108.4" x2="899.3" y2="1085.1" stroke="url(#strutGrad)" stroke-opacity="0.81" stroke-width="4.47" stroke-linecap="round"/>
+      <line x1="1025.0" y1="1107.6" x2="899.3" y2="1084.3" class="svg-highlight" stroke-opacity="0.34" stroke-width="0.98" stroke-linecap="round"/>
+      <line x1="899.3" y1="1085.1" x2="841.0" y2="984.9" stroke="url(#strutGrad)" stroke-opacity="0.76" stroke-width="4.30" stroke-linecap="round"/>
+      <line x1="899.3" y1="1084.3" x2="841.0" y2="984.1" class="svg-highlight" stroke-opacity="0.32" stroke-width="0.95" stroke-linecap="round"/>
+      <line x1="1025.0" y1="917.7" x2="1092.4" y2="1021.9" stroke="url(#strutGrad)" stroke-opacity="0.87" stroke-width="4.65" stroke-linecap="round"/>
+      <line x1="1025.0" y1="916.9" x2="1092.4" y2="1021.1" class="svg-highlight" stroke-opacity="0.36" stroke-width="1.02" stroke-linecap="round"/>
+      <line x1="1312.6" y1="102.0" x2="1236.2" y2="218.2" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1312.6" y1="101.2" x2="1236.2" y2="217.4" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="1236.2" y1="218.2" x2="1092.4" y2="239.6" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.82" stroke-linecap="round"/>
+      <line x1="1236.2" y1="217.4" x2="1092.4" y2="238.8" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.06" stroke-linecap="round"/>
+      <line x1="1092.4" y1="44.0" x2="1236.2" y2="12.9" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.82" stroke-linecap="round"/>
+      <line x1="1092.4" y1="43.2" x2="1236.2" y2="12.1" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.06" stroke-linecap="round"/>
+      <line x1="1236.2" y1="12.9" x2="1312.6" y2="102.0" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1236.2" y1="12.1" x2="1312.6" y2="101.2" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="1312.6" y1="312.1" x2="1236.2" y2="423.4" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1312.6" y1="311.3" x2="1236.2" y2="422.6" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="1236.2" y1="423.4" x2="1092.4" y2="435.2" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.82" stroke-linecap="round"/>
+      <line x1="1236.2" y1="422.6" x2="1092.4" y2="434.4" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.06" stroke-linecap="round"/>
+      <line x1="1236.2" y1="218.2" x2="1312.6" y2="312.1" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1236.2" y1="217.4" x2="1312.6" y2="311.3" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="1312.6" y1="522.1" x2="1236.2" y2="628.6" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1312.6" y1="521.3" x2="1236.2" y2="627.8" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="1236.2" y1="628.6" x2="1092.4" y2="630.8" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.82" stroke-linecap="round"/>
+      <line x1="1236.2" y1="627.8" x2="1092.4" y2="630.0" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.06" stroke-linecap="round"/>
+      <line x1="1236.2" y1="423.4" x2="1312.6" y2="522.1" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1236.2" y1="422.6" x2="1312.6" y2="521.3" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="1312.6" y1="732.1" x2="1236.2" y2="833.8" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1312.6" y1="731.3" x2="1236.2" y2="833.0" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="1236.2" y1="833.8" x2="1092.4" y2="826.4" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.82" stroke-linecap="round"/>
+      <line x1="1236.2" y1="833.0" x2="1092.4" y2="825.6" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.06" stroke-linecap="round"/>
+      <line x1="1236.2" y1="628.6" x2="1312.6" y2="732.1" stroke="url(#strutGrad)" stroke-opacity="0.90" stroke-width="4.99" stroke-linecap="round"/>
+      <line x1="1236.2" y1="627.8" x2="1312.6" y2="731.3" class="svg-highlight" stroke-opacity="0.38" stroke-width="1.10" stroke-linecap="round"/>
+      <line x1="554.1" y1="331.9" x2="493.1" y2="306.7" stroke="url(#strutGrad)" stroke-opacity="0.49" stroke-width="3.45" stroke-linecap="round"/>
+      <line x1="554.1" y1="331.1" x2="493.1" y2="305.9" class="svg-highlight" stroke-opacity="0.21" stroke-width="0.76" stroke-linecap="round"/>
+      <line x1="554.1" y1="479.4" x2="486.1" y2="454.6" stroke="url(#strutGrad)" stroke-opacity="0.49" stroke-width="3.44" stroke-linecap="round"/>
+      <line x1="554.1" y1="478.6" x2="486.1" y2="453.8" class="svg-highlight" stroke-opacity="0.20" stroke-width="0.76" stroke-linecap="round"/>
+      <line x1="451.3" y1="554.4" x2="405.5" y2="526.6" stroke="url(#strutGrad)" stroke-opacity="0.38" stroke-width="3.10" stroke-linecap="round"/>
+      <line x1="451.3" y1="553.6" x2="405.5" y2="525.8" class="svg-highlight" stroke-opacity="0.16" stroke-width="0.70" stroke-linecap="round"/>
+      <line x1="733.3" y1="-35.5" x2="681.5" y2="-87.1" stroke="url(#strutGrad)" stroke-opacity="0.65" stroke-width="3.95" stroke-linecap="round"/>
+      <line x1="733.3" y1="-36.3" x2="681.5" y2="-87.9" class="svg-highlight" stroke-opacity="0.27" stroke-width="0.87" stroke-linecap="round"/>
+    </g>
+    <g>
+      <circle cx="482.6" cy="623.1" r="4.74" class="svg-node-fill" fill-opacity="0.46"/>
+      <circle cx="481.4" cy="621.9" r="1.99" class="svg-node-highlight" fill-opacity="0.25"/>
+      <circle cx="451.3" cy="687.4" r="4.57" class="svg-node-fill" fill-opacity="0.42"/>
+      <circle cx="450.2" cy="686.3" r="1.92" class="svg-node-highlight" fill-opacity="0.23"/>
+      <circle cx="397.9" cy="677.3" r="4.24" class="svg-node-fill" fill-opacity="0.35"/>
+      <circle cx="396.8" cy="676.3" r="1.78" class="svg-node-highlight" fill-opacity="0.19"/>
+      <circle cx="375.6" cy="612.6" r="4.08" class="svg-node-fill" fill-opacity="0.31"/>
+      <circle cx="374.6" cy="611.6" r="1.71" class="svg-node-highlight" fill-opacity="0.17"/>
+      <circle cx="397.9" cy="553.9" r="4.24" class="svg-node-fill" fill-opacity="0.35"/>
+      <circle cx="396.8" cy="552.9" r="1.78" class="svg-node-highlight" fill-opacity="0.19"/>
+      <circle cx="451.3" cy="554.4" r="4.57" class="svg-node-fill" fill-opacity="0.42"/>
+      <circle cx="450.2" cy="553.2" r="1.92" class="svg-node-highlight" fill-opacity="0.23"/>
+      <circle cx="482.6" cy="761.0" r="4.74" class="svg-node-fill" fill-opacity="0.46"/>
+      <circle cx="481.4" cy="759.8" r="1.99" class="svg-node-highlight" fill-opacity="0.25"/>
+      <circle cx="451.3" cy="820.5" r="4.57" class="svg-node-fill" fill-opacity="0.42"/>
+      <circle cx="450.2" cy="819.3" r="1.92" class="svg-node-highlight" fill-opacity="0.23"/>
+      <circle cx="397.9" cy="800.8" r="4.24" class="svg-node-fill" fill-opacity="0.35"/>
+      <circle cx="396.8" cy="799.7" r="1.78" class="svg-node-highlight" fill-opacity="0.19"/>
+      <circle cx="375.6" cy="731.3" r="4.08" class="svg-node-fill" fill-opacity="0.31"/>
+      <circle cx="374.6" cy="730.2" r="1.71" class="svg-node-highlight" fill-opacity="0.17"/>
+      <circle cx="482.6" cy="898.9" r="4.74" class="svg-node-fill" fill-opacity="0.46"/>
+      <circle cx="481.4" cy="897.7" r="1.99" class="svg-node-highlight" fill-opacity="0.25"/>
+      <circle cx="451.3" cy="953.5" r="4.57" class="svg-node-fill" fill-opacity="0.42"/>
+      <circle cx="450.2" cy="952.4" r="1.92" class="svg-node-highlight" fill-opacity="0.23"/>
+      <circle cx="397.9" cy="924.2" r="4.24" class="svg-node-fill" fill-opacity="0.35"/>
+      <circle cx="396.8" cy="923.2" r="1.78" class="svg-node-highlight" fill-opacity="0.19"/>
+      <circle cx="375.6" cy="849.9" r="4.08" class="svg-node-fill" fill-opacity="0.31"/>
+      <circle cx="374.6" cy="848.9" r="1.71" class="svg-node-highlight" fill-opacity="0.17"/>
+      <circle cx="594.4" cy="400.0" r="5.23" class="svg-node-fill" fill-opacity="0.57"/>
+      <circle cx="593.1" cy="398.6" r="2.20" class="svg-node-highlight" fill-opacity="0.31"/>
+      <circle cx="554.1" cy="479.4" r="5.07" class="svg-node-fill" fill-opacity="0.53"/>
+      <circle cx="552.9" cy="478.1" r="2.13" class="svg-node-highlight" fill-opacity="0.29"/>
+      <circle cx="482.6" cy="485.3" r="4.74" class="svg-node-fill" fill-opacity="0.46"/>
+      <circle cx="481.4" cy="484.1" r="1.99" class="svg-node-highlight" fill-opacity="0.25"/>
+      <circle cx="451.3" cy="421.3" r="4.57" class="svg-node-fill" fill-opacity="0.42"/>
+      <circle cx="450.2" cy="420.2" r="1.92" class="svg-node-highlight" fill-opacity="0.23"/>
+      <circle cx="482.6" cy="347.4" r="4.74" class="svg-node-fill" fill-opacity="0.46"/>
+      <circle cx="481.4" cy="346.2" r="1.99" class="svg-node-highlight" fill-opacity="0.25"/>
+      <circle cx="554.1" cy="331.9" r="5.07" class="svg-node-fill" fill-opacity="0.53"/>
+      <circle cx="552.9" cy="330.7" r="2.13" class="svg-node-highlight" fill-opacity="0.29"/>
+      <circle cx="594.4" cy="552.3" r="5.23" class="svg-node-fill" fill-opacity="0.57"/>
+      <circle cx="593.1" cy="550.9" r="2.20" class="svg-node-highlight" fill-opacity="0.31"/>
+      <circle cx="554.1" cy="626.9" r="5.07" class="svg-node-fill" fill-opacity="0.53"/>
+      <circle cx="552.9" cy="625.6" r="2.13" class="svg-node-highlight" fill-opacity="0.29"/>
+      <circle cx="594.4" cy="704.5" r="5.23" class="svg-node-fill" fill-opacity="0.57"/>
+      <circle cx="593.1" cy="703.2" r="2.20" class="svg-node-highlight" fill-opacity="0.31"/>
+      <circle cx="554.1" cy="774.4" r="5.07" class="svg-node-fill" fill-opacity="0.53"/>
+      <circle cx="552.9" cy="773.1" r="2.13" class="svg-node-highlight" fill-opacity="0.29"/>
+      <circle cx="594.4" cy="856.8" r="5.23" class="svg-node-fill" fill-opacity="0.57"/>
+      <circle cx="593.1" cy="855.5" r="2.20" class="svg-node-highlight" fill-opacity="0.31"/>
+      <circle cx="554.1" cy="921.9" r="5.07" class="svg-node-fill" fill-opacity="0.53"/>
+      <circle cx="552.9" cy="920.6" r="2.13" class="svg-node-highlight" fill-opacity="0.29"/>
+      <circle cx="733.3" cy="298.0" r="5.73" class="svg-node-fill" fill-opacity="0.68"/>
+      <circle cx="731.9" cy="296.5" r="2.41" class="svg-node-highlight" fill-opacity="0.37"/>
+      <circle cx="684.0" cy="387.8" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="682.6" cy="386.4" r="2.34" class="svg-node-highlight" fill-opacity="0.35"/>
+      <circle cx="594.4" cy="247.7" r="5.23" class="svg-node-fill" fill-opacity="0.57"/>
+      <circle cx="593.1" cy="246.4" r="2.20" class="svg-node-highlight" fill-opacity="0.31"/>
+      <circle cx="684.0" cy="225.9" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="682.6" cy="224.5" r="2.34" class="svg-node-highlight" fill-opacity="0.35"/>
+      <circle cx="733.3" cy="464.7" r="5.73" class="svg-node-fill" fill-opacity="0.68"/>
+      <circle cx="731.9" cy="463.3" r="2.41" class="svg-node-highlight" fill-opacity="0.37"/>
+      <circle cx="684.0" cy="549.7" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="682.6" cy="548.3" r="2.34" class="svg-node-highlight" fill-opacity="0.35"/>
+      <circle cx="733.3" cy="631.4" r="5.73" class="svg-node-fill" fill-opacity="0.68"/>
+      <circle cx="731.9" cy="630.0" r="2.41" class="svg-node-highlight" fill-opacity="0.37"/>
+      <circle cx="684.0" cy="711.6" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="682.6" cy="710.2" r="2.34" class="svg-node-highlight" fill-opacity="0.35"/>
+      <circle cx="733.3" cy="798.2" r="5.73" class="svg-node-fill" fill-opacity="0.68"/>
+      <circle cx="731.9" cy="796.7" r="2.41" class="svg-node-highlight" fill-opacity="0.37"/>
+      <circle cx="684.0" cy="873.5" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="682.6" cy="872.1" r="2.34" class="svg-node-highlight" fill-opacity="0.35"/>
+      <circle cx="733.3" cy="964.9" r="5.73" class="svg-node-fill" fill-opacity="0.68"/>
+      <circle cx="731.9" cy="963.4" r="2.41" class="svg-node-highlight" fill-opacity="0.37"/>
+      <circle cx="684.0" cy="1035.5" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="682.6" cy="1034.1" r="2.34" class="svg-node-highlight" fill-opacity="0.35"/>
+      <circle cx="594.4" cy="1009.1" r="5.23" class="svg-node-fill" fill-opacity="0.57"/>
+      <circle cx="593.1" cy="1007.8" r="2.20" class="svg-node-highlight" fill-opacity="0.31"/>
+      <circle cx="899.3" cy="-1.8" r="6.23" class="svg-node-fill" fill-opacity="0.79"/>
+      <circle cx="897.8" cy="-3.4" r="2.61" class="svg-node-highlight" fill-opacity="0.44"/>
+      <circle cx="841.0" cy="103.2" r="6.06" class="svg-node-fill" fill-opacity="0.76"/>
+      <circle cx="839.5" cy="101.7" r="2.55" class="svg-node-highlight" fill-opacity="0.42"/>
+      <circle cx="733.3" cy="131.3" r="5.73" class="svg-node-fill" fill-opacity="0.68"/>
+      <circle cx="731.9" cy="129.8" r="2.41" class="svg-node-highlight" fill-opacity="0.37"/>
+      <circle cx="684.0" cy="64.0" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="682.6" cy="62.6" r="2.34" class="svg-node-highlight" fill-opacity="0.35"/>
+      <circle cx="733.3" cy="-35.5" r="5.73" class="svg-node-fill" fill-opacity="0.68"/>
+      <circle cx="731.9" cy="-36.9" r="2.41" class="svg-node-highlight" fill-opacity="0.37"/>
+      <circle cx="841.0" cy="-73.2" r="6.06" class="svg-node-fill" fill-opacity="0.76"/>
+      <circle cx="839.5" cy="-74.7" r="2.55" class="svg-node-highlight" fill-opacity="0.42"/>
+      <circle cx="899.3" cy="179.3" r="6.23" class="svg-node-fill" fill-opacity="0.79"/>
+      <circle cx="897.8" cy="177.8" r="2.61" class="svg-node-highlight" fill-opacity="0.44"/>
+      <circle cx="841.0" cy="279.5" r="6.06" class="svg-node-fill" fill-opacity="0.76"/>
+      <circle cx="839.5" cy="278.0" r="2.55" class="svg-node-highlight" fill-opacity="0.42"/>
+      <circle cx="899.3" cy="360.5" r="6.23" class="svg-node-fill" fill-opacity="0.79"/>
+      <circle cx="897.8" cy="358.9" r="2.61" class="svg-node-highlight" fill-opacity="0.44"/>
+      <circle cx="841.0" cy="455.9" r="6.06" class="svg-node-fill" fill-opacity="0.76"/>
+      <circle cx="839.5" cy="454.3" r="2.55" class="svg-node-highlight" fill-opacity="0.42"/>
+      <circle cx="899.3" cy="541.6" r="6.23" class="svg-node-fill" fill-opacity="0.79"/>
+      <circle cx="897.8" cy="540.1" r="2.61" class="svg-node-highlight" fill-opacity="0.44"/>
+      <circle cx="841.0" cy="632.2" r="6.06" class="svg-node-fill" fill-opacity="0.76"/>
+      <circle cx="839.5" cy="630.7" r="2.55" class="svg-node-highlight" fill-opacity="0.42"/>
+      <circle cx="899.3" cy="722.8" r="6.23" class="svg-node-fill" fill-opacity="0.79"/>
+      <circle cx="897.8" cy="721.2" r="2.61" class="svg-node-highlight" fill-opacity="0.44"/>
+      <circle cx="841.0" cy="808.5" r="6.06" class="svg-node-fill" fill-opacity="0.76"/>
+      <circle cx="839.5" cy="807.0" r="2.55" class="svg-node-highlight" fill-opacity="0.42"/>
+      <circle cx="899.3" cy="904.0" r="6.23" class="svg-node-fill" fill-opacity="0.79"/>
+      <circle cx="897.8" cy="902.4" r="2.61" class="svg-node-highlight" fill-opacity="0.44"/>
+      <circle cx="841.0" cy="984.9" r="6.06" class="svg-node-fill" fill-opacity="0.76"/>
+      <circle cx="839.5" cy="983.4" r="2.55" class="svg-node-highlight" fill-opacity="0.42"/>
+      <circle cx="1092.4" cy="44.0" r="6.72" class="svg-node-fill" fill-opacity="0.90"/>
+      <circle cx="1090.7" cy="42.3" r="2.82" class="svg-node-highlight" fill-opacity="0.50"/>
+      <circle cx="1025.0" cy="154.6" r="6.56" class="svg-node-fill" fill-opacity="0.87"/>
+      <circle cx="1023.4" cy="152.9" r="2.75" class="svg-node-highlight" fill-opacity="0.48"/>
+      <circle cx="1025.0" cy="-36.2" r="6.56" class="svg-node-fill" fill-opacity="0.87"/>
+      <circle cx="1023.4" cy="-37.9" r="2.75" class="svg-node-highlight" fill-opacity="0.48"/>
+      <circle cx="1092.4" cy="239.6" r="6.72" class="svg-node-fill" fill-opacity="0.90"/>
+      <circle cx="1090.7" cy="237.9" r="2.82" class="svg-node-highlight" fill-opacity="0.50"/>
+      <circle cx="1025.0" cy="345.3" r="6.56" class="svg-node-fill" fill-opacity="0.87"/>
+      <circle cx="1023.4" cy="343.7" r="2.75" class="svg-node-highlight" fill-opacity="0.48"/>
+      <circle cx="1092.4" cy="435.2" r="6.72" class="svg-node-fill" fill-opacity="0.90"/>
+      <circle cx="1090.7" cy="433.5" r="2.82" class="svg-node-highlight" fill-opacity="0.50"/>
+      <circle cx="1025.0" cy="536.1" r="6.56" class="svg-node-fill" fill-opacity="0.87"/>
+      <circle cx="1023.4" cy="534.5" r="2.75" class="svg-node-highlight" fill-opacity="0.48"/>
+      <circle cx="1092.4" cy="630.8" r="6.72" class="svg-node-fill" fill-opacity="0.90"/>
+      <circle cx="1090.7" cy="629.1" r="2.82" class="svg-node-highlight" fill-opacity="0.50"/>
+      <circle cx="1025.0" cy="726.9" r="6.56" class="svg-node-fill" fill-opacity="0.87"/>
+      <circle cx="1023.4" cy="725.2" r="2.75" class="svg-node-highlight" fill-opacity="0.48"/>
+      <circle cx="1092.4" cy="826.4" r="6.72" class="svg-node-fill" fill-opacity="0.90"/>
+      <circle cx="1090.7" cy="824.7" r="2.82" class="svg-node-highlight" fill-opacity="0.50"/>
+      <circle cx="1025.0" cy="917.7" r="6.56" class="svg-node-fill" fill-opacity="0.87"/>
+      <circle cx="1023.4" cy="916.0" r="2.75" class="svg-node-highlight" fill-opacity="0.48"/>
+      <circle cx="1092.4" cy="1021.9" r="6.72" class="svg-node-fill" fill-opacity="0.90"/>
+      <circle cx="1090.7" cy="1020.3" r="2.82" class="svg-node-highlight" fill-opacity="0.50"/>
+      <circle cx="1025.0" cy="1108.4" r="6.56" class="svg-node-fill" fill-opacity="0.87"/>
+      <circle cx="1023.4" cy="1106.8" r="2.75" class="svg-node-highlight" fill-opacity="0.48"/>
+      <circle cx="899.3" cy="1085.1" r="6.23" class="svg-node-fill" fill-opacity="0.79"/>
+      <circle cx="897.8" cy="1083.5" r="2.61" class="svg-node-highlight" fill-opacity="0.44"/>
+      <circle cx="1312.6" cy="102.0" r="7.22" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1310.8" cy="100.2" r="3.03" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1236.2" cy="218.2" r="7.05" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1234.4" cy="216.4" r="2.96" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1236.2" cy="12.9" r="7.05" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1234.4" cy="11.2" r="2.96" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1312.6" cy="312.1" r="7.22" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1310.8" cy="310.3" r="3.03" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1236.2" cy="423.4" r="7.05" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1234.4" cy="421.6" r="2.96" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1312.6" cy="522.1" r="7.22" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1310.8" cy="520.3" r="3.03" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1236.2" cy="628.6" r="7.05" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1234.4" cy="626.8" r="2.96" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1312.6" cy="732.1" r="7.22" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1310.8" cy="730.3" r="3.03" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="1236.2" cy="833.8" r="7.05" class="svg-node-fill" fill-opacity="0.92"/>
+      <circle cx="1234.4" cy="832.0" r="2.96" class="svg-node-highlight" fill-opacity="0.51"/>
+      <circle cx="493.1" cy="306.7" r="4.79" class="svg-node-fill" fill-opacity="0.47"/>
+      <circle cx="491.9" cy="305.5" r="2.01" class="svg-node-highlight" fill-opacity="0.26"/>
+      <circle cx="486.1" cy="454.6" r="4.76" class="svg-node-fill" fill-opacity="0.46"/>
+      <circle cx="484.9" cy="453.4" r="2.00" class="svg-node-highlight" fill-opacity="0.25"/>
+      <circle cx="405.5" cy="526.6" r="4.29" class="svg-node-fill" fill-opacity="0.36"/>
+      <circle cx="404.4" cy="525.5" r="1.80" class="svg-node-highlight" fill-opacity="0.20"/>
+      <circle cx="681.5" cy="-87.1" r="5.56" class="svg-node-fill" fill-opacity="0.64"/>
+      <circle cx="680.1" cy="-88.5" r="2.33" class="svg-node-highlight" fill-opacity="0.35"/>
+    </g>
+    <g class="lime-glow-layer">
+      <g class="twinkle-1">
+        <circle cx="733.3" cy="631.4" r="36.0" fill="url(#nodeGlowStrong)" opacity="0.67"/>
+        <ellipse cx="733.3" cy="631.4" rx="64.6" ry="3.3" fill="url(#flareH)" opacity="0.57"/>
+        <circle cx="733.3" cy="631.4" r="3.1" class="svg-glow-core" opacity="0.88"/>
+      </g>
+      <g class="twinkle-3">
+        <circle cx="733.3" cy="298.0" r="32.9" fill="url(#nodeGlowStrong)" opacity="0.61"/>
+        <ellipse cx="733.3" cy="298.0" rx="59.1" ry="3.0" fill="url(#flareH)" opacity="0.52"/>
+        <circle cx="733.3" cy="298.0" r="2.9" class="svg-glow-core" opacity="0.88"/>
+      </g>
+      <g class="twinkle-2">
+        <circle cx="899.3" cy="360.5" r="45.3" fill="url(#nodeGlowStrong)" opacity="0.78"/>
+        <ellipse cx="899.3" cy="360.5" rx="81.3" ry="4.2" fill="url(#flareH)" opacity="0.66"/>
+        <circle cx="899.3" cy="360.5" r="3.9" class="svg-glow-core" opacity="0.88"/>
+      </g>
+      <g class="twinkle-4">
+        <circle cx="899.3" cy="541.6" r="43.0" fill="url(#nodeGlowStrong)" opacity="0.74"/>
+        <ellipse cx="899.3" cy="541.6" rx="77.0" ry="4.0" fill="url(#flareH)" opacity="0.63"/>
+        <circle cx="899.3" cy="541.6" r="3.7" class="svg-glow-core" opacity="0.88"/>
+      </g>
+      <g class="twinkle-2">
+        <circle cx="684.0" cy="873.5" r="33.3" fill="url(#nodeGlowStrong)" opacity="0.64"/>
+        <ellipse cx="684.0" cy="873.5" rx="59.7" ry="3.1" fill="url(#flareH)" opacity="0.55"/>
+        <circle cx="684.0" cy="873.5" r="2.9" class="svg-glow-core" opacity="0.88"/>
+      </g>
+      <g class="twinkle-1">
+        <circle cx="733.3" cy="631.4" r="29.9" fill="url(#nodeGlowStrong)" opacity="0.56"/>
+        <ellipse cx="733.3" cy="631.4" rx="53.6" ry="2.8" fill="url(#flareH)" opacity="0.48"/>
+        <circle cx="733.3" cy="631.4" r="2.6" class="svg-glow-core" opacity="0.88"/>
+      </g>
+      <g class="twinkle-4">
+        <circle cx="1025.0" cy="345.3" r="36.2" fill="url(#nodeGlowStrong)" opacity="0.59"/>
+        <ellipse cx="1025.0" cy="345.3" rx="64.9" ry="3.3" fill="url(#flareH)" opacity="0.50"/>
+        <circle cx="1025.0" cy="345.3" r="3.1" class="svg-glow-core" opacity="0.88"/>
+      </g>
+      <g class="twinkle-3">
+        <circle cx="1025.0" cy="726.9" r="34.2" fill="url(#nodeGlowStrong)" opacity="0.56"/>
+        <ellipse cx="1025.0" cy="726.9" rx="61.3" ry="3.2" fill="url(#flareH)" opacity="0.48"/>
+        <circle cx="1025.0" cy="726.9" r="3.0" class="svg-glow-core" opacity="0.88"/>
+      </g>
+    </g>
+  </g>
+</svg>         
+
+                <div id="hero-logo-anchor" class="hero-logo-placeholder"></div>
             </div>
         </section>
 
-        <!-- Section À propos -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="about.title">À propos de moi</h2>
-                <div class="about-content">
-                    <div class="about-image" tabindex="0" aria-label="Photo de profil - apercu">
-                        <picture>
-                            <source type="image/webp" srcset="Public/img/profile-480.webp 480w, Public/img/profile-900.webp 900w, Public/img/profile-1600.webp 1600w" sizes="(max-width:600px) 80vw, (max-width:1200px) 40vw, 350px" />
-                            <img src="Public/img/profile-900.webp" alt="Photo de profil Ludovic" loading="lazy" decoding="async" width="350" height="350" />
-                        </picture>
+        <section class="section" id="competences">
+            <h2 class="section-title" data-i18n="skills.title">Compétences clés</h2>
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-card-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-11-4 14"/></svg>
+                        </span>
+                        <div>
+                            <h3 data-i18n="skills.frontend.title">Front-end</h3>
+                            <p data-i18n="skills.frontend.description">Interfaces et intégration</p>
+                        </div>
                     </div>
-                    <div class="about-text">
-                        <h3 data-i18n="about.subtitle">Passionné par le développement web</h3>
-                        <p data-i18n="about.intro">
-                            Développeur web full stack en formation, je suis spécialisé dans la création 
-                            d'applications web modernes et responsives. Mon approche combine créativité, 
-                            rigueur technique et attention aux détails.
+                    <div class="tech-stack-badges">
+                        <span class="tech-badge-hero">HTML5</span>
+                        <span class="tech-badge-hero">CSS3</span>
+                        <span class="tech-badge-hero">JavaScript</span>
+                        <span class="tech-badge-hero">Svelte</span>
+                    </div>
+                </article>
+                <article class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-card-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1"/><rect x="3" y="13" width="18" height="7" rx="1"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></svg>
+                        </span>
+                        <div>
+                            <h3 data-i18n="skills.backend.title">Back-end &amp; données</h3>
+                            <p data-i18n="skills.backend.description">Services et bases de données</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack-badges">
+                        <span class="tech-badge-hero">Node.js</span>
+                        <span class="tech-badge-hero">PostgreSQL</span>
+                    </div>
+                </article>
+                <article class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-card-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a5 5 0 0 0-6.4 6.4l-5 5a2.1 2.1 0 0 0 3 3l5-5a5 5 0 0 0 6.4-6.4l-3.1 3.1-3.5-3.5z"/></svg>
+                        </span>
+                        <div>
+                            <h3 data-i18n="skills.tools.title">Outils</h3>
+                            <p data-i18n="skills.tools.description">Documentation et collaboration</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack-badges">
+                        <span class="tech-badge-hero">Markdown</span>
+                        <span class="tech-badge-hero">GitHub</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section projects-section" id="projets">
+            <h2 class="section-title" data-i18n="projects.title">Mes réalisations</h2>
+            <div class="projects-intro">
+                <p class="projects-subtitle" data-i18n="projects.subtitle">Survolez un aperçu pour lancer la démo animée • Cliquez sur la flèche pour découvrir la stack technique.</p>
+                <div class="filter-header-row">
+                    <div class="filter-bar" role="group" aria-label="Filtrer les projets par catégorie" data-i18n-aria="projects.filters">
+                        <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true" data-i18n="projects.filter.all">Tous</button>
+                        <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false" data-i18n="projects.filter.fullstack">Full Stack</button>
+                        <button class="filter-btn" type="button" data-filter="landing" aria-pressed="false" data-i18n="projects.filter.landing">Landing Page</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-grid projects-grid">
+                <article class="project-card" data-category="landing">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="media-container">
+                                <video class="project-video" src="./Public/video/sitev2.mp4" poster="./Public/img/site-v2.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="hover-badge" data-i18n="projects.demoHover">▶ Démo / appuyer pour lancer</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title-group">
+                                    <span class="card-category" data-i18n="projects.category.landing">Landing Page</span>
+                                    <h3>Portfolio V2</h3>
+                                </div>
+                                <button class="flip-btn" type="button" aria-label="Voir les détails du Portfolio V2" data-i18n-aria="projects.details.open.portfolioV2" aria-expanded="false" aria-controls="portfolio-v2-details">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-back" id="portfolio-v2-details" aria-hidden="true" inert>
+                            <div>
+                                <div class="back-header">
+                                    <h3>Portfolio V2</h3>
+                                    <button class="flip-btn" type="button" aria-label="Revenir à l’aperçu du Portfolio V2" data-i18n-aria="projects.details.close.portfolioV2" aria-expanded="false" aria-controls="portfolio-v2-details">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                            <polyline points="9 14 4 9 9 4"></polyline>
+                                            <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <p class="project-summary" data-i18n="projects.summary.portfolioV2">Conception et réalisation d’un portfolio responsive, bilingue et animé, avec des cartes de projets interactives.</p>
+                                <div class="stack-section">
+                                    <h4 data-i18n="projects.stack">Stack technique</h4>
+                                    <div class="tech-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="fullstack">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="media-container">
+                                <video class="project-video" src="./Public/video/lespresentsdangel.mp4" poster="./Public/img/lespresentsdangel-poster.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="hover-badge" data-i18n="projects.demoHover">▶ Démo au survol</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title-group"><span class="card-category" data-i18n="projects.category.fullstack">Full Stack</span><h3>Les Présents d'Ange'L</h3></div>
+                                <button class="flip-btn" type="button" aria-label="Voir les détails des Présents d'Ange'L" data-i18n-aria="projects.details.open.presents" aria-expanded="false" aria-controls="presents-details">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-back" id="presents-details" aria-hidden="true" inert>
+                            <div>
+                                <div class="back-header">
+                                    <h3>Les Présents d'Ange'L</h3>
+                                    <button class="flip-btn" type="button" aria-label="Revenir à l'aperçu des Présents d'Ange'L" data-i18n-aria="projects.details.close.presents" aria-expanded="false" aria-controls="presents-details">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+                                    </button>
+                                </div>
+                                <p class="project-summary" data-i18n="projects.summary.presents">Création d'un site e-commerce avec un dashboard complet pour la gestion du site.</p>
+                                <div class="stack-section"><h4 data-i18n="projects.stack">Stack technique</h4><div class="tech-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>Sequelize</span><span>PostgreSQL</span><span>JWT</span><span>Sharp</span><span>Multer</span><span>API Mondial Relay</span></div></div>
+                            </div>
+                            <div class="project-links"><a class="btn-live" href="https://lespresentsdangel.fr/" target="_blank" rel="noopener noreferrer" data-i18n="projects.visit">Visiter le site</a></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="landing">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="media-container">
+                                <video class="project-video" src="./Public/video/landingperso.mp4" poster="./Public/img/landing-page-poster.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="hover-badge" data-i18n="projects.demoHover">▶ Démo au survol</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title-group"><span class="card-category" data-i18n="projects.category.landing">Landing Page</span><h3>Portfolio Moderne</h3></div>
+                                <button class="flip-btn" type="button" aria-label="Voir les détails du portfolio" data-i18n-aria="projects.details.open.portfolio" aria-expanded="false" aria-controls="portfolio-details">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-back" id="portfolio-details" aria-hidden="true" inert>
+                            <div>
+                                <div class="back-header">
+                                    <h3>Portfolio Moderne</h3>
+                                    <button class="flip-btn" type="button" aria-label="Revenir à l'aperçu du portfolio" data-i18n-aria="projects.details.close.portfolio" aria-expanded="false" aria-controls="portfolio-details">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+                                    </button>
+                                </div>
+                                <p class="project-summary" data-i18n="projects.summary.portfolio">Site portfolio responsive avec animations fluides et design moderne.</p>
+                                <div class="stack-section"><h4 data-i18n="projects.stack">Stack technique</h4><div class="tech-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="fullstack">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="media-container">
+                                <video class="project-video" src="./Public/video/cinedelices.mp4" poster="./Public/img/cinedelice-poster.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="hover-badge" data-i18n="projects.demoHover">▶ Démo au survol</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title-group"><span class="card-category" data-i18n="projects.category.fullstack">Full Stack</span><h3>Cinedelices</h3></div>
+                                <button class="flip-btn" type="button" aria-label="Voir les détails de Cinedelices" data-i18n-aria="projects.details.open.cinedelices" aria-expanded="false" aria-controls="cinedelices-details">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-back" id="cinedelices-details" aria-hidden="true" inert>
+                            <div>
+                                <div class="back-header">
+                                    <h3>Cinedelices</h3>
+                                    <button class="flip-btn" type="button" aria-label="Revenir à l'aperçu de Cinedelices" data-i18n-aria="projects.details.close.cinedelices" aria-expanded="false" aria-controls="cinedelices-details">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+                                    </button>
+                                </div>
+                                <p class="project-summary" data-i18n="projects.summary.cinedelices">Structure monolithique en Node.js avec authentification JWT et documentation.</p>
+                                <div class="stack-section"><h4 data-i18n="projects.stack">Stack technique</h4><div class="tech-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>Sequelize</span><span>PostgreSQL</span><span>JWT</span><span>Sharp</span><span>Multer</span></div></div>
+                            </div>
+                            <div class="project-links"><a class="btn-live" href="https://cinedelices.com/" target="_blank" rel="noopener noreferrer" data-i18n="projects.visit">Visiter le site</a></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2 class="section-title" data-i18n="contact.title">Contactez-moi</h2>
+            <div class="contact-vertical-container">
+                <div class="contact-intro">
+                    <div class="contact-info-card">
+                        <p class="contact-info-intro">
+                            <span data-i18n="contact.intro">N'hésitez pas à me contacter pour discuter de vos projets, d'opportunités de stage ou simplement pour échanger.</span>
                         </p>
-                        <p data-i18n="about.text2">
-                            Avec une base solide du front-end et du back-end, je transforme des idées 
-                            en solutions digitales performantes et intuitives.
-                        </p>
-                        
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <span class="stat-number" id="projects-count" data-target="12">0</span>
-                                <span class="stat-label" data-i18n="about.detail1.title">Projets réalisés</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="8">0</span>
-                                <span class="stat-label" data-i18n="about.detail3.title">Technologies</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="100" data-suffix="%">0</span>
-                                <span class="stat-label" data-i18n="about.detail2.title">Engagement</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="morph-contact-wrapper">
+        <div class="morph-box" id="morph-contact-box">
+            
+            <!-- État 1 : Bouton Morph -->
+            <button type="button" class="morph-step morph-trigger active" id="morph-step-btn" aria-labelledby="contact-open-label" aria-controls="morph-step-form" aria-expanded="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span id="contact-open-label" data-i18n="contact.open">Me contacter</span>
+            </button>
 
-        <!-- Section Compétences -->
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="skills.title">Mes Compétences</h2>
-                <p class="section-subtitle" data-i18n="skills.subtitle">Technologies et outils</p>
-                
-                <div class="skills-grid">
-                    <!-- Front-end -->
-                    <div class="skill-category">
-                        <h3 data-i18n="skills.frontend">Front-end</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <img src="Public/img/icones/html-5-svgrepo-com.svg" alt="HTML5" title="HTML5" loading="lazy" width="48" height="48" />
-                                
-                            </div>
-                            <div class="skill-item">
-                                <img src="Public/img/icones/css-svgrepo-com.svg" alt="CSS3" title="CSS3" loading="lazy" width="48" height="48" />
-                                
-                            </div>
-                            <div class="skill-item">
-                                <img src="Public/img/icones/js-svgrepo-com.svg" alt="JavaScript" title="JavaScript" loading="lazy" width="48" height="48" />
-                                
-                            </div>
-                            <div class="skill-item">
-                                <img src="Public/img/icones/svelte-icon-svgrepo-com.svg" alt="Svelte" title="Svelte" loading="lazy" width="48" height="48" />
-                                
-                            </div>
-                        </div>
+            <!-- État 2 : Carte Formulaire -->
+            <div class="morph-step" id="morph-step-form" aria-hidden="true" inert>
+                <div class="morph-form-header">
+                    <div class="morph-form-title">
+                        <img src="./Public/img/logo-128.webp" width="48" height="48" alt="">
+                        <span id="contact-form-title" data-i18n="contact.form.title">Envoyer un message</span>
                     </div>
+                    <button type="button" class="morph-close-btn" id="morph-close-x" aria-label="Fermer le formulaire" data-i18n-aria="contact.close.aria">✕</button>
+                </div>
 
-                    <!-- Back-end -->
-                    <div class="skill-category">
-                        <h3 data-i18n="skills.backend">Back-end</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <img src="Public/img/icones/nodejs-svgrepo-com.svg" alt="Node.js" title="Node.js" loading="lazy" width="48" height="48" />
-                                
-                            </div>
-                            <div class="skill-item">
-                                <img src="Public/img/icones/postgresql-logo-svgrepo-com.svg" alt="PostgreSQL" title="PostgreSQL" loading="lazy" width="48" height="48" />
-                                
-                            </div>
-                        </div>
+                <form class="contact-form-vertical" id="morph-contact-form" action="https://formspree.io/f/mkonbwlv" method="POST" aria-labelledby="contact-form-title">
+                    <input type="text" name="_gotcha" class="contact-form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div class="contact-form-field">
+                        <label class="contact-field-label" for="contact-name" data-i18n="contact.name.label">Nom complet</label>
+                        <input id="contact-name" type="text" name="name" class="form-input-wire" placeholder="Votre nom complet" data-i18n-placeholder="contact.name.placeholder" aria-label="Votre nom complet" data-i18n-aria="contact.name.placeholder" autocomplete="name" maxlength="100" required>
                     </div>
-
-                    <!-- Outils -->
-                    <div class="skill-category">
-                        <h3 data-i18n="skills.tools">Outils & Autres</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <img class="Markdown" src="Public/img/icones/markdown-svgrepo-com.svg" alt="Markdown" title="Markdown" loading="lazy" width="48" height="48" />
-                            </div>    
-                            <div class="skill-item">
-                                <img class="github" src="Public/img/icones/github.svg" alt="GitHub" title="GitHub" loading="lazy" width="48" height="48" />
-                                
-                            </div>
-                        </div>
+                    <div class="contact-form-field">
+                        <label class="contact-field-label" for="contact-email" data-i18n="contact.email.label">Adresse e-mail</label>
+                        <input id="contact-email" type="email" name="email" class="form-input-wire" placeholder="Votre adresse e-mail" data-i18n-placeholder="contact.email.placeholder" aria-label="Votre adresse e-mail" data-i18n-aria="contact.email.placeholder" autocomplete="email" maxlength="254" required>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Projets -->
-        <section id="projets" class="projects-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="projects.title">Mes Projets</h2>
-                <p class="section-subtitle" data-i18n="projects.subtitle">Découvrez mes réalisations récentes</p>
-                
-                <!-- Filtres -->
-                <div class="projects-filters">
-                    <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">Tous</button>
-                    <button class="filter-btn" data-filter="fullstack" data-i18n="projects.filter.fullstack">Full Stack</button>
-                    <!-- <button class="filter-btn" data-filter="frontend" data-i18n="projects.filter.frontend">Front-End</button> -->
-                    <!-- <button class="filter-btn" data-filter="backend" data-i18n="projects.filter.backend">Back-End</button> -->
-                    <button class="filter-btn" data-filter="landing" data-i18n="projects.filter.landing">Landing Page</button>
-                </div>
-                
-                <div class="projects-grid">
-                    <!-- Projet 4 -->
-                    <article class="project-card" data-type="fullstack">
-                        <div class="project-image">
-                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
-                                <source src="Public/video/devndumber.mp4" type="video/mp4">
-                            </video>
-                            <picture>
-                                <source type="image/webp" srcset="Public/img/devndumber2.webp" />
-                                <img src="Public/img/devndumber2.webp" data-i18n-alt="project4.alt" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
-                            </picture>
-                            <div class="project-overlay">
-                                <a href="https://www.devndumber.fr" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="in-progress" data-i18n="project4.title">Projet en cours</h3>
-                            <p data-i18n="project4.description">Création du site DevNDumber.</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Express</span>
-
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projet 3 -->
-                    <article class="project-card" data-type="fullstack">
-                        <div class="project-image">
-                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
-                                <source src="Public/video/lespresentsdangel.mp4" type="video/mp4">
-                            </video>
-                            <picture>
-                                <source type="image/webp" srcset="Public/img/lespresentsdangel.webp" />
-                                <img src="Public/img/lespresentsdangel.webp" data-i18n-alt="project3.alt" alt="Projet en cours" loading="lazy" decoding="async" width="400" height="250" />
-                            </picture>
-                            <div class="project-overlay">
-                                <a href="https://lespresentsdangel.fr/" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 data-i18n="project3.title">Les Présents d'Ange'L</h3>
-                            <p data-i18n="project3.description">Création d'un site e-commerce avec un dashboard complet pour la gestion du site.</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Express</span>
-                                <span class="tag">Sequelize</span>
-                                <span class="tag">PostgreSQL</span>
-                                <span class="tag">JWT</span>
-                                <span class="tag">Sharp</span>
-                                <span class="tag">Multer</span>
-                                <span class="tag">API Mondial Relay</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projet 2 -->
-                    <article class="project-card" data-type="landing">
-                        <div class="project-image">
-                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
-                                <source src="Public/video/landingperso.mp4" type="video/mp4">
-                            </video>
-                            <picture>
-                                <source type="image/webp" srcset="Public/img/landing-page.webp" />
-                                <img src="Public/img/landing-page.webp" data-i18n-alt="project2.alt" alt="Portfolio" loading="lazy" decoding="async" width="400" height="250" />
-                            </picture>
-                            <!-- <div class="project-overlay">
-                                <a href="https://trichereauludovic.github.io/" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
-                            </div> -->
-                        </div>
-                        <div class="project-content">
-                            <h3 data-i18n="project2.title">Portfolio Moderne</h3>
-                            <p data-i18n="project2.description">Site portfolio responsive avec animations fluides et design moderne.</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projet 1  -->
-                    <article class="project-card" data-type="fullstack">
-                        <div class="project-image">
-                            <video class="project-video" muted playsinline preload="none" loop loading="lazy">
-                                <source src="Public/video/cinedelices.mp4" type="video/mp4">
-                            </video>
-                            <picture>
-                                <source type="image/webp" srcset="Public/img/cinedelice.webp" />
-                                <img src="Public/img/cinedelice.webp" data-i18n-alt="project1.alt" alt="Projet fin de formation" loading="lazy" decoding="async" width="400" height="250" />
-                            </picture>
-                            <div class="project-overlay">
-                                <a href="https://cinedelices.com/" target="_blank" rel="noopener noreferrer" class="btn-project btn-visit" data-i18n="projects.btn.visit">Visiter le site</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 data-i18n="project1.title">Cinedelices</h3>
-                            <p data-i18n="project1.description">Structure monolithique en node.js avec authentification JWT et documentations.</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Express</span>
-                                <span class="tag">Sequelize</span>
-                                <span class="tag">PostgreSQL</span>
-                                <span class="tag">JWT</span>
-                                <span class="tag">Sharp</span>
-                                <span class="tag">Multer</span>
-                            </div>
-                        </div>
-                    </article>
-
-
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Startup -->
-        <section id="startup" class="startup-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="startup.title">Ma Startup</h2>
-                <p class="section-subtitle" data-i18n="startup.subtitle">Membre de l'équipe DevNDumber</p>
-                
-                <div class="startup-content">
-                    <div class="startup-card">
-                        <div class="startup-logo">
-                            <picture>
-                                <source srcset="Public/img/devndumber.webp" type="image/webp" />
-                                <img src="Public/img/devndumber.webp" alt="Logo DevNDumber" class="startup-logo" width="200" height="200" loading="lazy" />
-                            </picture>
-                        </div>
-                        <div class="startup-info">
-                            <div class="startup-info-item">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="16" y1="2" x2="16" y2="6"/>
-                                    <line x1="8" y1="2" x2="8" y2="6"/>
-                                    <line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
-                                <span data-i18n="startup.since">Depuis janvier 2026</span>
-                            </div>
-                            
-                            <div class="startup-info-item">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="12" cy="7" r="4"/>
-                                </svg>
-                                <span data-i18n="startup.role">Développeur Full Stack</span>
-                            </div>
-                            
-                            <div class="startup-info-item">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                                <span>Développement web & mobile</span>
-                            </div>
-                        </div>
-                        
-                        <p class="startup-description" data-i18n="startup.description">
-                            Je fais partie de l'équipe DevNDumber, une startup spécialisée dans le développement 
-                            de solutions web et web mobile. Notre mission est de développer des solutions 
-                            <strong>robustes et fiables</strong> pour nos clients, en alliant innovation 
-                            et expertise technique.
-                        </p>
-                        
-                        <div class="startup-values">
-                            <div class="value-item">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"/>
-                                </svg>
-                                <span data-i18n="startup.value1">Solutions robustes</span>
-                            </div>
-                            <div class="value-item">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                                <span data-i18n="startup.value2">Fiabilité garantie</span>
-                            </div>
-                            <div class="value-item">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                                <span data-i18n="startup.value3">Orienté client</span>
-                            </div>
-                        </div>
-                        
-                        <a href="https://www.devndumber.fr" target="_blank" rel="noopener noreferrer" class="btn btn-primary startup-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
-                            </svg>
-                            Visiter DevNDumber
-                        </a>
+                    <div class="contact-form-field">
+                        <label class="contact-field-label" for="contact-subject" data-i18n="contact.subject.label">Sujet</label>
+                        <input id="contact-subject" type="text" name="subject" class="form-input-wire" placeholder="Sujet de votre message" data-i18n-placeholder="contact.subject.placeholder" aria-label="Sujet de votre message" data-i18n-aria="contact.subject.placeholder" maxlength="150" required>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="contact.title">Contactez-moi</h2>
-                <!-- <p class="section-subtitle">Je suis actuellemnt en stage pour la création d'un site e-commerce professionnel.</p> -->
-                
-                <div class="contact-content">
-                    <div class="contact-info-full">
-                        <!-- <h3>Restons en contact</h3> -->
-                        <p data-i18n="contact.intro">
-                            N'hésitez pas à me contacter pour discuter de vos projets, 
-                            d'opportunités de stage ou simplement pour échanger.
-                        </p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Yvelines, Île-de-France</span>
-                            </div>
-                            <div class="contact-item">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                                </svg>
-                                <span>ludot84.dev@gmail.com</span>
-                            </div>
-                        </div>
-
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/ludovictrichereaupsp/" aria-label="LinkedIn">
-                                <img src="Public/img/icones/linkedin-1-svgrepo-com.svg" alt="LinkedIn" loading="lazy" width="24" height="24" />
-                            </a>
-                            <a href="https://github.com/TRICHEREAUludovic" aria-label="Github">
-                                <img class="github" src="Public/img/icones/github.svg" alt="github" loading="lazy" width="24" height="24" />
-                            </a>
-                        </div>
-                        
-                        <button id="open-contact-form" class="btn btn-primary">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                            </svg>
-                            <span data-i18n="contact.btn.open">M'envoyer un message</span>
-                        </button>
+                    <div class="contact-form-field">
+                        <label class="contact-field-label" for="contact-message" data-i18n="contact.message.label">Message</label>
+                        <textarea id="contact-message" name="message" class="form-input-wire" rows="4" placeholder="Votre message" data-i18n-placeholder="contact.message.placeholder" aria-label="Votre message" data-i18n-aria="contact.message.placeholder" maxlength="5000" required></textarea>
                     </div>
-                </div>
+                    
+                    <label class="privacy-checkbox-label">
+                        <input type="checkbox" required>
+                        <span><span data-i18n="contact.privacy.before">J’ai pris connaissance de la</span> <a href="./politique-confidentialite.html" class="privacy-link" data-i18n="contact.privacy.link">politique de confidentialité</a></span>
+                    </label>
+                    <div class="morph-actions">
+                        <button type="button" class="btn-morph-cancel" id="morph-cancel-btn" data-i18n="contact.cancel">Annuler</button>
+                        <button type="submit" class="btn-submit-wire" data-i18n="contact.submit">Envoyer ↗</button>
+                    </div>
+                </form>
             </div>
-        </section>
-        
-        <!-- Popup formulaire de contact -->
-        <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
-            <div class="modal-overlay" id="modal-overlay"></div>
-            <div class="modal-content">
-                <button class="modal-close" id="close-contact-form" data-i18n-aria="contact.form.close" aria-label="Fermer le formulaire">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"/>
-                        <line x1="6" y1="6" x2="18" y2="18"/>
-                    </svg>
-                </button>
-                
-                <h3 id="modal-title" data-i18n="contact.form.title">Envoyez-moi un message</h3>
-                <p class="modal-subtitle" data-i18n="contact.form.subtitle">Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.</p>
-                
-                <form class="contact-form" novalidate>
-                        <!-- Champ honeypot anti-bot (ne pas remplir) -->
-                        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-                            <label for="website">Ne pas remplir ce champ</label>
-                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.form.name">Nom complet</label>
-                            <input type="text" id="name" name="name" title="votre nom" required data-i18n="contact.form.name.placeholder" placeholder="Votre nom">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" data-i18n="contact.form.email">Email</label>
-                            <input type="email" id="email" name="email" title="Email" required data-i18n="contact.form.email.placeholder" placeholder="votre@email.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" title="Sujet" required placeholder="Sujet de votre message">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.form.message">Message</label>
-                            <textarea id="message" name="message" title="Votre message" rows="5" required data-i18n="contact.form.message.placeholder" placeholder="Votre message..."></textarea>
-                        </div>
-                        
-                        <div class="form-group form-checkbox">
-                            <input type="checkbox" id="rgpd" name="rgpd" required>
-                            <label for="rgpd" class="checkbox-label">
-                                <span data-i18n="contact.form.rgpd">J'accepte la </span><a href="politique-confidentialite.html" target="_blank" rel="noopener noreferrer" data-i18n="contact.form.rgpd.link">politique de confidentialité</a>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Envoyer le message</button>
-                        <div id="form-status" class="visually-hidden" role="status" aria-live="polite"></div>
-                    </form>
-                </div>
+
+            <!-- Messages de confirmation et d'erreur -->
+            <div class="morph-step morph-feedback-content" id="morph-step-success" aria-hidden="true" inert role="status" aria-live="polite">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h3 data-i18n="contact.success.title">Message envoyé !</h3>
+                <p data-i18n="contact.success.message">Merci pour votre prise de contact. Je vous répondrai dans les plus brefs délais.</p>
+                <button type="button" class="btn-morph-done" id="morph-reset-btn" data-i18n="contact.done">Fermer</button>
             </div>
+
+            <div class="morph-step morph-feedback-content" id="morph-step-error" role="alert" aria-hidden="true" inert>
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 8v4"></path>
+                    <path d="M12 16h.01"></path>
+                </svg>
+                <h3 data-i18n="contact.error.title">Échec de l’envoi</h3>
+                <p>
+                    <span data-i18n="contact.error">L’envoi a échoué. Réessayez ou écrivez directement à</span>
+                    <a href="mailto:ludot84.dev@gmail.com">ludot84.dev@gmail.com</a>.
+                </p>
+                <button type="button" class="btn-morph-done" id="morph-error-reset-btn" data-i18n="contact.done">Fermer</button>
+            </div>
+
         </div>
+    </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ludovic Trichereau. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
-                <div class="footer-links">
-                    <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
-                    <span>•</span>
-                    <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <!-- Bouton retour en haut -->
-    <button id="scroll-to-top" data-i18n-aria="scroll.top" aria-label="Retour en haut">
-        <i class="fa fa-arrow-up"></i>
-    </button>
-        <script>
-            // Enable animations when the browser is idle or after load to avoid layout jank
-            (function(){
-                function enableAnimations(){ document.documentElement.classList.add('anim-ready'); }
-                if ('requestIdleCallback' in window) requestIdleCallback(enableAnimations, {timeout:200});
-                else window.addEventListener('load', function(){ setTimeout(enableAnimations, 120); });
-            })();
-        </script>
-        <script>
-            // debug: log the current src of the hero image after load
-            document.addEventListener('DOMContentLoaded', function(){
-                const heroImg = document.querySelector('.hero-image img');
-                if(heroImg){
-                    heroImg.addEventListener('load', ()=> console.log('Hero image loaded:', heroImg.currentSrc || heroImg.src));
-                    // also log immediately
-                    console.log('Hero currentSrc initially:', heroImg.currentSrc || heroImg.src);
-                }
-            });
-        </script>
+    <!-- Footer -->
+  <footer class="dev-footer">
+    <div class="footer-container">
+      
+      <div class="footer-top">
+        
+          <span class="footer-name" data-i18n="footer.name">Ludovic Trichereau
+
+          </span>
+          <span class="footer-status">
+            <span class="status-dot"></span> <span data-i18n="footer.available">Disponible</span>
+          </span>
+        </div>
+
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/ludovictrichereaupsp/">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span data-i18n="footer.linkedin">LinkedIn</span>
+            </a>
+            <a href="https://github.com/TRICHEREAUludovic" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.23 1.84 1.23 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .297z"/></svg>
+                <span data-i18n="footer.github">GitHub</span>
+            </a>
+                    <a class="contact-info-item" href="mailto:ludot84.dev@gmail.com">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span>ludot84.dev@gmail.com</span>
+            </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Ludovic Trichereau • <a href="./mentions-legales.html" data-i18n="footer.legal">Mentions légales</a> • <a href="./politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></p>
+        <p class="footer-stack"><span data-i18n="footer.stack">Développé en HTML/CSS</span> • <a href="https://github.com/TRICHEREAUludovic/TRICHEREAUludovic.github.io" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Code source</a></p>
+      </div>
+
+    </div>
+  </footer>
+
 </body>
 </html>

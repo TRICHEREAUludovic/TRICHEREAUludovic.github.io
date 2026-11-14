@@ -7,6 +7,7 @@ Allow: /
 
 # Interdire les répertoires sensibles (s'il y en a)
 Disallow: /.git/
+Disallow: /conception/
 
 # Sitemap
 Sitemap: https://trichereauludovic.github.io/sitemap.xml
@@ -14,10 +15,14 @@ Sitemap: https://trichereauludovic.github.io/sitemap.xml
 # Règles spécifiques pour les crawlers populaires
 User-agent: Googlebot
 Allow: /
+Disallow: /.git/
+Disallow: /conception/
 Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Disallow: /.git/
+Disallow: /conception/
 Crawl-delay: 1
 
 # Bloquer les mauvais bots

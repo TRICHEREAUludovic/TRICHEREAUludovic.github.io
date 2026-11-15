@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        const siteBase = document.createElement("base");
+        siteBase.href = ["localhost", "127.0.0.1"].includes(window.location.hostname) ? "./" : "/";
+        document.head.append(siteBase);
+    </script>
+    <meta name="description" content="La page demandée est introuvable. Retrouvez le portfolio de Ludovic Trichereau." data-i18n-content="meta.404.description">
+    <title data-i18n="meta.404.title">Page introuvable — Ludovic.T</title>
+    <link rel="icon" type="image/webp" sizes="512x512" href="./Public/img/Logo.webp">
+    <link rel="stylesheet" href="./Public/css/reset.css">
+    <link rel="stylesheet" href="./Public/css/common.css">
+    <link rel="stylesheet" href="./Public/css/404.css">
+    <script src="./Public/js/i18n.js" defer></script>
+</head>
+<body class="not-found-page">
+    <header class="not-found-header">
+        <a class="not-found-brand" href="./index.html" aria-label="Ludovic.T — accueil" data-i18n-aria="legal.brand.aria">
+            <img src="./Public/img/Logo.webp" width="40" height="40" alt="">
+            <span>Ludovic.T</span>
+        </a>
+        <div class="language-switcher" role="group" aria-label="Choisir la langue" data-i18n-aria="language.group">
+            <button class="language-option" type="button" data-language="fr" aria-label="Français" aria-pressed="true" data-i18n-aria="language.french">FR</button>
+            <button class="language-option" type="button" data-language="en" aria-label="Anglais" aria-pressed="false" data-i18n-aria="language.english">EN</button>
+            <span class="language-status" role="status" aria-live="polite"></span>
+        </div>
+    </header>
+
+    <main class="not-found-main">
+        <section class="not-found-card" aria-labelledby="page-title">
+            <img class="not-found-illustration" src="./Public/img/404.svg" width="500" height="500" alt="Illustration 404" data-i18n-alt="error404.illustration">
+            <p class="not-found-eyebrow" data-i18n="error404.eyebrow">Erreur 404</p>
+            <h1 id="page-title" data-i18n="error404.title">Page introuvable</h1>
+            <p class="not-found-message" data-i18n="error404.message">La page que vous recherchez n’existe pas ou a été déplacée.</p>
+            <a class="btn btn-primary not-found-home" href="./index.html" data-i18n="error404.home">Retour à l’accueil</a>
+        </section>
+    </main>
+</body>
+</html>

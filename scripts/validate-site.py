@@ -13,6 +13,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_FILES = (
+    ROOT / "404.html",
     ROOT / "index.html",
     ROOT / "mentions-legales.html",
     ROOT / "politique-confidentialite.html",
@@ -43,10 +44,11 @@ class PageParser(HTMLParser):
                 self.duplicate_ids.add(element_id)
             self.ids.add(element_id)
 
-        for attribute in ("href", "src", "action"):
-            reference = attributes.get(attribute)
-            if reference:
-                self.references.append(reference)
+        if tag != "base":
+            for attribute in ("href", "src", "action"):
+                reference = attributes.get(attribute)
+                if reference:
+                    self.references.append(reference)
 
         for attribute in TRANSLATION_ATTRIBUTES:
             key = attributes.get(attribute)

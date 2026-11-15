@@ -460,6 +460,64 @@ document.addEventListener("site-language-changed", () => {
 });
 
 // Projets : démonstrations, détails et filtres
+function initProfileCard() {
+  const card = document.getElementById("profile-card");
+  if (!card) return;
+
+  const front = card.querySelector(".profile-front");
+  const back = card.querySelector(".profile-back");
+  const frontButton = front?.querySelector(".profile-flip-btn");
+  const backButton = back?.querySelector(".profile-flip-btn");
+
+  function setExpanded(isExpanded) {
+    card.classList.toggle("is-flipped", isExpanded);
+    card.querySelectorAll(".profile-flip-btn").forEach((button) => {
+      button.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    if (front) {
+      front.setAttribute("aria-hidden", String(isExpanded));
+      front.inert = isExpanded;
+    }
+    if (back) {
+      back.setAttribute("aria-hidden", String(!isExpanded));
+      back.inert = !isExpanded;
+    }
+  }
+
+  setExpanded(false);
+
+  frontButton?.addEventListener("click", () => {
+    setExpanded(true);
+    backButton?.focus();
+  });
+  backButton?.addEventListener("click", () => {
+    setExpanded(false);
+    frontButton?.focus();
+  });
+
+  const visibilityObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) setExpanded(false);
+      });
+    },
+    { threshold: 0.1 },
+  );
+  visibilityObserver.observe(card);
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      !mobileOverlay.classList.contains("open") &&
+      card.classList.contains("is-flipped")
+    ) {
+      setExpanded(false);
+      frontButton?.focus();
+    }
+  });
+}
+
 function initProjects() {
   const projectCards = Array.from(document.querySelectorAll(".project-card"));
   const projectGrid = document.querySelector(".projects-grid");
@@ -704,6 +762,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateExperienceCounter();
   initStatBoxGlow();
   updateHeroVisualBounds();
+  initProfileCard();
   initProjects();
   animateStatCounters();
   setTimeout(() => updateLogoPosition(true), 120);

@@ -21,7 +21,6 @@
             <ul>
                 <li><a href="./index.html" data-i18n="nav.home">Accueil</a></li>
                 <li><a href="./mentions-legales.html" data-i18n="nav.legal">Mentions</a></li>
-                <li><a href="./politique-confidentialite.html" aria-current="page" data-i18n="nav.privacy">Confidentialité</a></li>
             </ul>
         </nav>
         <div class="language-switcher" role="group" aria-label="Choisir la langue" data-i18n-aria="language.group">
@@ -29,7 +28,35 @@
             <button class="language-option" type="button" data-language="en" aria-label="Anglais" aria-pressed="false" data-i18n-aria="language.english">EN</button>
             <span class="language-status" role="status" aria-live="polite"></span>
         </div>
+        <button class="burger-menu" id="legal-burger-btn" type="button" aria-label="Ouvrir le menu de navigation" data-i18n-aria="nav.menu" aria-controls="legal-mobile-overlay" aria-expanded="false">
+            <svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <line class="burger-line line-1" x1="1.5" y1="1.5" x2="28.5" y2="1.5" stroke-width="3" stroke-linecap="round"/>
+                <line class="burger-line line-2" x1="1.5" y1="10.5" x2="28.5" y2="10.5" stroke-width="3" stroke-linecap="round"/>
+                <line class="burger-line line-3" x1="1.5" y1="19.5" x2="28.5" y2="19.5" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </button>
     </header>
+
+    <nav class="mobile-nav-overlay legal-mobile-overlay" id="legal-mobile-overlay" aria-label="Navigation mobile" data-i18n-aria="nav.mobile" aria-hidden="true" inert>
+        <ul>
+            <li><a href="./index.html" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="./mentions-legales.html" data-i18n="nav.legal">Mentions</a></li>
+            <li>
+                <details class="legal-mobile-toc">
+                    <summary aria-controls="legal-mobile-toc-links" data-i18n="legal.toc.title">Sur cette page</summary>
+                    <ol id="legal-mobile-toc-links">
+                        <li><a href="#responsable" data-i18n="privacy.toc.responsible">Responsable</a></li>
+                        <li><a href="#formulaire" data-i18n="privacy.toc.form">Formulaire de contact</a></li>
+                        <li><a href="#langue" data-i18n="privacy.toc.language">Préférence de langue</a></li>
+                        <li><a href="#destinataires" data-i18n="privacy.toc.recipients">Destinataires et services tiers</a></li>
+                        <li><a href="#conservation" data-i18n="privacy.toc.retention">Conservation</a></li>
+                        <li><a href="#traceurs" data-i18n="privacy.toc.trackers">Cookies et traceurs</a></li>
+                        <li><a href="#droits" data-i18n="privacy.toc.rights">Vos droits</a></li>
+                    </ol>
+                </details>
+            </li>
+        </ul>
+    </nav>
 
     <main class="legal-main">
         <section class="legal-heading" aria-labelledby="page-title">
@@ -112,7 +139,6 @@
                 </div>
                 <div class="footer-links">
                     <a href="./index.html" data-i18n="nav.home">Accueil</a>
-                    <a href="./mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
                     <a href="mailto:ludot84.dev@gmail.com" data-i18n="legal.footer.contact">Contact</a>
                 </div>
             </div>
@@ -122,5 +148,6 @@
             </div>
         </div>
     </footer>
+    <script src="./Public/js/legal.js" defer></script>
 </body>
 </html>

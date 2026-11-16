@@ -55,6 +55,7 @@
 }
 
 .not-found-illustration {
+    color-scheme: only light;
     display: block;
     width: clamp(180px, 42vw, 280px);
     height: auto;

@@ -644,6 +644,26 @@
     perspective: 1400px;
 }
 
+@media (min-width: 768px) {
+    .projects-grid:not(.is-filtered) {
+        grid-auto-rows: minmax(380px, auto);
+    }
+
+    /* A conserver pour de futurs projets : ces modificateurs restent inutilises avec les 4 projets actuels. */
+    .projects-grid:not(.is-filtered) .project-card--wide {
+        grid-column: span 2;
+    }
+
+    .projects-grid:not(.is-filtered) .project-card--tall {
+        grid-row: span 2;
+        align-self: stretch;
+    }
+
+    .projects-grid:not(.is-filtered) .project-card--tall.is-flipped .card-back {
+        height: 100%;
+    }
+}
+
 .card-inner {
     position: relative;
     width: 100%;

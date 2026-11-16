@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <style>:root { color-scheme: only light; }</style>
+
     <!-- Dégradé Vert Métallique Global -->
     <linearGradient id="grad-green" gradientUnits="userSpaceOnUse" x1="65" y1="60" x2="430" y2="365">
       <stop offset="0%" stop-color="#a8e016" />
